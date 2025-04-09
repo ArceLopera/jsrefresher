@@ -1,0 +1,2367 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="JavaScript refresher.">
+      
+      
+        <meta name="author" content="ArceLopera">
+      
+      
+        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/js_intro/">
+      
+      <link rel="icon" href="../Images/javascript_favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Introduction - JS Refresher</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#string-variables-and-assignments" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="JS Refresher" class="md-header__button md-logo" aria-label="JS Refresher" data-md-component="logo">
+      
+  <img src="../Images/js.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JS Refresher
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ArceLopera/jsrefresher" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ArceLopera/datanstorage
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Introduction
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="JS Refresher" class="md-nav__button md-logo" aria-label="JS Refresher" data-md-component="logo">
+      
+  <img src="../Images/js.png" alt="logo">
+
+    </a>
+    JS Refresher
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ArceLopera/jsrefresher" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ArceLopera/datanstorage
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Introduction
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jsdocs" class="md-nav__link">
+    JSDocs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    Data Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    Booleans
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-javascript-program" class="md-nav__link">
+    First JavaScript Program
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#popup-boxes" class="md-nav__link">
+    PopUp Boxes
+  </a>
+  
+    <nav class="md-nav" aria-label="PopUp Boxes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alert-box" class="md-nav__link">
+    Alert Box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-box" class="md-nav__link">
+    Prompt Box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirm-box" class="md-nav__link">
+    Confirm Box
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-math-object" class="md-nav__link">
+    The Math Object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators-boolean-operators" class="md-nav__link">
+    Logical Operators (Boolean Operators)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jsdocs" class="md-nav__link">
+    JSDocs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    Data Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    Booleans
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-javascript-program" class="md-nav__link">
+    First JavaScript Program
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#popup-boxes" class="md-nav__link">
+    PopUp Boxes
+  </a>
+  
+    <nav class="md-nav" aria-label="PopUp Boxes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alert-box" class="md-nav__link">
+    Alert Box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-box" class="md-nav__link">
+    Prompt Box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirm-box" class="md-nav__link">
+    Confirm Box
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-math-object" class="md-nav__link">
+    The Math Object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators-boolean-operators" class="md-nav__link">
+    Logical Operators (Boolean Operators)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="string-variables-and-assignments">String, Variables and Assignments</h1>
+<ul>
+<li>Each statement in JavaScript must end with a <strong>semicolon (;)</strong>. </li>
+<li>A comment beginning with two slashes (//) is called a single-line comment. </li>
+<li>Comments that require multiple lines begin with /<em> and end with </em>/ at the end of the comment block.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">// this is a single-line comment</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// a single-line comment after code</span><span class="w"></span>
+<span class="cm">/*  This is also a</span>
+<span class="cm">    comment spanning</span>
+<span class="cm">    multiple lines </span>
+<span class="cm">*/</span><span class="w"></span>
+</code></pre></div>
+<h2 id="jsdocs">JSDocs</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * This is a function.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {string} n - A string param</span>
+<span class="cm"> * @return {string} A good string</span>
+<span class="cm"> *</span>
+<span class="cm"> * @example</span>
+<span class="cm"> *</span>
+<span class="cm"> *     foo(&#39;hello&#39;)</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">foo</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">n</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="data-types">Data Types</h2>
+<p>Declaring a variable is as simple as using the keyword var. </p>
+<p>JavaScript variable names are case-sensitive. </p>
+<ul>
+<li>The first character of a variable name must be a letter, underscore (_), or a dollar sign ($) (Subsequent characters can be letters, digits, underscores, or dollar signs).</li>
+<li>The first character of a variable name can’t be a number.</li>
+<li>Variable names can’t include a mathematical or logical operator in their name. For instance, 2*something or this+that;</li>
+<li>Variable names can’t contain spaces.</li>
+<li>You’re not allowed to use any special symbols, like my#num, num%, etc.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.55</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">isAlive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">myNull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">myUndefined</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>Single or double quotes, it doesn’t matter, so long as you’re consistent with them. Like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;My name is John Smith&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>You can use quotes inside a string, as long as they don't match the quotes enclosing the string itself. </p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;My name is &#39;John&#39; &quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>You can get double quotes inside of double quotes using the escape character like this: \" or \' inside of single quotes. If you start a string with a single quote, then you need to end it with a single quote too. This applies to double quotes. Otherwise, JavaScript will get confused.</p>
+<h3 id="booleans">Booleans</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">isActive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">isAlive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>The Boolean value of 0 (zero), null, undefined, empty string is false.
+Everything with a "real" value is true.</p>
+<h3 id="first-javascript-program">First JavaScript Program</h3>
+<p>On the web, JavaScript code lives inside the HTML document, and needs to be enclosed by <script> and </script>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>JavaScript Mastery<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>JavaScript Mastery<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Hello World!&lt;/h1&gt;&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello Console!&quot;</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="popup-boxes">PopUp Boxes</h2>
+<p>JavaScript offers three types of popup boxes, the Alert, Prompt, and Confirm boxes.</p>
+<h3 id="alert-box">Alert Box</h3>
+<p>An alert box is used when you want to ensure that information gets through to the user.
+When an alert box pops up, the user must click OK to proceed.
+The alert function takes a single parameter, which is the text displayed in the popup box. To display line breaks within a popup box, use a backslash followed by the character n.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello World!\nBye&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Be careful when using alert boxes, as the user can continue using the page only after clicking OK.</p>
+<h3 id="prompt-box">Prompt Box</h3>
+<p>A prompt box is often used to have the user input a value before entering a page.
+When a prompt box pops up, the user will have to click either OK or Cancel to proceed after entering the input value.
+If the user clicks OK, the box returns the input value. If the user clicks Cancel, the box returns null.</p>
+<p>The prompt() method takes two parameters.</p>
+<ul>
+<li>The first is the label, which you want to display in the text box.</li>
+<li>The second is a default string to display in the text box (optional).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Enter your name&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">user</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Bye&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed after entering an input value. Do not overuse this method, because it prevents the user from accessing other parts of the page until the box is closed.</p>
+<h3 id="confirm-box">Confirm Box</h3>
+<p>A confirm box is often used to have the user verify or accept something.
+When a confirm box pops up, the user must click either OK or Cancel to proceed.
+If the user clicks OK, the box returns true. If the user clicks Cancel, the box returns false.</p>
+<p>The confirm() method takes a single parameter, which is the text displayed in the popup box.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Want to exit?&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Bye!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Continue&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span>
+</code></pre></div>
+<h2 id="operators">Operators</h2>
+<p>An operator is a symbol that performs mathematical or logical manipulations.</p>
+<p>Javascript supports addition (+), subtraction(-), multiplication(*), division(/) and modulus(%). Also increment (++) and decrement (--).
+You can get the result of a string expression using the eval() function, which takes a string expression argument like eval("10 * 20 + 8") and returns the result. If the argument is empty, it returns undefined. 10 * '5' or '10' * '5' will give the same result. But trying to multiply a number with string values that aren’t numbers, like 'hello' * 5 will return NaN (Not a Number). In JavaScript, we can use the modulus operator on integers AND on floating point numbers.
+Exponentiation operator was introduced in ES7.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">3</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// expected output: 81</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">10</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="o">-</span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// expected output: 0.01</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// expected output: 512</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mf">2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// expected output: 64</span><span class="w"></span>
+</code></pre></div>
+<p>User must explicitly enable this feature.</p>
+<h3 id="the-math-object">The Math Object</h3>
+<p>The Math object allows you to perform mathematical tasks, and includes several properties. Math has no constructor. There's no need to create a Math object first.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Math</span><span class="p">.</span><span class="nx">E</span><span class="w">    </span><span class="c1">//constant e</span><span class="w"></span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="w">   </span><span class="c1">//constant pi</span><span class="w"></span>
+</code></pre></div>
+<p>For exponentiation, we must use Math.pow. to calculate a number raised to the power of some other number.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>Math.abs() returns the absolute value of its parameter.</li>
+<li>Math.ceil() rounds a floating point value up to the nearest integer value. The rounded value is returned as a double</li>
+<li>Math.floor() rounds a floating point value down to the nearest integer value.</li>
+<li>Math.max() returns the largest of its parameters.</li>
+<li>Math.min() returns the smallest parameter.</li>
+<li>sqrt() for square root, sin() for sine, cos() for cosine</li>
+</ul>
+<p>Javascript also provides compound assignment operators that perform an operation and an assignment in one statement. 
+In-place operators allow you to write code like 'x = x + 3;' more concisely, as 'x += 3;'.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+<span class="nx">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
+<span class="nx">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w"></span>
+<span class="nx">x</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>The increment (and decrement) operator is used to increase (decrease) an integer's value by one.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">x</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">//equivalent to x = x + 1</span><span class="w"></span>
+<span class="nx">x</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="c1">//equivalent to x = x - 1</span><span class="w"></span>
+</code></pre></div>
+<p>The increment (and decrement) operator has two forms, prefix and postfix. 
+Prefix increments the value, and then proceeds with the expression.
+Postfix evaluates the expression and then performs the incrementing.</p>
+<div class="highlight"><pre><span></span><code><span class="o">++</span><span class="nx">x</span><span class="p">;</span><span class="w"> </span><span class="c1">//prefix</span><span class="w"></span>
+<span class="nx">x</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">//postfix</span><span class="w"></span>
+</code></pre></div>
+<h3 id="logical-operators-boolean-operators">Logical Operators (Boolean Operators)</h3>
+<p>Logical operators are used to join multiple expressions and return true or false. 
+The AND operator (&amp;&amp;), the OR operator(||) and the NOT operator(!)</p>
+<p>The ?: Operator (Conditional (Ternary) Operator)
+Exp1 ? Exp2 : Exp3; The ?: operator works the following way: Exp1 is evaluated. If it is true, then Exp2 is evaluated and becomes the value of the entire expression. If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the expression.
+var msg= (age &gt;= 18) ? "Welcome" : "Sorry" ;</p>
+<p>Exceptions
+An exception is a problem that occurs during program execution. Exceptions cause abnormal termination of the program.
+An exception can occur for many different reasons. Some examples:
+- A user has entered invalid data.
+- A file that needs to be opened cannot be found.
+- A network connection has been lost in the middle of communications.
+- Insufficient memory and other issues related to physical resources.
+JavaScript (similar to Java and C#) provides a flexible mechanism called the try-catch statement to handle exceptions so that a program won't crash when an error occurs.
+The code that might generate an exception is placed in the try block. If an exception occurs, the catch blocks is executed without stopping the program.
+The type of exception you want to catch appears in parentheses following the keyword catch.
+We use the general Exception type to handle all kinds of exceptions. We can also use the exception object e to access the exception details, such as the original error message (e.Message):
+A single try block can contain multiple catch blocks that handle different exceptions separately.
+Exception handling is particularly useful when dealing with user input.</p>
+<p>try {
+  nonExistentFunction();
+} catch (error) {
+  console.error(error);
+  // expected output: ReferenceError: nonExistentFunction is not defined
+  // Note - error messages will vary depending on browser
+}</p>
+<p>An optional finally block can be used after the catch blocks. The finally block is used to execute a given set of statements, whether an exception is thrown or not.
+try {
+  try_statements
+}
+catch (exception_var) {
+  catch_statements
+}
+finally {
+  finally_statements
+}</p>
+<p>try {
+  myroutine(); // may throw three types of exceptions
+} catch (e) {
+  if (e instanceof TypeError) {
+    // statements to handle TypeError exceptions
+  } else if (e instanceof RangeError) {
+    // statements to handle RangeError exceptions
+  } else if (e instanceof EvalError) {
+    // statements to handle EvalError exceptions
+  } else {
+    // statements to handle any unspecified exceptions
+    logMyErrors(e); // pass exception object to error handler
+  }
+}</p>
+<p>throw
+The throw keyword allows you to manually generate exceptions from your methods. A common use case for this is to only catch (and silence) a small subset of expected errors, and then re-throw the error in other cases:
+try {
+  myRoutine();
+} catch (e) {
+  if (e instanceof RangeError) {
+    // statements to handle this very common expected error
+  } else {
+    throw e;  // re-throw the error unchanged
+  }
+}</p>
+<p>JavaScript Arrays</p>
+<p>An array is a special type of object.
+An array uses numbers to access its elements, and an object uses names to access its members.
+var courses = new Array(3);
+courses[0]="HTML";
+courses[1]="CSS";
+courses[2]="JS";</p>
+<p>You refer to an array element by referring to the index number written in square brackets.
+This statement accesses the value of the first element in courses and changes the value of the second element.
+var courses = new Array("HTML", "CSS", "JS"); 
+var course = courses[0]; // HTML
+courses[1] = "C++"; //Changes the second element </p>
+<p>JS[0] is the first element in an array. [1] is the second. Array indexes start with 0. Attempting to access an index outside of the array, returns the value undefined.
+JavaScript arrays are dynamic, so you can declare an array and not pass any arguments with the Array() constructor. You can then add the elements dynamically.
+var courses = new Array();
+courses[0]="HTML";
+courses[1]="CSS";
+courses[2]="JS";
+courses[3]="CS";</p>
+<p>Array Literal</p>
+<p>For greater simplicity, readability, and execution speed, you can also declare arrays using the array literal syntax.
+var course = ["HTML","CSS";"JS"];</p>
+<p>This results in the same array as the one created with the new Array() syntax.
+You can access and modify the elements of the array using the index number, as you did before.
+The array literal syntax is the recommended way to declare arrays.</p>
+<p>Arrays Properties and Methods
+The length property returns the number of elements of the array. The length property is always one more than the highest array index. If the array is empty, the length property returns 0.
+JavaScript's concat() method allows you to join arrays and create an entirely new array.
+var c1 =["HTML","CSS"];
+var c2=["JS","CS"];
+var courses=c1.concat(c2);</p>
+<p>The concat operation does not affect the c1 and c2 arrays - it returns the resulting concatenation as a new array.</p>
+<p>Associative Arrays</p>
+<p>Remember that JavaScript does not support arrays with named indexes.
+In JavaScript, arrays always use numbered indexes.
+It is better to use an object when you want the index to be a string (text).
+Use an array when you want the index to be a number.
+If you use a named index, JavaScript will redefine the array to a standard object.
+Date Object
+setInterval</p>
+<p>The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
+It will continue calling the function until clearInterval() is called or the window is closed.
+function myAlert()[
+        alert("HI");
+}
+setInterval(myAlert, 3000);</p>
+<p>This will call the myAlert function every 3 seconds (1000 ms = 1 second).
+Write the name of the function without parentheses when passing it into the setInterval method.</p>
+<p>The Date object enables us to work with dates.
+A date consists of a year, a month, a day, an hour, a minute, a second, and milliseconds.</p>
+<p>Using new Date(), create a new date object with the current date and time
+var d = new Date();
+//d stores the current date and time</p>
+<p>The other ways to initialize dates allow for the creation of new date objects from the specified date and time
+new Date(milliseconds)
+new Date(dateString)
+new Date(year, month, day, hours, minutes, seconds, milliseconds)</p>
+<p>JavaScript dates are calculated in milliseconds from 01 January, 1970 00:00:00 Universal Time (UTC). One day contains 86,400,000 millisecond.
+For example:
+//Fri Jan 02 1970 00:00:00
+var d1 = new Date(86400000); </p>
+<p>//Fri Jan 02 2015 10:42:00
+var d2 = new Date("January 2, 2015 10:42:00");</p>
+<p>//Sat Jun 11 1988 11:42:00
+var d3 = new Date(88,5,11,11,42,0,0);</p>
+<p>JavaScript counts months from 0 to 11. January is 0, and December is 11.
+Date objects are static, rather than dynamic. The computer time is ticking, but date objects don't change, once created.
+When a Date object is created, a number of methods make it possible to perform operations on it. getMonth(), getDate(), getDay(),etc…
+var d = new Date();
+var hours= d.getHours();
+//hours equals to the current hour</p>
+<p>Control Flow
+For-Loops
+A for loop executes a set of statements a specific number of times. The init and increment statements may be left out, if not needed, but remember that the semicolons are mandatory. 
+for (; ;) {} is an infinite loop.
+for ( var i=0; i &lt;10;  i++ ) {
+     //...;
+}</p>
+<p>While-Loops
+A while loop repeatedly executes a block of code as long as a given condition is true.
+var num = 1;
+while(num &lt; 6 )
+{
+       console.log(num);
+       num++;
+}</p>
+<p>Do-While Loops
+A do-while loop is similar to a while loop, except that a do-while loop is guaranteed to execute at least one time.
+var a = 0;
+do {
+      console.log(a);
+      a++;
+}while( a &lt; 5);</p>
+<p>Conditionals
+The general form of the if statement is:
+if(x == 3)
+{
+      //....
+}
+else if (x == 0)
+{
+      //....
+}
+else
+{
+      //....
+}</p>
+<p>Use relational operators (Comparison Operators) to evaluate conditions. They only work when they’re comparing the same data type; numbers with numbers, strings with strings. In addition to the less than (&lt;) and greater than (&gt;) operators, the following operators are available: &gt;=, &lt;=, ==(Equal to), !=(Not Equal to), ===(Identical, Equal and same type), !==(Not identical).
+Remember, that an if can have zero or more else if's and they must come before the last else, which is optional. Once an else if succeeds, none of the remaining else if's or else clause will be tested.</p>
+<p>The switch statement provides a more elegant way to test a variable for equality against a list of values.
+Each value is called a case, and the variable being switched on is checked for each switch case. The default code executes when none of the cases matches the switch expression.
+// Or using a switch:
+switch(x) {
+  case 3:
+    // ...
+    break;
+  case 0:
+    // ...
+    break;
+  default:
+    // ...
+    break;
+}</p>
+<p>Break and Continue
+When the break statement is encountered inside a loop, the loop is immediately terminated and the program execution moves on to the next statement following the loop body. If you are using nested loops (i.e., one loop inside another loop), the break statement will stop the execution of the innermost loop and start executing the next line of code after the block.
+The continue statement is similar to the break statement, but instead of terminating the loop entirely, it skips the current iteration of the loop and continues with the next iteration.
+for( var i = 0; i &lt; 10; i++)
+{
+        if( i % 2 == 0)  continue;
+        if( i == 6) break;
+        console.log(i);
+}</p>
+<p>JavaScript Functions
+Functions define behavior. A function is a collection of statements that are grouped together to perform an operation. 
+You can define your own functions to perform your desired tasks.
+Functions have many advantages, including:
+- Reusable code.
+- Easy to test.
+- Modifications to a function do not affect the calling program.
+- One function can accept many different inputs.</p>
+<p>To define a JavaScript function, use the function keyword, followed by a name, followed by a set of parentheses ().</p>
+<p>The code to be executed by the function is placed inside curly brackets {}.
+function name() {</p>
+<p>//code to be executed
+}</p>
+<p>Function names can contain letters, digits, underscores, and dollar signs (same rules as variables). Parameters should be given names, which are separated by commas within the parentheses. If you pass more arguments than are defined, they will be assigned to an array called arguments. They can be used like this: arguments[0], arguments[1], etc. After defining the function, you can call it as many times as needed.
+JavaScript functions do not check the number of arguments received.
+If a function is called with missing arguments (fewer than declared), the missing values are set to undefined, which indicates that a variable has not been assigned a value.</p>
+<p>//Function definition
+function sayHello(name, age)
+{
+    console.log(name + " is " + age + " years old.");
+}
+//Function use
+sayHello("Cassie", 20);</p>
+<p>A function can have an optional return statement. It is used to return a value from the function.</p>
+<p>This statement is useful when making calculations that require a result.
+When JavaScript reaches a return statement, the function stops executing.</p>
+<p>//Function definition
+function myFunction(a, b)
+{
+     return a*b;
+}
+//Function use
+var res= myFunction(3,2);</p>
+<p>If you do not return anything from a function, it will return undefined.
+JavaScript Objects
+JavaScript variables are containers for data values. Objects are variables too, but they can contain many values.</p>
+<p>Think of an object as a list of values that are written as name:value pairs, with the names and the values separated by colons. You can access object properties in two ways.
+objectName.propertyName
+//or
+objectName['propertyName']</p>
+<p>var person = {
+ name: "John", age: 31, 
+ favColor: "green", height: 183
+};</p>
+<p>var x = person.age; //the same as:
+var y = person['age'];</p>
+<p>These values are called properties. JavaScript objects are containers for named values.
+JavaScript's built-in length property is used to count the number of characters in a property or string. An object method is a property that contains a function definition.
+Use the following syntax to access an object method.
+objectName.methodName()</p>
+<p>Methods are functions that are stored as object properties.</p>
+<p>Constructor Function</p>
+<p>Sometimes, we need to set an "object type" that can be used to create a number of objects of a single type.
+The standard way to create an "object type" is to use an object constructor function.
+function person(name, age, color) {
+  this.name = name;
+  this.age = age;
+  this.favColor = color;
+}</p>
+<p>The above function (person) is an object constructor, which takes parameters and assigns them to the object properties.
+The this keyword refers to the current object.
+Note that this is not a variable. It is a keyword, and its value cannot be changed.
+Once you have an object constructor, you can use the new keyword to create new objects of the same type.
+var p1 = new person("Amid", 42, "purple");
+var p2 = new person("Jessie", 39, "red");</p>
+<p>p1 and p2 are now objects of the person type. Their properties are assigned to the corresponding values.</p>
+<p>Object Initialization</p>
+<p>Use the object literal or initializer syntax to create single objects.
+var John = {name: "John", age: 25};
+var James = {name: "James", age: 21};</p>
+<p>Objects consist of properties, which are used to describe an object. Values of object properties can either contain primitive data types or other objects.</p>
+<p>Object Methods
+Methods are functions that are stored as object properties.</p>
+<p>Use the following syntax to create an object method:
+methodName = function() { code lines }</p>
+<p>Access an object method using the following syntax:
+objectName.methodName()</p>
+<p>A method is a function, belonging to an object. It can be referenced using the this keyword.
+The this keyword is used as a reference to the current object, meaning that you can access the objects properties and methods using it.</p>
+<p>Defining methods is done inside the constructor function.
+function person(name, age, color) {
+  this.name = name;
+  this.age = age;
+  this.changeName = function(name){
+        this.name=name;
+  }
+}</p>
+<p>var p = new person("David", 21);
+p.changeName("Jhon");</p>
+<p>You can also define the function outside of the constructor function and associate it with the object.
+function person(name, age) {
+  this.name= name;<br />
+  this.age = age;
+  this.yearOfBirth = bornYear;
+}
+function bornYear() {
+  return 2016 - this.age;
+}</p>
+<p>Note that it's not necessary to write the function's parentheses when assigning it to an object.
+Call the method by the property name you specified in the constructor function, rather than the function name.
+The DOM
+When you open any webpage in a browser, the HTML of the page is loaded and rendered visually on the screen.
+To accomplish that, the browser builds the Document Object Model of that page, which is an object oriented model of its logical structure.
+JavaScript can be used to manipulate the DOM of a page dynamically to add, delete and modify elements.
+The DOM represents a document as a tree structure.
+HTML elements become interrelated nodes in the tree.
+All those nodes in the tree have some kind of relations among each other.
+Nodes can have child nodes. Nodes on the same tree level are called siblings.</p>
+<p>For the example above:
+<html> has two children (<head>, <body>);
+<head> has one child (<title>) and one parent (<html>);
+<title> has one parent (<head>) and no children;</p>
+<body> has two children (<h1> and <a>) and one parent (<html>);
+It is important to understand the relationships between elements in an HTML document in order to be able to manipulate them with JavaScript.
+
+The document Object
+
+There is a predefined document object in JavaScript, which can be used to access all elements on the DOM.
+In other words, the document object is the owner (or root) of all objects in your webpage.
+So, if you want to access objects in an HTML page, you always start with accessing the document object.
+For example:
+document.body.innerHTML = "Some text";
+
+
+As body is an element of the DOM, we can access it using the document object and change the content of the innerHTML property.
+The innerHTML property can be used on almost all HTML elements to change its content.
+
+Selecting Elements
+
+
+All HTML elements are objects. And as we know every object has properties and methods.
+The document object has methods that allow you to select the desired HTML element.
+These three methods are the most commonly used for selecting HTML elements:
+//finds element by id
+document.getElementById(id) 
+
+//finds elements by class name
+document.getElementsByClassName(name) 
+
+//finds elements by tag name
+document.getElementsByTagName(name)
+
+
+In the example below, the getElementById method is used to select the element with id="demo" and change its content:
+var elem = document.getElementById("demo");
+elem.innerHTML = "Hello World!";
+
+
+The example above assumes that the HTML contains an element with id="demo", for example <div id="demo"></div>.
+
+The getElementsByClassName() method returns a collection of all elements in the document with the specified class name.
+For example, if our HTML page contained three elements with class="demo", the following code would return all those elements as an array:
+var arr =  document.getElementsByClassName("demo");
+//accessing the second element
+arr[1].innerHTML = "Hi";
+
+
+Similarly, the getElementsByTagName method returns all of the elements of the specified tag name as an array.
+The following example gets all paragraph elements of the page and changes their content:
+<p>hi</p>
+<p>hello</p>
+<p>hi</p>
+<script>
+var arr = document.getElementsByTagName("p");
+for (var x = 0; x < arr.length; x++) {
+  arr[x].innerHTML = "Hi there";
+}
+</script>
+
+
+The script will result in the following HTML:
+<p>Hi there</p>
+<p>Hi there</p>
+<p>Hi there</p>
+
+
+We used the length property of the array to loop through all the selected elements in the above example.
+
+Working with DOM
+
+Each element in the DOM has a set of properties and methods that provide information about their relationships in the DOM:
+element.childNodes returns an array of an element's child nodes.
+element.firstChild returns the first child node of an element.
+element.lastChild returns the last child node of an element.
+element.hasChildNodes returns true if an element has any child nodes, otherwise false.
+element.nextSibling returns the next node at the same tree level.
+element.previousSibling returns the previous node at the same tree level.
+element.parentNode returns the parent node of an element.
+
+We can, for example, select all child nodes of an element and change their content:
+<html>
+     <body>
+            <div id="demo">hi
+               <p>hi</p>
+               <p>hello</p>
+            </div>
+            <script>
+                   var a = document.getElementsById("demo");
+                 var arr = a.childNodes;
+                   for (var x = 0; x < arr.length; x++) {
+                        arr[x].innerHTML = "Hi there";
+                   }
+             </script>
+    </body>
+</html>
+
+
+
+Changing Elements
+
+Once you have selected the element(s) you want to work with, you can change their attributes.
+As we have seen in the previous lessons, we can change the text content of an element using the innerHTML property.
+Similarly, we can change the attributes of elements.
+For example, we can change the src attribute of an image:
+<img id="myimg" src="orange.png" alt="" />
+<script>
+var el = document.getElementById("myimg");
+el.src = "apple.png";
+</script>
+
+
+We can change the href attribute of a link:
+<a href="http://www.google.com/">Some URL</a>
+<script>
+var el=document.getElementByTagName("a");
+el[0].href="http://myurl.com/";
+</script>
+
+The style of HTML elements can also be changed using JavaScript.
+All style attributes can be accessed using the style object of the element.
+All CSS properties can be set and modified using JavaScript. Just remember, that you cannot use dashes (-) in the property names: these are replaced with camelCase versions, where the compound words begin with a capital letter.
+For example: the background-color property should be referred to as backgroundColor.
+<div id="demo" style="width:200px"> Some text</div>
+<script>
+var el = document.getElementById("demo");
+el.style.color = "6600FF";
+el.style.width = "100px";
+</script>
+
+
+Creating Elements
+
+Use the following methods to create new nodes:
+element.cloneNode() clones an element and returns the resulting node.
+document.createElement(element) creates a new element node.
+document.createTextNode(text) creates a new text node.
+
+var node = document.createTextNode("Some new text");
+
+
+This will create a new text node, but it will not appear in the document until you append it to an existing element with one of the following methods:
+element.appendChild(newNode) adds a new child node to an element as the last child node.
+element.insertBefore(node1, node2) inserts node1 as a child before node2.
+<div id="demo"> Some Text </div>
+<script>
+    //create a new paragraph
+    var p = document.createElement("p");
+    var node = document.createTextNode("Some new text");
+    //adding the text to paragraph
+    p.appendChild(node);
+
+    var div = document.getElementById("demo");
+    //adding  the paragraph  to the div 
+    div.appendChild(p);
+</script>
+
+
+To remove an HTML element, you must select the parent of the element and use the removeChild(node) method.
+An alternative way of achieving the same result would be the use of the parentNode property to get the parent of the element we want to remove:
+var child = document.getElementById("p1");
+child.parentNode.removeChild(child);
+To replace an HTML element, the element.replaceChild(newNode, oldNode) method is used.
+Animations
+To create an animation, we need to change the properties of an element at small intervals of time. We can achieve this by using the setInterval() method, which allows us to create a timer and call a function to change properties repeatedly at defined intervals (in milliseconds).
+For example:
+var t = setInterval(move, 500); 
+
+
+This code creates a timer that calls a move() function every 500 milliseconds.
+Now we need to define the move() function, that changes the position of the box.
+// starting position
+var pos = 0; 
+//our box element
+var box = document.getElementById("box");
+
+function move() {
+  pos += 1;
+  box.style.left = pos+"px"; //px = pixels
+}
+
+
+The move() function increments the left property of the box element by one each time it is called.
+The following code defines a timer that calls the move() function every 10 milliseconds:
+var t = setInterval(move, 10);
+
+However, this makes our box move to the right forever. To stop the animation when the box reaches the end of the container, we add a simple check to the move() function and use the clearInterval() method to stop the timer.
+function move() {
+  if(pos >= 150) {
+    clearInterval(t);
+  }
+  else {
+    pos += 1;
+    box.style.left = pos+"px";
+  }
+}
+
+When the left attribute of the box reaches the value of 150, the box reaches the end of the container, based on a container width of 200 and a box width of 50.
+
+Events
+You can write JavaScript code that executes when an event occurs, such as when a user clicks an HTML element, moves the mouse, or submits a form.
+When an event occurs on a target element, a handler function is executed.
+Common HTML events:
+onchange    An HTML element has been changed
+onclick The user clicks an HTML element
+onmouseover The user moves the mouse over an HTML element
+onmouseout  The user moves the mouse away from an HTML element
+onkeydown   The user pushes a keyboard key
+onload  The browser has finished loading the page
+Corresponding events can be added to HTML elements as attributes.
+For example: <p onclick="someFunc()">some text</p>
+
+Handling Events
+
+Let's display an alert popup when the user clicks a specified button:
+<button onclick="show()">Click Me</button>
+<script>
+function show(){
+    alert("hello");
+}
+</script>
+
+
+Event handlers can be assigned to elements.
+For example:
+var x=document.getElementById("demo");
+x.onclick = function () {
+       document.body.innerHTML = Date();
+}
+
+
+The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded.
+<body onload="doSomething()">
+
+
+Similarly, the window.onload event can be used to run code after the whole page is loaded.
+window.onload ​= function() {
+
+  ​//some code
+}
+
+
+The onchange event is mostly used on textboxes. The event handler gets called when the text inside the textbox changes and focus is lost from the element.
+
+Event Listeners
+
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers. You can add many event handlers to one element.
+You can also add many event handlers of the same type to one element, i.e., two "click" events.
+element.addEventListener(event, function, useCapture);
+
+
+The first parameter is the event's type (like "click" or "mousedown").
+The second parameter is the function we want to call when the event occurs.
+The third parameter is a Boolean value specifying whether to use event bubbling or event capturing. This parameter is optional, and will be described in the next lesson.
+Note that you don't use the "on" prefix for this event; use "click" instead of "onclick".
+Example:
+element.addEventListener("click", myFunction);
+element.addEventListener("mouseover", myFunction);
+
+function myFunction() {
+  alert("Hello World!");
+}
+
+
+This adds two event listeners to the element.
+We can remove one of the listeners:
+element.removeEventListener("mouseover", myFunction);
+
+Internet Explorer version 8 and lower do not support the addEventListener() and removeEventListener() methods. However, you can use the document.attachEvent() method to attach event handlers in Internet Explorer.
+
+Event Propagation
+
+There are two ways of event propagation in the HTML DOM: bubbling and capturing.
+
+Event propagation allows for the definition of the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+
+In bubbling, the innermost element's event is handled first and then the outer element's event is handled. The <p> element's click event is handled first, followed by the <div> element's click event.
+
+In capturing, the outermost element's event is handled first and then the inner. The <div> element's click event is handled first, followed by the <p> element's click event.
+Capturing goes down the DOM.
+Bubbling goes up the DOM.
+
+Capturing vs. Bubbling
+
+The addEventListener() method allows you to specify the propagation type with the "useCapture" parameter.
+addEventListener(event, function, useCapture)
+
+
+
+The default value is false, which means the bubbling propagation is used; when the value is set to true, the event uses the capturing propagation.
+//Capturing propagation
+elem1.addEventListener("click", myFunction, true); 
+
+//Bubbling propagation
+elem2.addEventListener("click", myFunction, false);
+
+
+This is particularly useful when you have the same event handled for multiple elements in the DOM hierarchy.
+
+Image Slider - Example
+
+Now we need to handle the Next and Prev button clicks and call the corresponding functions to change the image.
+HTML:
+<div>
+  <button onclick="prev()"> Prev </button>
+  <img id="slider" src="http://www.mysite.com/uploads/slider/1.jpg" 
+    width="200px" height="100px"/>
+  <button onclick="next()"> Next </button>
+</div>
+
+
+JS:
+var images = [
+   "http://www.mysite.com/uploads/slider/1.jpg", 
+   "http://www.mysite.com/uploads/slider/2.jpg", 
+   "http://www.mysite.com/uploads/slider/3.jpg"
+];
+var num=0;
+function next(){
+     var slider = document.getElementById("slider");
+     num++;
+     if(num >=images.length){
+           num=0;
+    }
+    slider.src = images[num];
+}
+function prev(){
+     var slider = document.getElementById("slider");
+     num--;
+     if(num < 0){
+           num=images.length -1;
+    }
+    slider.src = images[num];
+}
+
+
+Form Validation
+
+
+HTML5 adds some attributes that allow form validation. For example, the required attribute can be added to an input field to make it mandatory to fill in.
+More complex form validation can be done using JavaScript.
+The form element has an onsubmit event that can be handled to perform validation.
+For example, let's create a form with two inputs and one button. The text in both fields should be the same and not blank to pass the validation.
+<form onsubmit="return validate()" method="post">
+  Number: <input type="text" name="num1" id="num1" />
+  <br />
+  Repeat: <input type="text" name="num2" id="num2" />
+  <br />
+  <input type="submit" value="Submit" />
+</form>
+
+
+Now we need to define the validate() function:
+function validate(){
+    var n1 = document.getElementById("num1");
+    var n2 = document.getElementById("num2");
+    if(n1.value != "" && n2.value != ""){
+                if(n1.value == n2.value){
+                       return true;
+                }
+    }
+    alert("The values should be equal and not blank");
+    return false;
+}
+
+
+The form will not get submitted if its onsubmit event returns false.
+ECMAScript 6
+ECMAScript (ES) is a scripting language specification created to standardize JavaScript.
+
+The Sixth Edition, initially known as ECMAScript 6 (ES6) and later renamed to ECMAScript 2015, adds significant new syntax for writing complex applications, including classes and modules, iterators and for/of loops, generators, arrow functions, binary data, typed arrays, collections (maps, sets and weak maps), promises, number and math enhancements, reflection, and proxies.
+
+In other words, ES6 is a superset of JavaScript (ES5). The reason that ES6 became so popular is that it introduced new conventions and OOP concepts such as classes.
+
+var & let
+
+In ES6 we have three ways of declaring variables:
+var a = 10;
+const b = 'hello';
+let c = true;
+
+
+The type of declaration used depends on the necessary scope. Scope is the fundamental concept in all programming languages that defines the visibility of a variable.
+
+var & let
+Unlike the var keyword, which defines a variable globally, or locally to an entire function regardless of block scope, let allows you to declare variables that are limited in scope to the block, statement, or expression in which they are used.
+if(true){
+    let name ='Jack';
+}
+alert(name);//generates error
+
+
+In this case, the name variable is accessible only in the scope of the if statement because it was declared as let.
+
+To demonstrate the difference in scope between var and let, consider this example:
+function varTest(){
+    var x = 1;
+    if(true){
+       var x = 2;          // same variable
+       console.log(x); // 2
+    }
+    console.log(x); //2
+}
+function letTest(){
+    let x = 1;
+    if(true){
+       let x = 2;          // different variable
+       console.log(x); // 2
+    }
+    console.log(x); //1
+}
+
+
+One of the best uses for let is in loops:
+for(let i = 0; i < 3; i++) {...}
+
+
+let is not subject to Variable Hoisting, which means that let declarations do not move to the top of the current execution context.
+
+const
+
+const variables have the same scope as variables declared using let. The difference is that const variables are immutable - they are not allowed to be reassigned.
+For example, the following generates an exception:
+
+const a ='Hello';
+a = 'Hola';
+
+
+const is not subject to Variable Hoisting too, which means that const declarations do not move to the top of the current execution context.
+Also note that ES6 code will run only in browsers that support it. Older devices and browsers that do not support ES6 will return a syntax error.
+
+Template Literals in ES6
+
+Template literals are a way to output variables in the string.
+Prior to ES6 we had to break the string, for example:
+let name = 'David';
+let msg = 'Welcome '+ name +'!';
+console.log(msg);
+
+ES6 introduces a new way of outputting variable values in strings. The same code above can be rewritten as:
+let name = 'David';
+let msg = `Welcome ${name}!`;
+console.log(msg);
+
+
+Notice that template literals are enclosed by the backtick (` `) character instead of double or single quotes.
+The ${expression} is a placeholder, and can include any expression, which will get evaluated and inserted into the template literal.
+let a = 8;
+let b = 3;
+let msg = `The sum is ${a+b}!`;
+console.log(msg);
+
+
+To escape a backtick in a template literal, put a backslash \ before the backtick.
+
+Loops in ECMAScript 6
+
+In JavaScript we commonly use the for loop to iterate over values in a list:
+let arr = [1,2,3];
+for(let k =0 ; k < arr.length;k++){
+    console.log(arr[k]);
+}
+
+
+For..in loop
+
+The for...in loop is intended for iterating over the enumerable keys of an object.
+For example:
+
+let obj = {a:1,b:2,c:3};
+for (let v in obj){
+    console.log(v);
+}
+
+
+The for...in loop should NOT be used to iterate over arrays because, depending on the JavaScript engine, it could iterate in an arbitrary order. Also, the iterating variable is a string, not a number, so if you try to do any math with the variable, you'll be performing string concatenation instead of addition.
+
+For...of loop
+
+ES6 introduces the new for...of loop, which creates a loop iterating over iterable objects.
+For example:
+let list=["x","y","z"];
+for (let val of list){
+    console.log(val);
+}
+
+
+During each iteration the val variable is assigned the corresponding element in the list.
+
+The for...of loop works for other iterable objects as well, including strings
+for (let val of "Hello"){
+    console.log(val);
+}
+
+
+The for...of loop also works on the newly introduced collections (Map, Set, WeakMap, and WeakSet).
+
+Functions in ECMAScript 6
+
+Prior to ES6, a JavaScript function was defined like this:
+function add(x,y){
+    var sum= x+y;
+    console.log(sum);
+}
+
+
+ES6 introduces a new syntax for writing functions. The same function from above can be written as:
+
+const add = (x,y) => {
+    let sum= x+y;
+    console.log(sum);
+}
+
+
+This new syntax is quite handy when you just need a simple function with one argument.
+You can skip typing function and return, as well as some parentheses and braces.
+For example:
+
+const greet = x => "Welcome "+ x;
+
+
+The code above defines a function named greet that has one argument and returns a message.
+
+If there are no parameters, an empty pair of parentheses should be used, as in
+const  x = () => alert("Hi");
+
+
+The syntax is very useful for inline functions. For example, let's say we have an array, and for each element of the array we need to execute a function. We use the forEach method of the array to call a function for each element:
+var arr = [2,3,7,8];
+
+arr.forEach(function(el) {
+    console.log(el * 2);
+});
+
+However, in ES6, the code above can be rewritten as following:
+var arr = [2,3,7,8];
+
+arr.forEach(v => {
+    console.log(v * 2);
+});
+
+
+Default Parameters in ES6
+
+In ES6, we can put the default values right in the signature of the functions.
+function test(a, b = 3, c = 42){
+  return a + b + c;
+}
+console.log(test(5)); //50 
+
+
+
+And here's an example of an arrow function with default parameters:
+const test = (a, b = 3, c = 42) => {
+  return a + b + c;
+}
+console.log(test(5)); //50 
+
+
+Default value expressions are evaluated at function call time from left to right. This also means that default expressions can use the values of previously-filled parameters.
+
+ES6 Objects
+
+
+JavaScript variables can be Object data types that contain many values called properties.
+An object can also have properties that are function definitions called methods for performing actions on the object.
+ES6 introduces shorthand notations and computed property names that make declaring and using objects easier to understand.
+
+The new method definition shorthand does not require the colon (:) or function keyword, as in the grow function of the tree object declaration:
+
+let tree = {
+    height:10,
+    color: 'green',
+    grow() {
+        this.height +=2;
+    }
+};
+tree.grow();
+console.log(tree.height);  //12
+
+
+You can also use a property value shorthand when initializing properties with a variable by the same name.
+For example, properties height and health are being initialized with variables named height and health
+
+let height = 5;
+let health = 100;
+
+let athlete = {
+      height,
+      health
+};
+
+
+When creating an object by using duplicate property names, the last property will overwrite the prior ones of the same name.
+For Example:
+
+var a = {x: 1,x: 2,x: 3,x: 4};
+
+Duplicate property names generated a SyntaxError in ES5 when using strict mode. However, ES6 removed this limitation.
+
+Computed Property Names
+
+With ES6, you can now use computed property names. Using the square bracket notation [], we can use an expression for a property name, including concatenating strings. This can be useful in cases where we want to create certain objects based on user data (e.g. id, email, and so on).
+It is very useful when you need to create custom objects based on some variables.
+Here are three examples:
+Example 1:
+let prop = 'name';
+let id = '1234';
+let mobile = '12345678';
+
+let user = {
+    [prop]: 'Jack',
+    [`user_${id}`]: `${mobile}`
+};
+
+Example 2:
+var i = 0;
+var a = {
+     ['foo' + ++i]: i,
+     ['foo' + ++i]: i,
+     ['foo' + ++i]: i
+};
+
+Example 3:
+var param = 'size';
+var config = {
+   [param]: 12,
+   ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4
+};
+console.log(config.mobileSize);
+
+
+Object.assign() in ES6
+
+ES6 adds a new Object method assign() that allows us to combine multiple sources into one target to create a single new object.
+Object.assign() is also useful for creating a duplicate of an existing object.
+
+Let's look at the following example to see how to combine objects:
+
+let person = {
+     name: 'Jack',
+     age: 18,
+     sex: 'male'
+};
+
+let student = {
+     name: 'Bob',
+     age: 20,
+     xp: '2'
+};
+let student = Object.assign({}, person, student);
+
+
+Here we used Object.assign() where the first parameter is the target object you want to apply new properties to.
+Every parameter after the first will be used as sources for the target. There are no limitations on the number of source parameters. However, order is important because properties in the second parameter will be overridden by properties of the same name in third parameter, and so on.
+
+In the example above, we used a new object {} as the target and used two objects as sources.
+
+Now, let's see how we can use assign() to create a duplicate object without creating a reference (mutating) to the base object.
+In the following example, assignment was used to try to generate a new object. However, using = creates a reference to the base object. Because of this reference, changes intended for a new object mutate the original object:
+
+let person = {
+     name: 'Jack',
+     age: 18
+};
+let newPerson = person;  //newPerson references person
+newPerson.name = 'Bob';
+
+console.log(person.name); //Bob
+console.log(newPerson.name); //Bob
+
+
+To avoid this (mutations), use Object.assign() to create a new object.
+For example:
+let person = {
+     name: 'Jack',
+     age: 18
+};
+let newPerson = Object.assign({},person);  
+newPerson.name = 'Bob';
+
+console.log(person.name); //Jack
+console.log(newPerson.name); //Bob
+
+
+Finally, you can assign a value to an object property in the Object.assign() statement.
+For example:
+let person = {
+     name: 'Jack',
+     age: 18
+};
+let newPerson = Object.assign({},person, {name: 'Bob'});  
+
+
+Array Destructuring in ES6
+
+The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+ES6 has added a shorthand syntax for destructuring an array.
+
+The following example demonstrates how to unpack the elements of an array into distinct variables:
+let arr = ['1','2','3'];
+let [one, two, three] = arr;
+
+
+We can also destructure an array returned by a function.
+let a = () => {
+     return [1,2,3];
+};
+let [one,,two] = a();
+
+
+Notice that we left the second argument's place empty.
+
+The destructuring syntax also simplifies assignment and swapping values:
+let a, b, c = 4, d=8;
+[a, b = 6] = [2];  // a=2,  b=6
+[c, d] = [d, c];  // c=8, d = 4
+
+
+Object Destructuring in ES6
+
+Similar to Array destructuring, Object destructuring unpacks properties into distinct variables.
+let obj = {h:100, s: true};
+let {h, s} = obj;
+
+We can assign without declaration, but there are some syntax requirements for that:
+let a,b;
+({a, b} = {a: 'Hello', b: 'world!'});
+
+The () with a semicolon (;) at the end are mandatory when destructuring without a declaration. However, you can also do it as follows where the () are not required:
+let {a, b} = {a: 'Hello', b: 'world!'};
+
+
+You can also assign the object to new variable names.
+For example:
+var o = {h: 42, s:true};
+var {h: foo, s: bar} = o;
+
+//console.log(h); //Error
+console.log(foo); //42
+
+
+Finally you can assign default values to variables, in case the value unpacked from the object is undefined.
+
+var obj = {id: 42, name:'Carlos'};
+let  {id =10, age = 20} = obj;
+
+console.log(id); //42
+console.log(age); //20
+
+
+ES6 Rest Parameters
+
+Prior to ES6, if we wanted to pass a variable number of arguments to a function, we could use the arguments object, an array-like object, to access the parameters passed to the function.
+For example, let's write a function that checks if an array contains all the arguments passed:
+function containsAll(arr){
+    for(let k=1; k < arguments.length; k++){
+         let num = arguments[k];
+         if(arr.indexOf(num) === -1){
+             return false;
+         }
+    }
+    return true;
+}
+let x =[2,4,6,7];
+console.log(containsAll(x,2,4,7));
+console.log(containsAll(x,6,4,9));
+
+
+We can pass any number of arguments to the function and access it using the arguments object.
+
+While this does the job, ES6 provides a more readable syntax to achieve variable number of parameters by using a rest parameter:
+function containsAll(arr, ...nums){
+    for(let num of nums){
+         if(arr.indexOf(num) === -1){
+             return false;
+         }
+    }
+    return true;
+}
+
+
+The ...nums parameter is called a rest parameter. It takes all the "extra" arguments passed to the function. The three dots (...) are called the Spread operator.
+Only the last parameter of a function may be marked as a rest parameter. If there are no extra arguments, the rest parameter will simply be an empty array; the rest parameter will never be undefined.
+
+The Spread Operator
+
+This operator is similar to the Rest Parameter, but it has another purpose when used in objects or arrays or function calls (arguments).
+
+Spread in function calls
+
+It is common to pass the elements of an array as arguments to a function. Before ES6, we used the following method:
+function myFunction(w, x, y, z){
+       console.log(w+x+y+z);
+}
+var args =[1,2,3];
+myFunction.apply(null, args.concat(4));
+
+
+ES6 provides an easy way to do the example above with spread operators.
+const myFunction = (w, x, y, z) => {
+       console.log(w+x+y+z);
+};
+let args =[1,2,3];
+myFunction( ...args, 4);
+
+
+Example:
+var dateFields = [1981,11,26];
+var date = new Date(...dateFields);
+console.log(date);
+
+
+Spread in array literals
+
+Before ES6, we used the following syntax to add an item at middle of an array:
+var arr = ["One", "Two", "Five"];
+
+arr.splice(2, 0,"Three");
+arr.splice(3, 0, "Four");
+console.log(arr);
+
+
+You can use methods such as push, splice, and concat, for example, to achieve this in different positions of the array. However, in ES6 the spread operator lets us do this more easily:
+
+let newArr = ['Three','Four'];
+let arr = ['One', 'Two', ...NewArr, 'Five'];
+console.log(arr);
+
+
+Spread in object literals
+
+In objects it copies the own enumerable properties from the provided object onto a new object.
+const obj1 = {foo: 'bar', x: 42};
+const obj2 = {foo: 'baz', y: 5};
+
+const cloneObj = {...obj1};  //{foo: 'bar', x: 42}
+const mergedObj = {...obj1, ...obj2};  //{foo: 'baz', x: 42, y: 5}
+
+
+However, if you try to merge them you will not get the result you expected:
+const obj1 = {foo: 'bar', x: 42};
+const obj2 = {foo: 'baz', y: 5};
+const merge = (...objects) => ({...objects});
+
+let mergedObj = merge(obj1, obj2);  
+// { 0: {foo: 'bar', x: 42}, 1:  {foo: 'baz', y: 5} }
+
+let mergedObj2 = merge({},obj1,obj2);
+// { 0: {}, 1: {foo: 'bar', x: 42}, 2:  {foo: 'baz', y: 5} }
+
+Shallow cloning or merging objects is possible with another operator called Object.assign().
+
+Classes in ES6
+
+In this lesson we'll explain how to create a class that can be used to create multiple objects of the same structure.
+A class uses the keyword class and contains a constructor method for initializing.
+
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+
+
+A declared class can then be used to create multiple objects using the keyword new.
+const square = new Rectangle(5,5);
+const poster = new Rectangle(2,3);
+
+
+Class Declarations are not hoisted while Function Declarations are. If you try to access your class before declaring it, ReferenceError will be returned.
+
+You can also define a class with a class expression, where the class can be named or unnamed.
+A named class looks like:
+var Square = class Rectangle {
+      constructor(height, width){
+           this.height = height;
+           this.width = width
+       }
+};
+
+
+In the unnamed class expression, a variable is simply assigned the class definition:
+var Square = class {
+      constructor(height, width){
+           this.height = height;
+           this.width = width
+       }
+};
+
+The constructor is a special method which is used for creating and initializing an object created with a class. There can be only one constructor in each class.
+
+Class Methods in ES6
+
+ES6 introduced a shorthand that does not require the keyword function for a function assigned to a method's name. One type of class method is the prototype method, which is available to objects of the class.
+
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  get area(){
+        return this.calcArea();
+  }
+  calcArea(){
+        return this.height*this.width
+  }
+}
+const square = new Rectangle(5,5);
+console.log(square.area);  //25
+
+
+In the code above, area is a getter, calcArea is a method.
+Another type of method is the static method, which cannot be called through a class instance. Static methods are often used to create utility functions for an application.
+
+class Point {
+   constructor (x, y){
+       this.x = x;
+       this.y = y;
+   }
+   static distance(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        return Math.hypot(dx, dy);
+   }
+}
+const p1 = new Point(7, 2);
+const p2 = new Point(3, 8);
+
+console.log(Point.distance(p1,p2));
+
+As you can see, the static distance method is called directly using the class name, without an object.
+
+Inheritance in ES6
+
+The extends keyword is used in class declarations or class expressions to create a child of a class. The child inherits the properties and methods of the parent.
+
+class Animal {
+    constructor(name){
+        this.name = name; 
+    }
+    speak(){
+        console.log(this.name + 'makes noise');
+    }
+}
+
+class Dog extends Animal {
+     speak() {
+        console.log(this.name + 'Woof!');
+     }
+}
+
+let dog = new Dog('Sparky');
+dog.speak();
+
+
+In the code above, the Dog class is a child of the Animal class, inheriting its properties and methods.
+If there is a constructor present in the subclass, it needs to first call super() before using this. Also, the super keyword is used to call parent's methods.
+For example, we can modify the program above to the following:
+class Animal {
+    constructor(name){
+        this.name = name; 
+    }
+    speak(){
+        console.log(this.name + 'makes noise');
+    }
+}
+
+class Dog extends Animal {
+     speak() {
+        super.speak();
+        console.log(this.name + 'Woof!');
+     }
+}
+
+let dog = new Dog('Sparky');
+dog.speak();
+
+In the code above, the parent's speak() method is called using the super keyword.
+
+ES6 Collections
+
+ES6 Map
+
+A Map object can be used to hold key/value pairs. A key or value in a map can be anything (objects and primitive values).
+
+The syntax new Map([iterable]) creates a Map object where iterable is an array or any other iterable object whose elements are arrays (with a key/value pair each).
+
+An Object is similar to Map but there are important differences that make using a Map preferable in certain cases:
+1) The keys can be any type including functions, objects, and any primitive.
+2) You can get the size of a Map.
+3) You can directly iterate over Map.
+4) Performance of the Map is better in scenarios involving frequent addition and removal of key/value pairs.
+
+The size property returns the number of key/value pairs in a map.
+let map = new Map([['k1','v1'],['k2','v2']]);
+Console.log(map.size);   //2
+
+
+Methods
+
+set(key, value) Adds a specified key/value pair to the map. If the specified key already exists, value corresponding to it is replaced with the specified value.
+get(key) Gets the value corresponding to a specified key in the map. If the specified key doesn't exist, undefined is returned.
+has(key) Returns true if a specified key exists in the map and false otherwise.
+delete(key) Deletes the key/value pair with a specified key from the map and returns true. Returns false if the element does not exist.
+clear() Removes all key/value pairs from map.
+keys() Returns an Iterator of keys in the map for each element.
+values() Returns an Iterator of values in the map for each element.
+entries() Returns an Iterator of array[key, value] in the map for each element.
+
+let map = new Map();
+map.set('k1','v1').set('k2','v2');
+console.log(map.get('k1'));    // v1
+console.log(map.has('k2'));    // true
+
+for(let kv of map.entries()){
+     console.log(kv[0] + " : " + kv[1]);
+}
+
+The above example demonstrates some of the ES6 Map methods.
+Map supports different data types i.e. 1 and "1" are two different keys/values.
+
+ES6 Set
+
+A Set object can be used to hold unique values (no repetitions are allowed).
+A value in a set can be anything (objects and primitive values).
+
+The syntax new Set([iterable]) creates a Set object where iterable is an array or any other iterable object of values.
+
+The size property returns the number of distinct values in a set.
+For example:
+
+let set = new Set([1, 2, 4, 2, 59, 9, 4, 9, 1]);
+console.log(set.size);   //5
+
+
+Methods
+
+add(value) Adds a new element with the given value to the Set.
+delete(value) Deletes a specified value from the set.
+has(value) Returns true if a specified value exists in the set and false otherwise.
+clear() Clears the set.
+values() Returns an Iterator of values in the set.
+
+let set = new Set();
+
+set.add(5).add(9).add(59).add(9);
+console.log(set.has(9));
+
+for(let v of set.values()){
+    console.log(v);
+}
+
+Set supports different data types i.e. 1 and "1" are two different values.
+NaN and undefined can also be stored in Set.
+
+ES6 Promises
+
+A Promise is a better way for asynchronous programming when compared to the common way of using a setTimeout() type of method.
+
+Consider this example:
+setTimeOut(function() {
+    console.log("Work 1");
+    setTimeOut(function() { console.log("Work 2");}, 1000);
+    }, 1000);
+console.log("End");
+
+
+It prints "End", "Work 1" and "Work 2" in that order (the work is done asynchronously). But if there are more events like this, the code becomes very complex.
+
+ES6 comes to the rescue in such situations. A promise can be created as follows:
+new Promise(function(resolve, reject) {
+    // Work
+    if (success)
+        resolve(result);
+    else
+        reject(Error("failure"));
+}); 
+
+
+Here, resolve is the method for success and reject is the method for failure.
+
+If a method returns a promise, its calls should use the then method which takes two methods as input; one for success and the other for failure.
+
+For Example:
+function asyncFunc(work){
+    return new Promise(function(resolve, reject) {
+    if (work === "")
+        reject(Error("failure"));        
+    setTimeOut(function(){resolve(work);}, 1000);
+});
+}
+
+asyncFunc("Work1")  //Task1
+.then(function(result) {
+   console.log(result);
+   return asyncFunc("Work2");   //Task2
+}, function(error) {
+    console.log(error);
+})
+.then(function(result) {
+   console.log(result);
+}, function(error) {
+    console.log(error);
+});
+console.log("End");
+
+
+It also prints "End", "Work 1" and "Work 2" (the work is done asynchronously). But, this is clearly more readable than the previous example and in more complex situations it is easier to work with.
+
+Iterators & Generators
+
+Symbol.iterator is the default iterator for an object. The for...of loops are based on this type of iterator.
+
+In the example below, we will see how we should implement it and how generator functions are used.
+Example:
+let myIterableObj = {
+   [Symbol.iterator] : function* () {
+        yield 1; yield 2; yield 3;
+...
+console.log([...myIterableObj]);
+
+
+First, we create an object, and use the Symbol.iterator and generator function to fill it with some values.
+
+In the second line of the code, we use a * with the function keyword. It's called a generator function (or gen function).
+
+For example, here is a simple case of how gen functions can be useful:
+function* idMaker(){
+    let index = 0;
+    while (index < 5) {
+       yield index++;
+    }
+}
+var gen = idMaker();
+console.log(gen.next().value);
+
+
+We can exit and re-enter generator functions later. Their variable bindings (context) will be saved across re-entrances. They are a very powerful tool for asynchronous programming, especially when combined with Promises. They can also be useful for creating loops with special requirements.
+
+We can nest generator functions inside each other to create more complex structures and pass them arguments while we are calling them.
+The example below will show a useful case of how we can use generator functions and Symbol.iterators together.
+Example:
+
+const arr = ['0','1','4','a','9','c','16'];
+const my_obj = {
+     [Symbol.iterator] : function* () {
+         for(let index of arr){
+             yield `${index}`;
+         }
+     }
+};
+const all = [...my_obj]
+    .map(i => parseInt(i,10))
+    .map(Math.sqrt)
+    .filter((i) => i < 5)
+    .reduce((i, d) => i + d);
+console.log(all);
+
+We create an object of 7 elements by using Symbol.iterator and generator functions. In the second part, we assign our object to a constant all. At the end, we print its value.
+
+Modules
+
+It is a good practice to divide your related code into modules. Before ES6 there were some libraries which made this possible (e.g., RequireJS, CommonJS). ES6 is now supporting this feature natively.
+
+Considerations when using modules:
+The first consideration is maintainability. A module is independent of other modules, making improvements and expansion possible without any dependency on code in other modules.
+
+The second consideration is namespacing. In an earlier lesson, we talked about variables and scope. As you know, vars are globally declared, so it's common to have namespace pollution where unrelated variables are accessible all over our code. Modules solve this problem by creating a private space for variables.
+
+Another important consideration is reusability. When we write code that can be used in other projects, modules make it possible to easily reuse the code without having to rewrite it in a new project.
+
+Let's see how we should use modules in JS files.
+For Example:
+// lib/math.js
+export ​let sum = (x, y) => { return x + y; }
+export ​let pi = 3.14
+
+// app.j
+
+import * ​as math from "lib/mat"
+console.log(`2p = + ${math.sum(math.pi, math.pi)
+
+
+Here we are exporting the sum function and the pi variable so we can use them in different files.
+ES6 supports modules officially, however, some browsers are not supporting modules natively yet. So, we should use bundlers (builders) such as Webpack or Browserify to run our code.
+
+Built-in Methods
+
+ES6 also introduced new built-in methods to make several tasks easier. Here we will cover the most common ones.
+
+Array Element Finding
+
+The legacy way to find the first element of an array by its value and a rule was the following:
+[4, 5, 8, 1, 2, 0].filter(function (x) {
+     return x > 3;
+})[0];
+
+
+The new syntax is cleaner and more robust:
+
+[4, 5, 8, 1, 2, 0].find(x => x > 3);
+
+
+You can also get the index of the item above by using the findIndex() method:
+
+[4, 5, 8, 1, 2, 0].findIndex(x => x > 3);
+
+
+Repeating Strings
+
+Before ES6 the following syntax was the correct way to repeat a string multiple times:
+console.log(Array(3 + 1).join("foo"));   //foofoofoo
+
+
+With the new syntax, it becomes:
+
+console.log("foo".repeat(3));   //foofoofoo
+
+
+Searching Strings
+
+Before ES6 we only used the indexOf() method to find the position of the text in the string. For example:   
+"Hello World!".indexOf("Wo");
+"Hello World!".indexOf("Wo")===6;
+
+
+ES6 has replaced this with a version that has cleaner and more simplified syntax:
+
+"Hello World!".startsWith("He");
+"Hello World!".endsWith("He");
+"Hello World!".includes("He");
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/carlos-arcelopera" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ArceLopera" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    <a href="mailto:arcelopera.carlos@gmail.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m511.6 36.86-64 415.1a32.008 32.008 0 0 1-31.65 27.147c-4.188 0-8.319-.815-12.29-2.472l-122.6-51.1-50.86 76.29C226.3 508.5 219.8 512 212.8 512c-11.5 0-20.8-9.3-20.8-20.8v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96 122.3 360.3 19.69 317.5C8.438 312.8.812 302.2.062 289.1s5.47-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
