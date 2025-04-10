@@ -6,7 +6,7 @@ site_author: ArceLopera
 
 # Repository
 repo_url: https://github.com/ArceLopera/jsrefresher
-repo_name: ArceLopera/datanstorage
+repo_name: ArceLopera/jsrefresher
 edit_uri: "" #disables edit button
 
 # Copyright
@@ -87,4 +87,6 @@ extra_javascript:
 # Page tree
 nav:
   - Home: index.md
-  - Introduction: js_intro.md
+  - Basics: 
+      - Intro: js_intro.md
+      - Functions: js_func.md
