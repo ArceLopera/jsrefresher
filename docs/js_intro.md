@@ -173,7 +173,15 @@ else
 An operator is a symbol that performs mathematical or logical manipulations.
 
 Javascript supports addition (+), subtraction(-), multiplication(*), division(/) and modulus(%). Also increment (++) and decrement (--).
-You can get the result of a string expression using the eval() function, which takes a string expression argument like eval("10 * 20 + 8") and returns the result. If the argument is empty, it returns undefined. 10 * '5' or '10' * '5' will give the same result. But trying to multiply a number with string values that aren’t numbers, like 'hello' * 5 will return NaN (Not a Number). In JavaScript, we can use the modulus operator on integers AND on floating point numbers.
+
+You can get the result of a string expression using the eval() function, which takes a string expression argument like eval("10 * 20 + 8") and returns the result. 
+
+If the argument is empty, it returns undefined. 10 * '5' or '10' * '5' will give the same result. 
+
+But trying to multiply a number with string values that aren’t numbers, like 'hello' * 5 will return NaN (Not a Number). 
+
+In JavaScript, we can use the modulus operator on integers AND on floating point numbers.
+
 Exponentiation operator was introduced in ES7.
 
 ``` js
@@ -242,13 +250,27 @@ Postfix evaluates the expression and then performs the incrementing.
 x++; //postfix
 ```
 
-### Logical Operators (Boolean Operators)
+### Logical Operators 
+
+(Boolean Operators)
+
 Logical operators are used to join multiple expressions and return true or false. 
+
 The AND operator (&&), the OR operator(||) and the NOT operator(!)
 
-The ?: Operator (Conditional (Ternary) Operator)
-Exp1 ? Exp2 : Exp3; The ?: operator works the following way: Exp1 is evaluated. If it is true, then Exp2 is evaluated and becomes the value of the entire expression. If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the expression.
+### The ?: Operator 
+
+(Conditional (Ternary) Operator)
+
+Exp1 ? Exp2 : Exp3; The ?: operator works the following way: Exp1 is evaluated. 
+
+If it is true, then Exp2 is evaluated and becomes the value of the entire expression. 
+
+If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the expression.
+
+``` js
 var msg= (age >= 18) ? "Welcome" : "Sorry" ;
+```
 
 Exceptions
 An exception is a problem that occurs during program execution. Exceptions cause abnormal termination of the program.
