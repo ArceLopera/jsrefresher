@@ -90,3 +90,4 @@ nav:
   - Basics: 
       - Intro: js_intro.md
       - Functions: js_func.md
+      - DOM: js_dom.md

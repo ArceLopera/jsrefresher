@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/js_func/">
+        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/js_dom/">
       
       <link rel="icon" href="../Images/javascript_favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Functions - JS Refresher</title>
+        <title>DOM - JS Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javascript-functions" class="md-skip">
+        <a href="#the-dom" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Functions
+              DOM
             
           </span>
         </div>
@@ -328,6 +328,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../js_func/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -339,24 +353,55 @@
         
       
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Functions
-      </a>
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DOM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../js_dom/" class="md-nav__link">
+      <a href="./" class="md-nav__link md-nav__link--active">
         DOM
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-document-object" class="md-nav__link">
+    The document Object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-elements" class="md-nav__link">
+    Selecting Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-elements" class="md-nav__link">
+    Changing Elements
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -388,6 +433,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-document-object" class="md-nav__link">
+    The document Object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-elements" class="md-nav__link">
+    Selecting Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-elements" class="md-nav__link">
+    Changing Elements
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -400,250 +474,136 @@
                 
 
 
-<h1 id="javascript-functions">JavaScript Functions</h1>
-<p>Functions define behavior. A function is a collection of statements that are grouped together to perform an operation. 
-You can define your own functions to perform your desired tasks.
-Functions have many advantages, including:</p>
-<ul>
-<li>Reusable code.</li>
-<li>Easy to test.</li>
-<li>Modifications to a function do not affect the calling program.</li>
-<li>One function can accept many different inputs.</li>
-</ul>
-<p>To define a JavaScript function, use the function keyword, followed by a name, followed by a set of parentheses ().</p>
-<p>The code to be executed by the function is placed inside curly brackets {}.
-<div class="highlight"><pre><span></span><code>function name() {
-
-  //code to be executed
-}
-</code></pre></div></p>
-<p>Function names can contain letters, digits, underscores, and dollar signs (same rules as variables). Parameters should be given names, which are separated by commas within the parentheses. If you pass more arguments than are defined, they will be assigned to an array called arguments. They can be used like this: arguments[0], arguments[1], etc. After defining the function, you can call it as many times as needed.
-JavaScript functions do not check the number of arguments received.
-If a function is called with missing arguments (fewer than declared), the missing values are set to undefined, which indicates that a variable has not been assigned a value.</p>
-<div class="highlight"><pre><span></span><code>//Function definition
-function sayHello(name, age)
-{
-    console.log(name + &quot; is &quot; + age + &quot; years old.&quot;);
-}
-//Function use
-sayHello(&quot;Cassie&quot;, 20);
-</code></pre></div>
-<p>A function can have an optional return statement. It is used to return a value from the function.</p>
-<p>This statement is useful when making calculations that require a result.
-When JavaScript reaches a return statement, the function stops executing.</p>
-<div class="highlight"><pre><span></span><code>//Function definition
-function myFunction(a, b)
-{
-     return a*b;
-}
-//Function use
-var res= myFunction(3,2);
-</code></pre></div>
-<p>If you do not return anything from a function, it will return undefined.
-JavaScript Objects
-JavaScript variables are containers for data values. Objects are variables too, but they can contain many values.</p>
-<p>Think of an object as a list of values that are written as name:value pairs, with the names and the values separated by colons. You can access object properties in two ways.
-objectName.propertyName
-//or
-objectName['propertyName']</p>
-<p>var person = {
- name: "John", age: 31, 
- favColor: "green", height: 183
-};</p>
-<p>var x = person.age; //the same as:
-var y = person['age'];</p>
-<p>These values are called properties. JavaScript objects are containers for named values.
-JavaScript's built-in length property is used to count the number of characters in a property or string. An object method is a property that contains a function definition.
-Use the following syntax to access an object method.
-objectName.methodName()</p>
-<p>Methods are functions that are stored as object properties.</p>
-<p>Constructor Function</p>
-<p>Sometimes, we need to set an "object type" that can be used to create a number of objects of a single type.
-The standard way to create an "object type" is to use an object constructor function.
-function person(name, age, color) {
-  this.name = name;
-  this.age = age;
-  this.favColor = color;
-}</p>
-<p>The above function (person) is an object constructor, which takes parameters and assigns them to the object properties.
-The this keyword refers to the current object.
-Note that this is not a variable. It is a keyword, and its value cannot be changed.
-Once you have an object constructor, you can use the new keyword to create new objects of the same type.
-var p1 = new person("Amid", 42, "purple");
-var p2 = new person("Jessie", 39, "red");</p>
-<p>p1 and p2 are now objects of the person type. Their properties are assigned to the corresponding values.</p>
-<p>Object Initialization</p>
-<p>Use the object literal or initializer syntax to create single objects.
-var John = {name: "John", age: 25};
-var James = {name: "James", age: 21};</p>
-<p>Objects consist of properties, which are used to describe an object. Values of object properties can either contain primitive data types or other objects.</p>
-<p>Object Methods
-Methods are functions that are stored as object properties.</p>
-<p>Use the following syntax to create an object method:
-methodName = function() { code lines }</p>
-<p>Access an object method using the following syntax:
-objectName.methodName()</p>
-<p>A method is a function, belonging to an object. It can be referenced using the this keyword.
-The this keyword is used as a reference to the current object, meaning that you can access the objects properties and methods using it.</p>
-<p>Defining methods is done inside the constructor function.
-function person(name, age, color) {
-  this.name = name;
-  this.age = age;
-  this.changeName = function(name){
-        this.name=name;
-  }
-}</p>
-<p>var p = new person("David", 21);
-p.changeName("Jhon");</p>
-<p>You can also define the function outside of the constructor function and associate it with the object.
-function person(name, age) {
-  this.name= name;<br />
-  this.age = age;
-  this.yearOfBirth = bornYear;
-}
-function bornYear() {
-  return 2016 - this.age;
-}</p>
-<p>Note that it's not necessary to write the function's parentheses when assigning it to an object.
-Call the method by the property name you specified in the constructor function, rather than the function name.
-The DOM
-When you open any webpage in a browser, the HTML of the page is loaded and rendered visually on the screen.
-To accomplish that, the browser builds the Document Object Model of that page, which is an object oriented model of its logical structure.
-JavaScript can be used to manipulate the DOM of a page dynamically to add, delete and modify elements.
+<h1 id="the-dom">The DOM</h1>
+<p>When you open any webpage in a browser, the HTML of the page is loaded and rendered visually on the screen.
+To accomplish that, the browser builds the Document Object Model of that page, which is an object oriented model of its logical structure.</p>
+<p>JavaScript can be used to manipulate the DOM of a page dynamically to add, delete and modify elements.
 The DOM represents a document as a tree structure.
 HTML elements become interrelated nodes in the tree.
 All those nodes in the tree have some kind of relations among each other.
 Nodes can have child nodes. Nodes on the same tree level are called siblings.</p>
-<p>For the example above:
-<html> has two children (<head>, <body>);
-<head> has one child (<title>) and one parent (<html>);
-<title> has one parent (<head>) and no children;</p>
-<body> has two children (<h1> and <a>) and one parent (<html>);
-It is important to understand the relationships between elements in an HTML document in order to be able to manipulate them with JavaScript.
-
-The document Object
-
-There is a predefined document object in JavaScript, which can be used to access all elements on the DOM.
+<p><img alt="dom" src="../Images/dom.png" /></p>
+<p>For the example above:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span> has two children (<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>, <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>);
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span> has one child (<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>) and one parent (<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>);
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> has one parent (<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>) and no children;
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span> has two children (<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> and <span class="p">&lt;</span><span class="nt">a</span><span class="p">&gt;</span>) and one parent (<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>);
+</code></pre></div>
+<p>It is important to understand the relationships between elements in an HTML document in order to be able to manipulate them with JavaScript.</p>
+<h3 id="the-document-object">The document Object</h3>
+<p>There is a predefined document object in JavaScript, which can be used to access all elements on the DOM.
 In other words, the document object is the owner (or root) of all objects in your webpage.
-So, if you want to access objects in an HTML page, you always start with accessing the document object.
-For example:
-document.body.innerHTML = "Some text";
+So, if you want to access objects in an HTML page, you always start with accessing the document object.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Some text&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>As body is an element of the DOM, we can access it using the document object and change the content of the innerHTML property.
+The innerHTML property can be used on almost all HTML elements to change its content.</p>
+<h3 id="selecting-elements">Selecting Elements</h3>
+<div class="highlight"><pre><span></span><code><span class="nx">All</span><span class="w"> </span><span class="nx">HTML</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">objects</span><span class="p">.</span><span class="w"> </span><span class="nx">And</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">we</span><span class="w"> </span><span class="nx">know</span><span class="w"> </span><span class="nx">every</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">properties</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">methods</span><span class="p">.</span><span class="w"></span>
+<span class="nx">The</span><span class="w"> </span><span class="nb">document</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">methods</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">allow</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">select</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">desired</span><span class="w"> </span><span class="nx">HTML</span><span class="w"> </span><span class="nx">element</span><span class="p">.</span><span class="w"></span>
+<span class="nx">These</span><span class="w"> </span><span class="nx">three</span><span class="w"> </span><span class="nx">methods</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">most</span><span class="w"> </span><span class="nx">commonly</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">selecting</span><span class="w"> </span><span class="nx">HTML</span><span class="w"> </span><span class="nx">elements</span><span class="o">:</span><span class="w"></span>
+<span class="c1">//finds element by id</span><span class="w"></span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span>
+
+<span class="c1">//finds elements by class name</span><span class="w"></span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span>
+
+<span class="c1">//finds elements by tag name</span><span class="w"></span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"></span>
 
 
-As body is an element of the DOM, we can access it using the document object and change the content of the innerHTML property.
-The innerHTML property can be used on almost all HTML elements to change its content.
-
-Selecting Elements
-
-
-All HTML elements are objects. And as we know every object has properties and methods.
-The document object has methods that allow you to select the desired HTML element.
-These three methods are the most commonly used for selecting HTML elements:
-//finds element by id
-document.getElementById(id) 
-
-//finds elements by class name
-document.getElementsByClassName(name) 
-
-//finds elements by tag name
-document.getElementsByTagName(name)
+<span class="nx">In</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">example</span><span class="w"> </span><span class="nx">below</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">getElementById</span><span class="w"> </span><span class="nx">method</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">select</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;demo&quot;</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">change</span><span class="w"> </span><span class="nx">its</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">elem</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span><span class="w"></span>
 
 
-In the example below, the getElementById method is used to select the element with id="demo" and change its content:
-var elem = document.getElementById("demo");
-elem.innerHTML = "Hello World!";
+<span class="nx">The</span><span class="w"> </span><span class="nx">example</span><span class="w"> </span><span class="nx">above</span><span class="w"> </span><span class="nx">assumes</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">HTML</span><span class="w"> </span><span class="nx">contains</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">example</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;demo&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;.</span><span class="w"></span>
+
+<span class="nx">The</span><span class="w"> </span><span class="nx">getElementsByClassName</span><span class="p">()</span><span class="w"> </span><span class="nx">method</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">collection</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nb">document</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">specified</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">name</span><span class="p">.</span><span class="w"></span>
+<span class="nx">For</span><span class="w"> </span><span class="nx">example</span><span class="p">,</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">our</span><span class="w"> </span><span class="nx">HTML</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="nx">contained</span><span class="w"> </span><span class="nx">three</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">&quot;demo&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">following</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="nx">would</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">those</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">array</span><span class="o">:</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="c1">//accessing the second element</span><span class="w"></span>
+<span class="nx">arr</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hi&quot;</span><span class="p">;</span><span class="w"></span>
 
 
-The example above assumes that the HTML contains an element with id="demo", for example <div id="demo"></div>.
-
-The getElementsByClassName() method returns a collection of all elements in the document with the specified class name.
-For example, if our HTML page contained three elements with class="demo", the following code would return all those elements as an array:
-var arr =  document.getElementsByClassName("demo");
-//accessing the second element
-arr[1].innerHTML = "Hi";
-
-
-Similarly, the getElementsByTagName method returns all of the elements of the specified tag name as an array.
-The following example gets all paragraph elements of the page and changes their content:
-<p>hi</p>
-<p>hello</p>
-<p>hi</p>
-<script>
-var arr = document.getElementsByTagName("p");
-for (var x = 0; x < arr.length; x++) {
-  arr[x].innerHTML = "Hi there";
-}
-</script>
+<span class="nx">Similarly</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">getElementsByTagName</span><span class="w"> </span><span class="nx">method</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">specified</span><span class="w"> </span><span class="nx">tag</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="w"></span>
+<span class="nx">The</span><span class="w"> </span><span class="nx">following</span><span class="w"> </span><span class="nx">example</span><span class="w"> </span><span class="nx">gets</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">paragraph</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">changes</span><span class="w"> </span><span class="nx">their</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"></span>
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">hi</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">hello</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">hi</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">arr</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hi there&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span><span class="w"></span>
 
 
-The script will result in the following HTML:
-<p>Hi there</p>
-<p>Hi there</p>
-<p>Hi there</p>
+<span class="nx">The</span><span class="w"> </span><span class="nx">script</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">following</span><span class="w"> </span><span class="nx">HTML</span><span class="o">:</span><span class="w"></span>
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hi</span><span class="w"> </span><span class="nx">there</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hi</span><span class="w"> </span><span class="nx">there</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hi</span><span class="w"> </span><span class="nx">there</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
 
 
-We used the length property of the array to loop through all the selected elements in the above example.
+<span class="nx">We</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">length</span><span class="w"> </span><span class="nx">property</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">loop</span><span class="w"> </span><span class="nx">through</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">selected</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">above</span><span class="w"> </span><span class="nx">example</span><span class="p">.</span><span class="w"></span>
 
-Working with DOM
+<span class="nx">Working</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">DOM</span><span class="w"></span>
 
-Each element in the DOM has a set of properties and methods that provide information about their relationships in the DOM:
-element.childNodes returns an array of an element's child nodes.
-element.firstChild returns the first child node of an element.
-element.lastChild returns the last child node of an element.
-element.hasChildNodes returns true if an element has any child nodes, otherwise false.
-element.nextSibling returns the next node at the same tree level.
-element.previousSibling returns the previous node at the same tree level.
-element.parentNode returns the parent node of an element.
+<span class="nx">Each</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">DOM</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">properties</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">methods</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">provide</span><span class="w"> </span><span class="nx">information</span><span class="w"> </span><span class="nx">about</span><span class="w"> </span><span class="nx">their</span><span class="w"> </span><span class="nx">relationships</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">DOM</span><span class="o">:</span><span class="w"></span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">childNodes</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="err">&#39;</span><span class="nx">s</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">nodes</span><span class="p">.</span><span class="w"></span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">firstChild</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">first</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="p">.</span><span class="w"></span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">lastChild</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">last</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="p">.</span><span class="w"></span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">hasChildNodes</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">any</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">nodes</span><span class="p">,</span><span class="w"> </span><span class="nx">otherwise</span><span class="w"> </span><span class="kc">false</span><span class="p">.</span><span class="w"></span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">nextSibling</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">next</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">tree</span><span class="w"> </span><span class="nx">level</span><span class="p">.</span><span class="w"></span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">previousSibling</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">previous</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">tree</span><span class="w"> </span><span class="nx">level</span><span class="p">.</span><span class="w"></span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">parentNode</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">parent</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="p">.</span><span class="w"></span>
 
-We can, for example, select all child nodes of an element and change their content:
-<html>
-     <body>
-            <div id="demo">hi
-               <p>hi</p>
-               <p>hello</p>
-            </div>
-            <script>
-                   var a = document.getElementsById("demo");
-                 var arr = a.childNodes;
-                   for (var x = 0; x < arr.length; x++) {
-                        arr[x].innerHTML = "Hi there";
-                   }
-             </script>
-    </body>
-</html>
-
-
-
-Changing Elements
-
-Once you have selected the element(s) you want to work with, you can change their attributes.
+<span class="nx">We</span><span class="w"> </span><span class="nx">can</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">example</span><span class="p">,</span><span class="w"> </span><span class="nx">select</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">nodes</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">change</span><span class="w"> </span><span class="nx">their</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"></span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">     </span><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;demo&quot;</span><span class="o">&gt;</span><span class="nx">hi</span><span class="w"></span>
+<span class="w">               </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">hi</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="w">               </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">hello</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="o">&lt;</span><span class="err">/div&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">                   </span><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">                 </span><span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">childNodes</span><span class="p">;</span><span class="w"></span>
+<span class="w">                   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="nx">arr</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hi there&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">                   </span><span class="p">}</span><span class="w"></span>
+<span class="w">             </span><span class="o">&lt;</span><span class="err">/script&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/body&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="err">/html&gt;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="changing-elements">Changing Elements</h3>
+<p>Once you have selected the element(s) you want to work with, you can change their attributes.
 As we have seen in the previous lessons, we can change the text content of an element using the innerHTML property.
 Similarly, we can change the attributes of elements.
-For example, we can change the src attribute of an image:
-<img id="myimg" src="orange.png" alt="" />
-<script>
-var el = document.getElementById("myimg");
-el.src = "apple.png";
-</script>
-
-
-We can change the href attribute of a link:
-<a href="http://www.google.com/">Some URL</a>
-<script>
-var el=document.getElementByTagName("a");
-el[0].href="http://myurl.com/";
-</script>
-
-The style of HTML elements can also be changed using JavaScript.
+For example, we can change the src attribute of an image:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;myimg&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;orange.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;myimg&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;apple.png&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>We can change the href attribute of a link:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.google.com/&quot;</span><span class="p">&gt;</span>Some URL<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">el</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementByTagName</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">el</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://myurl.com/&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>The style of HTML elements can also be changed using JavaScript.
 All style attributes can be accessed using the style object of the element.
 All CSS properties can be set and modified using JavaScript. Just remember, that you cannot use dashes (-) in the property names: these are replaced with camelCase versions, where the compound words begin with a capital letter.
 For example: the background-color property should be referred to as backgroundColor.
-<div id="demo" style="width:200px"> Some text</div>
-<script>
-var el = document.getElementById("demo");
-el.style.color = "6600FF";
-el.style.width = "100px";
-</script>
+&lt;div id=&quot;demo&quot; style=&quot;width:200px&quot;&gt; Some text&lt;/div&gt;
+&lt;script&gt;
+var el = document.getElementById(&quot;demo&quot;);
+el.style.color = &quot;6600FF&quot;;
+el.style.width = &quot;100px&quot;;
+&lt;/script&gt;
 
 
 Creating Elements
@@ -653,29 +613,29 @@ element.cloneNode() clones an element and returns the resulting node.
 document.createElement(element) creates a new element node.
 document.createTextNode(text) creates a new text node.
 
-var node = document.createTextNode("Some new text");
+var node = document.createTextNode(&quot;Some new text&quot;);
 
 
 This will create a new text node, but it will not appear in the document until you append it to an existing element with one of the following methods:
 element.appendChild(newNode) adds a new child node to an element as the last child node.
 element.insertBefore(node1, node2) inserts node1 as a child before node2.
-<div id="demo"> Some Text </div>
-<script>
+&lt;div id=&quot;demo&quot;&gt; Some Text &lt;/div&gt;
+&lt;script&gt;
     //create a new paragraph
-    var p = document.createElement("p");
-    var node = document.createTextNode("Some new text");
+    var p = document.createElement(&quot;p&quot;);
+    var node = document.createTextNode(&quot;Some new text&quot;);
     //adding the text to paragraph
     p.appendChild(node);
 
-    var div = document.getElementById("demo");
+    var div = document.getElementById(&quot;demo&quot;);
     //adding  the paragraph  to the div 
     div.appendChild(p);
-</script>
+&lt;/script&gt;
 
 
 To remove an HTML element, you must select the parent of the element and use the removeChild(node) method.
 An alternative way of achieving the same result would be the use of the parentNode property to get the parent of the element we want to remove:
-var child = document.getElementById("p1");
+var child = document.getElementById(&quot;p1&quot;);
 child.parentNode.removeChild(child);
 To replace an HTML element, the element.replaceChild(newNode, oldNode) method is used.
 Animations
@@ -689,11 +649,11 @@ Now we need to define the move() function, that changes the position of the box.
 // starting position
 var pos = 0; 
 //our box element
-var box = document.getElementById("box");
+var box = document.getElementById(&quot;box&quot;);
 
 function move() {
   pos += 1;
-  box.style.left = pos+"px"; //px = pixels
+  box.style.left = pos+&quot;px&quot;; //px = pixels
 }
 
 
@@ -703,12 +663,12 @@ var t = setInterval(move, 10);
 
 However, this makes our box move to the right forever. To stop the animation when the box reaches the end of the container, we add a simple check to the move() function and use the clearInterval() method to stop the timer.
 function move() {
-  if(pos >= 150) {
+  if(pos &gt;= 150) {
     clearInterval(t);
   }
   else {
     pos += 1;
-    box.style.left = pos+"px";
+    box.style.left = pos+&quot;px&quot;;
   }
 }
 
@@ -725,29 +685,29 @@ onmouseout  The user moves the mouse away from an HTML element
 onkeydown   The user pushes a keyboard key
 onload  The browser has finished loading the page
 Corresponding events can be added to HTML elements as attributes.
-For example: <p onclick="someFunc()">some text</p>
+For example: &lt;p onclick=&quot;someFunc()&quot;&gt;some text&lt;/p&gt;
 
 Handling Events
 
-Let's display an alert popup when the user clicks a specified button:
-<button onclick="show()">Click Me</button>
-<script>
+Let&#39;s display an alert popup when the user clicks a specified button:
+&lt;button onclick=&quot;show()&quot;&gt;Click Me&lt;/button&gt;
+&lt;script&gt;
 function show(){
-    alert("hello");
+    alert(&quot;hello&quot;);
 }
-</script>
+&lt;/script&gt;
 
 
 Event handlers can be assigned to elements.
 For example:
-var x=document.getElementById("demo");
+var x=document.getElementById(&quot;demo&quot;);
 x.onclick = function () {
        document.body.innerHTML = Date();
 }
 
 
 The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded.
-<body onload="doSomething()">
+&lt;body onload=&quot;doSomething()&quot;&gt;
 
 
 Similarly, the window.onload event can be used to run code after the whole page is loaded.
@@ -762,26 +722,26 @@ The onchange event is mostly used on textboxes. The event handler gets called wh
 Event Listeners
 
 The addEventListener() method attaches an event handler to an element without overwriting existing event handlers. You can add many event handlers to one element.
-You can also add many event handlers of the same type to one element, i.e., two "click" events.
+You can also add many event handlers of the same type to one element, i.e., two &quot;click&quot; events.
 element.addEventListener(event, function, useCapture);
 
 
-The first parameter is the event's type (like "click" or "mousedown").
+The first parameter is the event&#39;s type (like &quot;click&quot; or &quot;mousedown&quot;).
 The second parameter is the function we want to call when the event occurs.
 The third parameter is a Boolean value specifying whether to use event bubbling or event capturing. This parameter is optional, and will be described in the next lesson.
-Note that you don't use the "on" prefix for this event; use "click" instead of "onclick".
+Note that you don&#39;t use the &quot;on&quot; prefix for this event; use &quot;click&quot; instead of &quot;onclick&quot;.
 Example:
-element.addEventListener("click", myFunction);
-element.addEventListener("mouseover", myFunction);
+element.addEventListener(&quot;click&quot;, myFunction);
+element.addEventListener(&quot;mouseover&quot;, myFunction);
 
 function myFunction() {
-  alert("Hello World!");
+  alert(&quot;Hello World!&quot;);
 }
 
 
 This adds two event listeners to the element.
 We can remove one of the listeners:
-element.removeEventListener("mouseover", myFunction);
+element.removeEventListener(&quot;mouseover&quot;, myFunction);
 
 Internet Explorer version 8 and lower do not support the addEventListener() and removeEventListener() methods. However, you can use the document.attachEvent() method to attach event handlers in Internet Explorer.
 
@@ -789,27 +749,27 @@ Event Propagation
 
 There are two ways of event propagation in the HTML DOM: bubbling and capturing.
 
-Event propagation allows for the definition of the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+Event propagation allows for the definition of the element order when an event occurs. If you have a &lt;p&gt; element inside a &lt;div&gt; element, and the user clicks on the &lt;p&gt; element, which element&#39;s &quot;click&quot; event should be handled first?
 
-In bubbling, the innermost element's event is handled first and then the outer element's event is handled. The <p> element's click event is handled first, followed by the <div> element's click event.
+In bubbling, the innermost element&#39;s event is handled first and then the outer element&#39;s event is handled. The &lt;p&gt; element&#39;s click event is handled first, followed by the &lt;div&gt; element&#39;s click event.
 
-In capturing, the outermost element's event is handled first and then the inner. The <div> element's click event is handled first, followed by the <p> element's click event.
+In capturing, the outermost element&#39;s event is handled first and then the inner. The &lt;div&gt; element&#39;s click event is handled first, followed by the &lt;p&gt; element&#39;s click event.
 Capturing goes down the DOM.
 Bubbling goes up the DOM.
 
 Capturing vs. Bubbling
 
-The addEventListener() method allows you to specify the propagation type with the "useCapture" parameter.
+The addEventListener() method allows you to specify the propagation type with the &quot;useCapture&quot; parameter.
 addEventListener(event, function, useCapture)
 
 
 
 The default value is false, which means the bubbling propagation is used; when the value is set to true, the event uses the capturing propagation.
 //Capturing propagation
-elem1.addEventListener("click", myFunction, true); 
+elem1.addEventListener(&quot;click&quot;, myFunction, true); 
 
 //Bubbling propagation
-elem2.addEventListener("click", myFunction, false);
+elem2.addEventListener(&quot;click&quot;, myFunction, false);
 
 
 This is particularly useful when you have the same event handled for multiple elements in the DOM hierarchy.
@@ -818,33 +778,33 @@ Image Slider - Example
 
 Now we need to handle the Next and Prev button clicks and call the corresponding functions to change the image.
 HTML:
-<div>
-  <button onclick="prev()"> Prev </button>
-  <img id="slider" src="http://www.mysite.com/uploads/slider/1.jpg" 
-    width="200px" height="100px"/>
-  <button onclick="next()"> Next </button>
-</div>
+&lt;div&gt;
+  &lt;button onclick=&quot;prev()&quot;&gt; Prev &lt;/button&gt;
+  &lt;img id=&quot;slider&quot; src=&quot;http://www.mysite.com/uploads/slider/1.jpg&quot; 
+    width=&quot;200px&quot; height=&quot;100px&quot;/&gt;
+  &lt;button onclick=&quot;next()&quot;&gt; Next &lt;/button&gt;
+&lt;/div&gt;
 
 
 JS:
 var images = [
-   "http://www.mysite.com/uploads/slider/1.jpg", 
-   "http://www.mysite.com/uploads/slider/2.jpg", 
-   "http://www.mysite.com/uploads/slider/3.jpg"
+   &quot;http://www.mysite.com/uploads/slider/1.jpg&quot;, 
+   &quot;http://www.mysite.com/uploads/slider/2.jpg&quot;, 
+   &quot;http://www.mysite.com/uploads/slider/3.jpg&quot;
 ];
 var num=0;
 function next(){
-     var slider = document.getElementById("slider");
+     var slider = document.getElementById(&quot;slider&quot;);
      num++;
-     if(num >=images.length){
+     if(num &gt;=images.length){
            num=0;
     }
     slider.src = images[num];
 }
 function prev(){
-     var slider = document.getElementById("slider");
+     var slider = document.getElementById(&quot;slider&quot;);
      num--;
-     if(num < 0){
+     if(num &lt; 0){
            num=images.length -1;
     }
     slider.src = images[num];
@@ -857,26 +817,26 @@ Form Validation
 HTML5 adds some attributes that allow form validation. For example, the required attribute can be added to an input field to make it mandatory to fill in.
 More complex form validation can be done using JavaScript.
 The form element has an onsubmit event that can be handled to perform validation.
-For example, let's create a form with two inputs and one button. The text in both fields should be the same and not blank to pass the validation.
-<form onsubmit="return validate()" method="post">
-  Number: <input type="text" name="num1" id="num1" />
-  <br />
-  Repeat: <input type="text" name="num2" id="num2" />
-  <br />
-  <input type="submit" value="Submit" />
-</form>
+For example, let&#39;s create a form with two inputs and one button. The text in both fields should be the same and not blank to pass the validation.
+&lt;form onsubmit=&quot;return validate()&quot; method=&quot;post&quot;&gt;
+  Number: &lt;input type=&quot;text&quot; name=&quot;num1&quot; id=&quot;num1&quot; /&gt;
+  &lt;br /&gt;
+  Repeat: &lt;input type=&quot;text&quot; name=&quot;num2&quot; id=&quot;num2&quot; /&gt;
+  &lt;br /&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+&lt;/form&gt;
 
 
 Now we need to define the validate() function:
 function validate(){
-    var n1 = document.getElementById("num1");
-    var n2 = document.getElementById("num2");
-    if(n1.value != "" && n2.value != ""){
+    var n1 = document.getElementById(&quot;num1&quot;);
+    var n2 = document.getElementById(&quot;num2&quot;);
+    if(n1.value != &quot;&quot; &amp;&amp; n2.value != &quot;&quot;){
                 if(n1.value == n2.value){
                        return true;
                 }
     }
-    alert("The values should be equal and not blank");
+    alert(&quot;The values should be equal and not blank&quot;);
     return false;
 }
 
@@ -889,20 +849,20 @@ The Sixth Edition, initially known as ECMAScript 6 (ES6) and later renamed to EC
 
 In other words, ES6 is a superset of JavaScript (ES5). The reason that ES6 became so popular is that it introduced new conventions and OOP concepts such as classes.
 
-var & let
+var &amp; let
 
 In ES6 we have three ways of declaring variables:
 var a = 10;
-const b = 'hello';
+const b = &#39;hello&#39;;
 let c = true;
 
 
 The type of declaration used depends on the necessary scope. Scope is the fundamental concept in all programming languages that defines the visibility of a variable.
 
-var & let
+var &amp; let
 Unlike the var keyword, which defines a variable globally, or locally to an entire function regardless of block scope, let allows you to declare variables that are limited in scope to the block, statement, or expression in which they are used.
 if(true){
-    let name ='Jack';
+    let name =&#39;Jack&#39;;
 }
 alert(name);//generates error
 
@@ -929,7 +889,7 @@ function letTest(){
 
 
 One of the best uses for let is in loops:
-for(let i = 0; i < 3; i++) {...}
+for(let i = 0; i &lt; 3; i++) {...}
 
 
 let is not subject to Variable Hoisting, which means that let declarations do not move to the top of the current execution context.
@@ -939,8 +899,8 @@ const
 const variables have the same scope as variables declared using let. The difference is that const variables are immutable - they are not allowed to be reassigned.
 For example, the following generates an exception:
 
-const a ='Hello';
-a = 'Hola';
+const a =&#39;Hello&#39;;
+a = &#39;Hola&#39;;
 
 
 const is not subject to Variable Hoisting too, which means that const declarations do not move to the top of the current execution context.
@@ -950,12 +910,12 @@ Template Literals in ES6
 
 Template literals are a way to output variables in the string.
 Prior to ES6 we had to break the string, for example:
-let name = 'David';
-let msg = 'Welcome '+ name +'!';
+let name = &#39;David&#39;;
+let msg = &#39;Welcome &#39;+ name +&#39;!&#39;;
 console.log(msg);
 
 ES6 introduces a new way of outputting variable values in strings. The same code above can be rewritten as:
-let name = 'David';
+let name = &#39;David&#39;;
 let msg = `Welcome ${name}!`;
 console.log(msg);
 
@@ -974,7 +934,7 @@ Loops in ECMAScript 6
 
 In JavaScript we commonly use the for loop to iterate over values in a list:
 let arr = [1,2,3];
-for(let k =0 ; k < arr.length;k++){
+for(let k =0 ; k &lt; arr.length;k++){
     console.log(arr[k]);
 }
 
@@ -990,13 +950,13 @@ for (let v in obj){
 }
 
 
-The for...in loop should NOT be used to iterate over arrays because, depending on the JavaScript engine, it could iterate in an arbitrary order. Also, the iterating variable is a string, not a number, so if you try to do any math with the variable, you'll be performing string concatenation instead of addition.
+The for...in loop should NOT be used to iterate over arrays because, depending on the JavaScript engine, it could iterate in an arbitrary order. Also, the iterating variable is a string, not a number, so if you try to do any math with the variable, you&#39;ll be performing string concatenation instead of addition.
 
 For...of loop
 
 ES6 introduces the new for...of loop, which creates a loop iterating over iterable objects.
 For example:
-let list=["x","y","z"];
+let list=[&quot;x&quot;,&quot;y&quot;,&quot;z&quot;];
 for (let val of list){
     console.log(val);
 }
@@ -1005,7 +965,7 @@ for (let val of list){
 During each iteration the val variable is assigned the corresponding element in the list.
 
 The for...of loop works for other iterable objects as well, including strings
-for (let val of "Hello"){
+for (let val of &quot;Hello&quot;){
     console.log(val);
 }
 
@@ -1023,7 +983,7 @@ function add(x,y){
 
 ES6 introduces a new syntax for writing functions. The same function from above can be written as:
 
-const add = (x,y) => {
+const add = (x,y) =&gt; {
     let sum= x+y;
     console.log(sum);
 }
@@ -1033,16 +993,16 @@ This new syntax is quite handy when you just need a simple function with one arg
 You can skip typing function and return, as well as some parentheses and braces.
 For example:
 
-const greet = x => "Welcome "+ x;
+const greet = x =&gt; &quot;Welcome &quot;+ x;
 
 
 The code above defines a function named greet that has one argument and returns a message.
 
 If there are no parameters, an empty pair of parentheses should be used, as in
-const  x = () => alert("Hi");
+const  x = () =&gt; alert(&quot;Hi&quot;);
 
 
-The syntax is very useful for inline functions. For example, let's say we have an array, and for each element of the array we need to execute a function. We use the forEach method of the array to call a function for each element:
+The syntax is very useful for inline functions. For example, let&#39;s say we have an array, and for each element of the array we need to execute a function. We use the forEach method of the array to call a function for each element:
 var arr = [2,3,7,8];
 
 arr.forEach(function(el) {
@@ -1052,7 +1012,7 @@ arr.forEach(function(el) {
 However, in ES6, the code above can be rewritten as following:
 var arr = [2,3,7,8];
 
-arr.forEach(v => {
+arr.forEach(v =&gt; {
     console.log(v * 2);
 });
 
@@ -1067,8 +1027,8 @@ console.log(test(5)); //50
 
 
 
-And here's an example of an arrow function with default parameters:
-const test = (a, b = 3, c = 42) => {
+And here&#39;s an example of an arrow function with default parameters:
+const test = (a, b = 3, c = 42) =&gt; {
   return a + b + c;
 }
 console.log(test(5)); //50 
@@ -1087,7 +1047,7 @@ The new method definition shorthand does not require the colon (:) or function k
 
 let tree = {
     height:10,
-    color: 'green',
+    color: &#39;green&#39;,
     grow() {
         this.height +=2;
     }
@@ -1121,28 +1081,28 @@ With ES6, you can now use computed property names. Using the square bracket nota
 It is very useful when you need to create custom objects based on some variables.
 Here are three examples:
 Example 1:
-let prop = 'name';
-let id = '1234';
-let mobile = '12345678';
+let prop = &#39;name&#39;;
+let id = &#39;1234&#39;;
+let mobile = &#39;12345678&#39;;
 
 let user = {
-    [prop]: 'Jack',
+    [prop]: &#39;Jack&#39;,
     [`user_${id}`]: `${mobile}`
 };
 
 Example 2:
 var i = 0;
 var a = {
-     ['foo' + ++i]: i,
-     ['foo' + ++i]: i,
-     ['foo' + ++i]: i
+     [&#39;foo&#39; + ++i]: i,
+     [&#39;foo&#39; + ++i]: i,
+     [&#39;foo&#39; + ++i]: i
 };
 
 Example 3:
-var param = 'size';
+var param = &#39;size&#39;;
 var config = {
    [param]: 12,
-   ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4
+   [&#39;mobile&#39; + param.charAt(0).toUpperCase() + param.slice(1)]: 4
 };
 console.log(config.mobileSize);
 
@@ -1152,18 +1112,18 @@ Object.assign() in ES6
 ES6 adds a new Object method assign() that allows us to combine multiple sources into one target to create a single new object.
 Object.assign() is also useful for creating a duplicate of an existing object.
 
-Let's look at the following example to see how to combine objects:
+Let&#39;s look at the following example to see how to combine objects:
 
 let person = {
-     name: 'Jack',
+     name: &#39;Jack&#39;,
      age: 18,
-     sex: 'male'
+     sex: &#39;male&#39;
 };
 
 let student = {
-     name: 'Bob',
+     name: &#39;Bob&#39;,
      age: 20,
-     xp: '2'
+     xp: &#39;2&#39;
 };
 let student = Object.assign({}, person, student);
 
@@ -1173,15 +1133,15 @@ Every parameter after the first will be used as sources for the target. There ar
 
 In the example above, we used a new object {} as the target and used two objects as sources.
 
-Now, let's see how we can use assign() to create a duplicate object without creating a reference (mutating) to the base object.
+Now, let&#39;s see how we can use assign() to create a duplicate object without creating a reference (mutating) to the base object.
 In the following example, assignment was used to try to generate a new object. However, using = creates a reference to the base object. Because of this reference, changes intended for a new object mutate the original object:
 
 let person = {
-     name: 'Jack',
+     name: &#39;Jack&#39;,
      age: 18
 };
 let newPerson = person;  //newPerson references person
-newPerson.name = 'Bob';
+newPerson.name = &#39;Bob&#39;;
 
 console.log(person.name); //Bob
 console.log(newPerson.name); //Bob
@@ -1190,11 +1150,11 @@ console.log(newPerson.name); //Bob
 To avoid this (mutations), use Object.assign() to create a new object.
 For example:
 let person = {
-     name: 'Jack',
+     name: &#39;Jack&#39;,
      age: 18
 };
 let newPerson = Object.assign({},person);  
-newPerson.name = 'Bob';
+newPerson.name = &#39;Bob&#39;;
 
 console.log(person.name); //Jack
 console.log(newPerson.name); //Bob
@@ -1203,10 +1163,10 @@ console.log(newPerson.name); //Bob
 Finally, you can assign a value to an object property in the Object.assign() statement.
 For example:
 let person = {
-     name: 'Jack',
+     name: &#39;Jack&#39;,
      age: 18
 };
-let newPerson = Object.assign({},person, {name: 'Bob'});  
+let newPerson = Object.assign({},person, {name: &#39;Bob&#39;});  
 
 
 Array Destructuring in ES6
@@ -1215,18 +1175,18 @@ The destructuring assignment syntax is a JavaScript expression that makes it pos
 ES6 has added a shorthand syntax for destructuring an array.
 
 The following example demonstrates how to unpack the elements of an array into distinct variables:
-let arr = ['1','2','3'];
+let arr = [&#39;1&#39;,&#39;2&#39;,&#39;3&#39;];
 let [one, two, three] = arr;
 
 
 We can also destructure an array returned by a function.
-let a = () => {
+let a = () =&gt; {
      return [1,2,3];
 };
 let [one,,two] = a();
 
 
-Notice that we left the second argument's place empty.
+Notice that we left the second argument&#39;s place empty.
 
 The destructuring syntax also simplifies assignment and swapping values:
 let a, b, c = 4, d=8;
@@ -1242,10 +1202,10 @@ let {h, s} = obj;
 
 We can assign without declaration, but there are some syntax requirements for that:
 let a,b;
-({a, b} = {a: 'Hello', b: 'world!'});
+({a, b} = {a: &#39;Hello&#39;, b: &#39;world!&#39;});
 
 The () with a semicolon (;) at the end are mandatory when destructuring without a declaration. However, you can also do it as follows where the () are not required:
-let {a, b} = {a: 'Hello', b: 'world!'};
+let {a, b} = {a: &#39;Hello&#39;, b: &#39;world!&#39;};
 
 
 You can also assign the object to new variable names.
@@ -1259,7 +1219,7 @@ console.log(foo); //42
 
 Finally you can assign default values to variables, in case the value unpacked from the object is undefined.
 
-var obj = {id: 42, name:'Carlos'};
+var obj = {id: 42, name:&#39;Carlos&#39;};
 let  {id =10, age = 20} = obj;
 
 console.log(id); //42
@@ -1269,9 +1229,9 @@ console.log(age); //20
 ES6 Rest Parameters
 
 Prior to ES6, if we wanted to pass a variable number of arguments to a function, we could use the arguments object, an array-like object, to access the parameters passed to the function.
-For example, let's write a function that checks if an array contains all the arguments passed:
+For example, let&#39;s write a function that checks if an array contains all the arguments passed:
 function containsAll(arr){
-    for(let k=1; k < arguments.length; k++){
+    for(let k=1; k &lt; arguments.length; k++){
          let num = arguments[k];
          if(arr.indexOf(num) === -1){
              return false;
@@ -1297,7 +1257,7 @@ function containsAll(arr, ...nums){
 }
 
 
-The ...nums parameter is called a rest parameter. It takes all the "extra" arguments passed to the function. The three dots (...) are called the Spread operator.
+The ...nums parameter is called a rest parameter. It takes all the &quot;extra&quot; arguments passed to the function. The three dots (...) are called the Spread operator.
 Only the last parameter of a function may be marked as a rest parameter. If there are no extra arguments, the rest parameter will simply be an empty array; the rest parameter will never be undefined.
 
 The Spread Operator
@@ -1315,7 +1275,7 @@ myFunction.apply(null, args.concat(4));
 
 
 ES6 provides an easy way to do the example above with spread operators.
-const myFunction = (w, x, y, z) => {
+const myFunction = (w, x, y, z) =&gt; {
        console.log(w+x+y+z);
 };
 let args =[1,2,3];
@@ -1331,46 +1291,46 @@ console.log(date);
 Spread in array literals
 
 Before ES6, we used the following syntax to add an item at middle of an array:
-var arr = ["One", "Two", "Five"];
+var arr = [&quot;One&quot;, &quot;Two&quot;, &quot;Five&quot;];
 
-arr.splice(2, 0,"Three");
-arr.splice(3, 0, "Four");
+arr.splice(2, 0,&quot;Three&quot;);
+arr.splice(3, 0, &quot;Four&quot;);
 console.log(arr);
 
 
 You can use methods such as push, splice, and concat, for example, to achieve this in different positions of the array. However, in ES6 the spread operator lets us do this more easily:
 
-let newArr = ['Three','Four'];
-let arr = ['One', 'Two', ...NewArr, 'Five'];
+let newArr = [&#39;Three&#39;,&#39;Four&#39;];
+let arr = [&#39;One&#39;, &#39;Two&#39;, ...NewArr, &#39;Five&#39;];
 console.log(arr);
 
 
 Spread in object literals
 
 In objects it copies the own enumerable properties from the provided object onto a new object.
-const obj1 = {foo: 'bar', x: 42};
-const obj2 = {foo: 'baz', y: 5};
+const obj1 = {foo: &#39;bar&#39;, x: 42};
+const obj2 = {foo: &#39;baz&#39;, y: 5};
 
-const cloneObj = {...obj1};  //{foo: 'bar', x: 42}
-const mergedObj = {...obj1, ...obj2};  //{foo: 'baz', x: 42, y: 5}
+const cloneObj = {...obj1};  //{foo: &#39;bar&#39;, x: 42}
+const mergedObj = {...obj1, ...obj2};  //{foo: &#39;baz&#39;, x: 42, y: 5}
 
 
 However, if you try to merge them you will not get the result you expected:
-const obj1 = {foo: 'bar', x: 42};
-const obj2 = {foo: 'baz', y: 5};
-const merge = (...objects) => ({...objects});
+const obj1 = {foo: &#39;bar&#39;, x: 42};
+const obj2 = {foo: &#39;baz&#39;, y: 5};
+const merge = (...objects) =&gt; ({...objects});
 
 let mergedObj = merge(obj1, obj2);  
-// { 0: {foo: 'bar', x: 42}, 1:  {foo: 'baz', y: 5} }
+// { 0: {foo: &#39;bar&#39;, x: 42}, 1:  {foo: &#39;baz&#39;, y: 5} }
 
 let mergedObj2 = merge({},obj1,obj2);
-// { 0: {}, 1: {foo: 'bar', x: 42}, 2:  {foo: 'baz', y: 5} }
+// { 0: {}, 1: {foo: &#39;bar&#39;, x: 42}, 2:  {foo: &#39;baz&#39;, y: 5} }
 
 Shallow cloning or merging objects is possible with another operator called Object.assign().
 
 Classes in ES6
 
-In this lesson we'll explain how to create a class that can be used to create multiple objects of the same structure.
+In this lesson we&#39;ll explain how to create a class that can be used to create multiple objects of the same structure.
 A class uses the keyword class and contains a constructor method for initializing.
 
 class Rectangle {
@@ -1410,7 +1370,7 @@ The constructor is a special method which is used for creating and initializing 
 
 Class Methods in ES6
 
-ES6 introduced a shorthand that does not require the keyword function for a function assigned to a method's name. One type of class method is the prototype method, which is available to objects of the class.
+ES6 introduced a shorthand that does not require the keyword function for a function assigned to a method&#39;s name. One type of class method is the prototype method, which is available to objects of the class.
 
 class Rectangle {
   constructor(height, width) {
@@ -1458,43 +1418,43 @@ class Animal {
         this.name = name; 
     }
     speak(){
-        console.log(this.name + 'makes noise');
+        console.log(this.name + &#39;makes noise&#39;);
     }
 }
 
 class Dog extends Animal {
      speak() {
-        console.log(this.name + 'Woof!');
+        console.log(this.name + &#39;Woof!&#39;);
      }
 }
 
-let dog = new Dog('Sparky');
+let dog = new Dog(&#39;Sparky&#39;);
 dog.speak();
 
 
 In the code above, the Dog class is a child of the Animal class, inheriting its properties and methods.
-If there is a constructor present in the subclass, it needs to first call super() before using this. Also, the super keyword is used to call parent's methods.
+If there is a constructor present in the subclass, it needs to first call super() before using this. Also, the super keyword is used to call parent&#39;s methods.
 For example, we can modify the program above to the following:
 class Animal {
     constructor(name){
         this.name = name; 
     }
     speak(){
-        console.log(this.name + 'makes noise');
+        console.log(this.name + &#39;makes noise&#39;);
     }
 }
 
 class Dog extends Animal {
      speak() {
         super.speak();
-        console.log(this.name + 'Woof!');
+        console.log(this.name + &#39;Woof!&#39;);
      }
 }
 
-let dog = new Dog('Sparky');
+let dog = new Dog(&#39;Sparky&#39;);
 dog.speak();
 
-In the code above, the parent's speak() method is called using the super keyword.
+In the code above, the parent&#39;s speak() method is called using the super keyword.
 
 ES6 Collections
 
@@ -1511,14 +1471,14 @@ An Object is similar to Map but there are important differences that make using 
 4) Performance of the Map is better in scenarios involving frequent addition and removal of key/value pairs.
 
 The size property returns the number of key/value pairs in a map.
-let map = new Map([['k1','v1'],['k2','v2']]);
+let map = new Map([[&#39;k1&#39;,&#39;v1&#39;],[&#39;k2&#39;,&#39;v2&#39;]]);
 Console.log(map.size);   //2
 
 
 Methods
 
 set(key, value) Adds a specified key/value pair to the map. If the specified key already exists, value corresponding to it is replaced with the specified value.
-get(key) Gets the value corresponding to a specified key in the map. If the specified key doesn't exist, undefined is returned.
+get(key) Gets the value corresponding to a specified key in the map. If the specified key doesn&#39;t exist, undefined is returned.
 has(key) Returns true if a specified key exists in the map and false otherwise.
 delete(key) Deletes the key/value pair with a specified key from the map and returns true. Returns false if the element does not exist.
 clear() Removes all key/value pairs from map.
@@ -1527,16 +1487,16 @@ values() Returns an Iterator of values in the map for each element.
 entries() Returns an Iterator of array[key, value] in the map for each element.
 
 let map = new Map();
-map.set('k1','v1').set('k2','v2');
-console.log(map.get('k1'));    // v1
-console.log(map.has('k2'));    // true
+map.set(&#39;k1&#39;,&#39;v1&#39;).set(&#39;k2&#39;,&#39;v2&#39;);
+console.log(map.get(&#39;k1&#39;));    // v1
+console.log(map.has(&#39;k2&#39;));    // true
 
 for(let kv of map.entries()){
-     console.log(kv[0] + " : " + kv[1]);
+     console.log(kv[0] + &quot; : &quot; + kv[1]);
 }
 
 The above example demonstrates some of the ES6 Map methods.
-Map supports different data types i.e. 1 and "1" are two different keys/values.
+Map supports different data types i.e. 1 and &quot;1&quot; are two different keys/values.
 
 ES6 Set
 
@@ -1569,7 +1529,7 @@ for(let v of set.values()){
     console.log(v);
 }
 
-Set supports different data types i.e. 1 and "1" are two different values.
+Set supports different data types i.e. 1 and &quot;1&quot; are two different values.
 NaN and undefined can also be stored in Set.
 
 ES6 Promises
@@ -1578,13 +1538,13 @@ A Promise is a better way for asynchronous programming when compared to the comm
 
 Consider this example:
 setTimeOut(function() {
-    console.log("Work 1");
-    setTimeOut(function() { console.log("Work 2");}, 1000);
+    console.log(&quot;Work 1&quot;);
+    setTimeOut(function() { console.log(&quot;Work 2&quot;);}, 1000);
     }, 1000);
-console.log("End");
+console.log(&quot;End&quot;);
 
 
-It prints "End", "Work 1" and "Work 2" in that order (the work is done asynchronously). But if there are more events like this, the code becomes very complex.
+It prints &quot;End&quot;, &quot;Work 1&quot; and &quot;Work 2&quot; in that order (the work is done asynchronously). But if there are more events like this, the code becomes very complex.
 
 ES6 comes to the rescue in such situations. A promise can be created as follows:
 new Promise(function(resolve, reject) {
@@ -1592,7 +1552,7 @@ new Promise(function(resolve, reject) {
     if (success)
         resolve(result);
     else
-        reject(Error("failure"));
+        reject(Error(&quot;failure&quot;));
 }); 
 
 
@@ -1603,16 +1563,16 @@ If a method returns a promise, its calls should use the then method which takes 
 For Example:
 function asyncFunc(work){
     return new Promise(function(resolve, reject) {
-    if (work === "")
-        reject(Error("failure"));        
+    if (work === &quot;&quot;)
+        reject(Error(&quot;failure&quot;));        
     setTimeOut(function(){resolve(work);}, 1000);
 });
 }
 
-asyncFunc("Work1")  //Task1
+asyncFunc(&quot;Work1&quot;)  //Task1
 .then(function(result) {
    console.log(result);
-   return asyncFunc("Work2");   //Task2
+   return asyncFunc(&quot;Work2&quot;);   //Task2
 }, function(error) {
     console.log(error);
 })
@@ -1621,12 +1581,12 @@ asyncFunc("Work1")  //Task1
 }, function(error) {
     console.log(error);
 });
-console.log("End");
+console.log(&quot;End&quot;);
 
 
-It also prints "End", "Work 1" and "Work 2" (the work is done asynchronously). But, this is clearly more readable than the previous example and in more complex situations it is easier to work with.
+It also prints &quot;End&quot;, &quot;Work 1&quot; and &quot;Work 2&quot; (the work is done asynchronously). But, this is clearly more readable than the previous example and in more complex situations it is easier to work with.
 
-Iterators & Generators
+Iterators &amp; Generators
 
 Symbol.iterator is the default iterator for an object. The for...of loops are based on this type of iterator.
 
@@ -1641,12 +1601,12 @@ console.log([...myIterableObj]);
 
 First, we create an object, and use the Symbol.iterator and generator function to fill it with some values.
 
-In the second line of the code, we use a * with the function keyword. It's called a generator function (or gen function).
+In the second line of the code, we use a * with the function keyword. It&#39;s called a generator function (or gen function).
 
 For example, here is a simple case of how gen functions can be useful:
 function* idMaker(){
     let index = 0;
-    while (index < 5) {
+    while (index &lt; 5) {
        yield index++;
     }
 }
@@ -1660,7 +1620,7 @@ We can nest generator functions inside each other to create more complex structu
 The example below will show a useful case of how we can use generator functions and Symbol.iterators together.
 Example:
 
-const arr = ['0','1','4','a','9','c','16'];
+const arr = [&#39;0&#39;,&#39;1&#39;,&#39;4&#39;,&#39;a&#39;,&#39;9&#39;,&#39;c&#39;,&#39;16&#39;];
 const my_obj = {
      [Symbol.iterator] : function* () {
          for(let index of arr){
@@ -1669,10 +1629,10 @@ const my_obj = {
      }
 };
 const all = [...my_obj]
-    .map(i => parseInt(i,10))
+    .map(i =&gt; parseInt(i,10))
     .map(Math.sqrt)
-    .filter((i) => i < 5)
-    .reduce((i, d) => i + d);
+    .filter((i) =&gt; i &lt; 5)
+    .reduce((i, d) =&gt; i + d);
 console.log(all);
 
 We create an object of 7 elements by using Symbol.iterator and generator functions. In the second part, we assign our object to a constant all. At the end, we print its value.
@@ -1684,19 +1644,19 @@ It is a good practice to divide your related code into modules. Before ES6 there
 Considerations when using modules:
 The first consideration is maintainability. A module is independent of other modules, making improvements and expansion possible without any dependency on code in other modules.
 
-The second consideration is namespacing. In an earlier lesson, we talked about variables and scope. As you know, vars are globally declared, so it's common to have namespace pollution where unrelated variables are accessible all over our code. Modules solve this problem by creating a private space for variables.
+The second consideration is namespacing. In an earlier lesson, we talked about variables and scope. As you know, vars are globally declared, so it&#39;s common to have namespace pollution where unrelated variables are accessible all over our code. Modules solve this problem by creating a private space for variables.
 
 Another important consideration is reusability. When we write code that can be used in other projects, modules make it possible to easily reuse the code without having to rewrite it in a new project.
 
-Let's see how we should use modules in JS files.
+Let&#39;s see how we should use modules in JS files.
 For Example:
 // lib/math.js
-export ​let sum = (x, y) => { return x + y; }
+export ​let sum = (x, y) =&gt; { return x + y; }
 export ​let pi = 3.14
 
 // app.j
 
-import * ​as math from "lib/mat"
+import * ​as math from &quot;lib/mat&quot;
 console.log(`2p = + ${math.sum(math.pi, math.pi)
 
 
@@ -1711,43 +1671,44 @@ Array Element Finding
 
 The legacy way to find the first element of an array by its value and a rule was the following:
 [4, 5, 8, 1, 2, 0].filter(function (x) {
-     return x > 3;
+     return x &gt; 3;
 })[0];
 
 
 The new syntax is cleaner and more robust:
 
-[4, 5, 8, 1, 2, 0].find(x => x > 3);
+[4, 5, 8, 1, 2, 0].find(x =&gt; x &gt; 3);
 
 
 You can also get the index of the item above by using the findIndex() method:
 
-[4, 5, 8, 1, 2, 0].findIndex(x => x > 3);
+[4, 5, 8, 1, 2, 0].findIndex(x =&gt; x &gt; 3);
 
 
 Repeating Strings
 
 Before ES6 the following syntax was the correct way to repeat a string multiple times:
-console.log(Array(3 + 1).join("foo"));   //foofoofoo
+console.log(Array(3 + 1).join(&quot;foo&quot;));   //foofoofoo
 
 
 With the new syntax, it becomes:
 
-console.log("foo".repeat(3));   //foofoofoo
+console.log(&quot;foo&quot;.repeat(3));   //foofoofoo
 
 
 Searching Strings
 
 Before ES6 we only used the indexOf() method to find the position of the text in the string. For example:   
-"Hello World!".indexOf("Wo");
-"Hello World!".indexOf("Wo")===6;
+&quot;Hello World!&quot;.indexOf(&quot;Wo&quot;);
+&quot;Hello World!&quot;.indexOf(&quot;Wo&quot;)===6;
 
 
 ES6 has replaced this with a version that has cleaner and more simplified syntax:
 
-"Hello World!".startsWith("He");
-"Hello World!".endsWith("He");
-"Hello World!".includes("He");
+&quot;Hello World!&quot;.startsWith(&quot;He&quot;);
+&quot;Hello World!&quot;.endsWith(&quot;He&quot;);
+&quot;Hello World!&quot;.includes(&quot;He&quot;);
+</code></pre></div>
 
               
             </article>
@@ -1761,7 +1722,7 @@ ES6 has replaced this with a version that has cleaner and more simplified syntax
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../js_intro/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Intro" rel="prev">
+        <a href="../js_func/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Functions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1770,26 +1731,11 @@ ES6 has replaced this with a version that has cleaner and more simplified syntax
               <span class="md-footer__direction">
                 Previous
               </span>
-              Intro
+              Functions
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../js_dom/" class="md-footer__link md-footer__link--next" aria-label="Next: DOM" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              DOM
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

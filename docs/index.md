@@ -5,8 +5,8 @@ JavaScript is the backbone of modern web development. Whether you're a beginner 
 | Topic | Description |
 |--------|--------------------------------------------------------------|
 | [**Introduction to JavaScript**](js_intro.md) | Understanding syntax, variables, and data types. |
-| **Functions and Scope** | Mastering functions, closures, and scope. |
-| **DOM Manipulation** | How JavaScript interacts with HTML and CSS. |
+| [**Functions and Scope**](js_func.md) | Mastering functions, closures, and scope. |
+| [**DOM Manipulation**](js_dom.md) | How JavaScript interacts with HTML and CSS. |
 | **Event Handling** | Making web pages interactive with events. |
 | **Asynchronous JavaScript** | Understanding callbacks, promises, and async/await. |
 | **Object-Oriented JavaScript** | Exploring prototypes, classes, and inheritance. |
