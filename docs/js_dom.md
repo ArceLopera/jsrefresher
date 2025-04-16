@@ -40,10 +40,12 @@ The innerHTML property can be used on almost all HTML elements to change its con
 
 ### Selecting Elements
 
-``` js
+
 All HTML elements are objects. And as we know every object has properties and methods.
 The document object has methods that allow you to select the desired HTML element.
 These three methods are the most commonly used for selecting HTML elements:
+
+``` js
 //finds element by id
 document.getElementById(id) 
 
@@ -52,24 +54,33 @@ document.getElementsByClassName(name)
 
 //finds elements by tag name
 document.getElementsByTagName(name)
+```
 
 
 In the example below, the getElementById method is used to select the element with id="demo" and change its content:
+
+``` js
 var elem = document.getElementById("demo");
 elem.innerHTML = "Hello World!";
+```
 
 
-The example above assumes that the HTML contains an element with id="demo", for example <div id="demo"></div>.
+The example above assumes that the HTML contains an element with id="demo", for example `<div id="demo"></div>.`
 
 The getElementsByClassName() method returns a collection of all elements in the document with the specified class name.
 For example, if our HTML page contained three elements with class="demo", the following code would return all those elements as an array:
+
+``` js
 var arr =  document.getElementsByClassName("demo");
 //accessing the second element
 arr[1].innerHTML = "Hi";
+```
 
 
 Similarly, the getElementsByTagName method returns all of the elements of the specified tag name as an array.
 The following example gets all paragraph elements of the page and changes their content:
+
+``` js
 <p>hi</p>
 <p>hello</p>
 <p>hi</p>
@@ -79,16 +90,19 @@ for (var x = 0; x < arr.length; x++) {
   arr[x].innerHTML = "Hi there";
 }
 </script>
-
+```
 
 The script will result in the following HTML:
-<p>Hi there</p>
-<p>Hi there</p>
-<p>Hi there</p>
 
+``` js
+<p>Hi there</p>
+<p>Hi there</p>
+<p>Hi there</p>
+``` 
 
 We used the length property of the array to loop through all the selected elements in the above example.
 
+``` js
 Working with DOM
 
 Each element in the DOM has a set of properties and methods that provide information about their relationships in the DOM:
