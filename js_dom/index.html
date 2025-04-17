@@ -392,9 +392,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#working-with-dom" class="md-nav__link">
+    Working with DOM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#changing-elements" class="md-nav__link">
     Changing Elements
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-elements" class="md-nav__link">
+    Creating Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animations" class="md-nav__link">
+    Animations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handling-events" class="md-nav__link">
+    Handling Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -454,9 +495,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#working-with-dom" class="md-nav__link">
+    Working with DOM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#changing-elements" class="md-nav__link">
     Changing Elements
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-elements" class="md-nav__link">
+    Creating Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animations" class="md-nav__link">
+    Animations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handling-events" class="md-nav__link">
+    Handling Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -541,33 +623,33 @@ The following example gets all paragraph elements of the page and changes their 
 <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hi</span><span class="w"> </span><span class="nx">there</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>We used the length property of the array to loop through all the selected elements in the above example.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">Working</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">DOM</span><span class="w"></span>
-
-<span class="nx">Each</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">DOM</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">properties</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">methods</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">provide</span><span class="w"> </span><span class="nx">information</span><span class="w"> </span><span class="nx">about</span><span class="w"> </span><span class="nx">their</span><span class="w"> </span><span class="nx">relationships</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">DOM</span><span class="o">:</span><span class="w"></span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">childNodes</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="err">&#39;</span><span class="nx">s</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">nodes</span><span class="p">.</span><span class="w"></span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">firstChild</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">first</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="p">.</span><span class="w"></span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">lastChild</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">last</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="p">.</span><span class="w"></span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">hasChildNodes</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">any</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">nodes</span><span class="p">,</span><span class="w"> </span><span class="nx">otherwise</span><span class="w"> </span><span class="kc">false</span><span class="p">.</span><span class="w"></span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">nextSibling</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">next</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">tree</span><span class="w"> </span><span class="nx">level</span><span class="p">.</span><span class="w"></span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">previousSibling</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">previous</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">tree</span><span class="w"> </span><span class="nx">level</span><span class="p">.</span><span class="w"></span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">parentNode</span><span class="w"> </span><span class="nx">returns</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">parent</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="p">.</span><span class="w"></span>
-
-<span class="nx">We</span><span class="w"> </span><span class="nx">can</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">example</span><span class="p">,</span><span class="w"> </span><span class="nx">select</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="nx">nodes</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">change</span><span class="w"> </span><span class="nx">their</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"></span>
-<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span><span class="w"></span>
-<span class="w">     </span><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span><span class="w"></span>
-<span class="w">            </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;demo&quot;</span><span class="o">&gt;</span><span class="nx">hi</span><span class="w"></span>
-<span class="w">               </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">hi</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
-<span class="w">               </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">hello</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
-<span class="w">            </span><span class="o">&lt;</span><span class="err">/div&gt;</span><span class="w"></span>
-<span class="w">            </span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="w"></span>
+<h3 id="working-with-dom">Working with DOM</h3>
+<p>Each element in the DOM has a set of properties and methods that provide information about their relationships in the DOM:</p>
+<ul>
+<li>element.childNodes returns an array of an element's child nodes.</li>
+<li>element.firstChild returns the first child node of an element.</li>
+<li>element.lastChild returns the last child node of an element.</li>
+<li>element.hasChildNodes returns true if an element has any child nodes, otherwise false.</li>
+<li>element.nextSibling returns the next node at the same tree level.</li>
+<li>element.previousSibling returns the previous node at the same tree level.</li>
+<li>element.parentNode returns the parent node of an element.</li>
+</ul>
+<p>We can, for example, select all child nodes of an element and change their content:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;demo&quot;</span><span class="p">&gt;</span>hi
+               <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>hi<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+               <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>hello<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
 <span class="w">                   </span><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">                 </span><span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">childNodes</span><span class="p">;</span><span class="w"></span>
 <span class="w">                   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                        </span><span class="nx">arr</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hi there&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="w">                   </span><span class="p">}</span><span class="w"></span>
-<span class="w">             </span><span class="o">&lt;</span><span class="err">/script&gt;</span><span class="w"></span>
-<span class="w">    </span><span class="o">&lt;</span><span class="err">/body&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="err">/html&gt;</span><span class="w"></span>
+<span class="w">             </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 <h3 id="changing-elements">Changing Elements</h3>
 <p>Once you have selected the element(s) you want to work with, you can change their attributes.
@@ -587,132 +669,152 @@ For example, we can change the src attribute of an image:</p>
 <span class="nx">el</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://myurl.com/&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>The style of HTML elements can also be changed using JavaScript.
+<p>The style of HTML elements can also be changed using JavaScript.
 All style attributes can be accessed using the style object of the element.
 All CSS properties can be set and modified using JavaScript. Just remember, that you cannot use dashes (-) in the property names: these are replaced with camelCase versions, where the compound words begin with a capital letter.
-For example: the background-color property should be referred to as backgroundColor.
-&lt;div id=&quot;demo&quot; style=&quot;width:200px&quot;&gt; Some text&lt;/div&gt;
-&lt;script&gt;
-var el = document.getElementById(&quot;demo&quot;);
-el.style.color = &quot;6600FF&quot;;
-el.style.width = &quot;100px&quot;;
-&lt;/script&gt;
+For example: the background-color property should be referred to as backgroundColor.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;demo&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:200px&quot;</span><span class="p">&gt;</span> Some text<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;6600FF&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;100px&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="creating-elements">Creating Elements</h3>
+<p>Use the following methods to create new nodes:</p>
+<ul>
+<li>element.cloneNode() clones an element and returns the resulting node.</li>
+<li>document.createElement(element) creates a new element node.</li>
+<li>document.createTextNode(text) creates a new text node.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>var node = document.createTextNode(&quot;Some new text&quot;);
+</code></pre></div>
+<p>This will create a new text node, but it will not appear in the document until you append it to an existing element with one of the following methods:</p>
+<ul>
+<li>element.appendChild(newNode) adds a new child node to an element as the last child node.</li>
+<li>element.insertBefore(node1, node2) inserts node1 as a child before node2.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;demo&quot;</span><span class="p">&gt;</span> Some Text <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//create a new paragraph</span><span class="w"></span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">&quot;Some new text&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//adding the text to paragraph</span><span class="w"></span>
+<span class="w">    </span><span class="nx">p</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span><span class="w"></span>
 
-
-Creating Elements
-
-Use the following methods to create new nodes:
-element.cloneNode() clones an element and returns the resulting node.
-document.createElement(element) creates a new element node.
-document.createTextNode(text) creates a new text node.
-
-var node = document.createTextNode(&quot;Some new text&quot;);
-
-
-This will create a new text node, but it will not appear in the document until you append it to an existing element with one of the following methods:
-element.appendChild(newNode) adds a new child node to an element as the last child node.
-element.insertBefore(node1, node2) inserts node1 as a child before node2.
-&lt;div id=&quot;demo&quot;&gt; Some Text &lt;/div&gt;
-&lt;script&gt;
-    //create a new paragraph
-    var p = document.createElement(&quot;p&quot;);
-    var node = document.createTextNode(&quot;Some new text&quot;);
-    //adding the text to paragraph
-    p.appendChild(node);
-
-    var div = document.getElementById(&quot;demo&quot;);
-    //adding  the paragraph  to the div 
-    div.appendChild(p);
-&lt;/script&gt;
-
-
-To remove an HTML element, you must select the parent of the element and use the removeChild(node) method.
-An alternative way of achieving the same result would be the use of the parentNode property to get the parent of the element we want to remove:
-var child = document.getElementById(&quot;p1&quot;);
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">div</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//adding  the paragraph  to the div </span><span class="w"></span>
+<span class="w">    </span><span class="nx">div</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>To remove an HTML element, you must select the parent of the element and use the removeChild(node) method.
+An alternative way of achieving the same result would be the use of the parentNode property to get the parent of the element we want to remove:</p>
+<div class="highlight"><pre><span></span><code>var child = document.getElementById(&quot;p1&quot;);
 child.parentNode.removeChild(child);
-To replace an HTML element, the element.replaceChild(newNode, oldNode) method is used.
-Animations
-To create an animation, we need to change the properties of an element at small intervals of time. We can achieve this by using the setInterval() method, which allows us to create a timer and call a function to change properties repeatedly at defined intervals (in milliseconds).
-For example:
-var t = setInterval(move, 500); 
+</code></pre></div>
+<p>To replace an HTML element, the element.replaceChild(newNode, oldNode) method is used.</p>
+<h3 id="animations">Animations</h3>
+<p>To create an animation, we need to change the properties of an element at small intervals of time. We can achieve this by using the setInterval() method, which allows us to create a timer and call a function to change properties repeatedly at defined intervals (in milliseconds).</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="nx">move</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div>
+<p>This code creates a timer that calls a move() function every 500 milliseconds.
+Now we need to define the move() function, that changes the position of the box.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// starting position</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span>
+<span class="c1">//our box element</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;box&quot;</span><span class="p">);</span><span class="w"></span>
 
-
-This code creates a timer that calls a move() function every 500 milliseconds.
-Now we need to define the move() function, that changes the position of the box.
-// starting position
-var pos = 0; 
-//our box element
-var box = document.getElementById(&quot;box&quot;);
-
-function move() {
-  pos += 1;
-  box.style.left = pos+&quot;px&quot;; //px = pixels
-}
-
-
-The move() function increments the left property of the box element by one each time it is called.
-The following code defines a timer that calls the move() function every 10 milliseconds:
-var t = setInterval(move, 10);
-
-However, this makes our box move to the right forever. To stop the animation when the box reaches the end of the container, we add a simple check to the move() function and use the clearInterval() method to stop the timer.
-function move() {
-  if(pos &gt;= 150) {
-    clearInterval(t);
-  }
-  else {
-    pos += 1;
-    box.style.left = pos+&quot;px&quot;;
-  }
-}
-
-When the left attribute of the box reaches the value of 150, the box reaches the end of the container, based on a container width of 200 and a box width of 50.
-
-Events
-You can write JavaScript code that executes when an event occurs, such as when a user clicks an HTML element, moves the mouse, or submits a form.
+<span class="kd">function</span><span class="w"> </span><span class="nx">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">pos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">box</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pos</span><span class="o">+</span><span class="s2">&quot;px&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">//px = pixels</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The move() function increments the left property of the box element by one each time it is called.</p>
+<p>The following code defines a timer that calls the move() function every 10 milliseconds:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="nx">move</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>However, this makes our box move to the right forever. To stop the animation when the box reaches the end of the container, we add a simple check to the move() function and use the clearInterval() method to stop the timer.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="nx">pos</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">150</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">t</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">pos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nx">box</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pos</span><span class="o">+</span><span class="s2">&quot;px&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>When the left attribute of the box reaches the value of 150, the box reaches the end of the container, based on a container width of 200 and a box width of 50.</p>
+<h3 id="events">Events</h3>
+<p>You can write JavaScript code that executes when an event occurs, such as when a user clicks an HTML element, moves the mouse, or submits a form.
 When an event occurs on a target element, a handler function is executed.
-Common HTML events:
-onchange    An HTML element has been changed
-onclick The user clicks an HTML element
-onmouseover The user moves the mouse over an HTML element
-onmouseout  The user moves the mouse away from an HTML element
-onkeydown   The user pushes a keyboard key
-onload  The browser has finished loading the page
-Corresponding events can be added to HTML elements as attributes.
-For example: &lt;p onclick=&quot;someFunc()&quot;&gt;some text&lt;/p&gt;
-
-Handling Events
-
-Let&#39;s display an alert popup when the user clicks a specified button:
-&lt;button onclick=&quot;show()&quot;&gt;Click Me&lt;/button&gt;
-&lt;script&gt;
-function show(){
-    alert(&quot;hello&quot;);
-}
-&lt;/script&gt;
-
-
-Event handlers can be assigned to elements.
-For example:
-var x=document.getElementById(&quot;demo&quot;);
+Common HTML events:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onchange</td>
+<td>An HTML element has been changed</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>The user clicks an HTML element</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>The user moves the mouse over an HTML element</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>The user moves the mouse away from an HTML element</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>The user pushes a keyboard key</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>The browser has finished loading the page</td>
+</tr>
+</tbody>
+</table>
+<p>Corresponding events can be added to HTML elements as attributes.
+For example: </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;someFunc()&quot;</span><span class="p">&gt;</span>some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="handling-events">Handling Events</h4>
+<p>Let's display an alert popup when the user clicks a specified button:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;show()&quot;</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">show</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Event handlers can be assigned to elements.
+For example:</p>
+<div class="highlight"><pre><span></span><code>var x=document.getElementById(&quot;demo&quot;);
 x.onclick = function () {
        document.body.innerHTML = Date();
 }
+</code></pre></div>
+<p>The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;doSomething()&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Similarly, the window.onload event can be used to run code after the whole page is loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="err">​</span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-
-The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded.
-&lt;body onload=&quot;doSomething()&quot;&gt;
-
-
-Similarly, the window.onload event can be used to run code after the whole page is loaded.
-window.onload ​= function() {
-
-  ​//some code
-}
-
-
-The onchange event is mostly used on textboxes. The event handler gets called when the text inside the textbox changes and focus is lost from the element.
-
-Event Listeners
+<span class="w">  </span><span class="err">​</span><span class="c1">//some code</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The onchange event is mostly used on textboxes. The event handler gets called when the text inside the textbox changes and focus is lost from the element.</p>
+<div class="highlight"><pre><span></span><code>Event Listeners
 
 The addEventListener() method attaches an event handler to an element without overwriting existing event handlers. You can add many event handlers to one element.
 You can also add many event handlers of the same type to one element, i.e., two &quot;click&quot; events.
