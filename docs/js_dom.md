@@ -102,19 +102,21 @@ The script will result in the following HTML:
 
 We used the length property of the array to loop through all the selected elements in the above example.
 
-``` js
-Working with DOM
+### Working with DOM
 
 Each element in the DOM has a set of properties and methods that provide information about their relationships in the DOM:
-element.childNodes returns an array of an element's child nodes.
-element.firstChild returns the first child node of an element.
-element.lastChild returns the last child node of an element.
-element.hasChildNodes returns true if an element has any child nodes, otherwise false.
-element.nextSibling returns the next node at the same tree level.
-element.previousSibling returns the previous node at the same tree level.
-element.parentNode returns the parent node of an element.
+
++ element.childNodes returns an array of an element's child nodes.
++ element.firstChild returns the first child node of an element.
++ element.lastChild returns the last child node of an element.
++ element.hasChildNodes returns true if an element has any child nodes, otherwise false.
++ element.nextSibling returns the next node at the same tree level.
++ element.previousSibling returns the previous node at the same tree level.
++ element.parentNode returns the parent node of an element.
 
 We can, for example, select all child nodes of an element and change their content:
+
+``` html
 <html>
      <body>
             <div id="demo">hi
@@ -159,32 +161,40 @@ el[0].href="http://myurl.com/";
 </script>
 ```
 
-```
 The style of HTML elements can also be changed using JavaScript.
 All style attributes can be accessed using the style object of the element.
 All CSS properties can be set and modified using JavaScript. Just remember, that you cannot use dashes (-) in the property names: these are replaced with camelCase versions, where the compound words begin with a capital letter.
 For example: the background-color property should be referred to as backgroundColor.
+
+``` html
 <div id="demo" style="width:200px"> Some text</div>
 <script>
 var el = document.getElementById("demo");
 el.style.color = "6600FF";
 el.style.width = "100px";
 </script>
+```
 
 
-Creating Elements
+### Creating Elements
 
 Use the following methods to create new nodes:
-element.cloneNode() clones an element and returns the resulting node.
-document.createElement(element) creates a new element node.
-document.createTextNode(text) creates a new text node.
 
++ element.cloneNode() clones an element and returns the resulting node.
++ document.createElement(element) creates a new element node.
++ document.createTextNode(text) creates a new text node.
+
+``` html
 var node = document.createTextNode("Some new text");
+```
 
 
 This will create a new text node, but it will not appear in the document until you append it to an existing element with one of the following methods:
-element.appendChild(newNode) adds a new child node to an element as the last child node.
-element.insertBefore(node1, node2) inserts node1 as a child before node2.
+
++ element.appendChild(newNode) adds a new child node to an element as the last child node.
++ element.insertBefore(node1, node2) inserts node1 as a child before node2.
+
+``` html
 <div id="demo"> Some Text </div>
 <script>
     //create a new paragraph
@@ -197,21 +207,33 @@ element.insertBefore(node1, node2) inserts node1 as a child before node2.
     //adding  the paragraph  to the div 
     div.appendChild(p);
 </script>
+```
 
 
 To remove an HTML element, you must select the parent of the element and use the removeChild(node) method.
 An alternative way of achieving the same result would be the use of the parentNode property to get the parent of the element we want to remove:
+
+``` html
 var child = document.getElementById("p1");
 child.parentNode.removeChild(child);
-To replace an HTML element, the element.replaceChild(newNode, oldNode) method is used.
-Animations
-To create an animation, we need to change the properties of an element at small intervals of time. We can achieve this by using the setInterval() method, which allows us to create a timer and call a function to change properties repeatedly at defined intervals (in milliseconds).
-For example:
-var t = setInterval(move, 500); 
+```
 
+To replace an HTML element, the element.replaceChild(newNode, oldNode) method is used.
+
+### Animations
+
+To create an animation, we need to change the properties of an element at small intervals of time. We can achieve this by using the setInterval() method, which allows us to create a timer and call a function to change properties repeatedly at defined intervals (in milliseconds).
+
+For example:
+
+``` js
+var t = setInterval(move, 500); 
+```
 
 This code creates a timer that calls a move() function every 500 milliseconds.
 Now we need to define the move() function, that changes the position of the box.
+
+``` js
 // starting position
 var pos = 0; 
 //our box element
@@ -221,13 +243,20 @@ function move() {
   pos += 1;
   box.style.left = pos+"px"; //px = pixels
 }
+```
 
 
 The move() function increments the left property of the box element by one each time it is called.
+
 The following code defines a timer that calls the move() function every 10 milliseconds:
+
+``` js
 var t = setInterval(move, 10);
+```
 
 However, this makes our box move to the right forever. To stop the animation when the box reaches the end of the container, we add a simple check to the move() function and use the clearInterval() method to stop the timer.
+
+``` js
 function move() {
   if(pos >= 150) {
     clearInterval(t);
@@ -237,53 +266,78 @@ function move() {
     box.style.left = pos+"px";
   }
 }
+```
 
 When the left attribute of the box reaches the value of 150, the box reaches the end of the container, based on a container width of 200 and a box width of 50.
 
-Events
+### Events
+
 You can write JavaScript code that executes when an event occurs, such as when a user clicks an HTML element, moves the mouse, or submits a form.
 When an event occurs on a target element, a handler function is executed.
 Common HTML events:
-onchange	An HTML element has been changed
-onclick	The user clicks an HTML element
-onmouseover	The user moves the mouse over an HTML element
-onmouseout	The user moves the mouse away from an HTML element
-onkeydown	The user pushes a keyboard key
-onload	The browser has finished loading the page
-Corresponding events can be added to HTML elements as attributes.
-For example: <p onclick="someFunc()">some text</p>
 
-Handling Events
+|Event|Description|
+|---|---|
+|onchange|	An HTML element has been changed|
+|onclick|	The user clicks an HTML element|
+|onmouseover|	The user moves the mouse over an HTML element|
+|onmouseout|	The user moves the mouse away from an HTML element|
+|onkeydown|	The user pushes a keyboard key|
+|onload|	The browser has finished loading the page|
+
+Corresponding events can be added to HTML elements as attributes.
+For example: 
+
+``` html
+<p onclick="someFunc()">some text</p>
+```
+
+#### Handling Events
 
 Let's display an alert popup when the user clicks a specified button:
+
+``` html
 <button onclick="show()">Click Me</button>
 <script>
 function show(){
     alert("hello");
 }
 </script>
+```
 
 
 Event handlers can be assigned to elements.
 For example:
+
+``` html
 var x=document.getElementById("demo");
 x.onclick = function () {
        document.body.innerHTML = Date();
 }
+```
+
 
 
 The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded.
+
+``` html
 <body onload="doSomething()">
+```
 
 
 Similarly, the window.onload event can be used to run code after the whole page is loaded.
+
+``` js
 window.onload ​= function() {
 
   ​//some code
 }
+```
 
 
 The onchange event is mostly used on textboxes. The event handler gets called when the text inside the textbox changes and focus is lost from the element.
+
+```
 
 Event Listeners
 
