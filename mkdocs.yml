@@ -91,4 +91,5 @@ nav:
       - Intro: js_intro.md
       - Functions: js_func.md
       - DOM: js_dom.md
+      - Events: js_event.md
       - ECMAScript 6: js_ECMAScript6.md

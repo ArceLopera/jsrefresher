@@ -419,51 +419,24 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    Events
-  </a>
-  
-    <nav class="md-nav" aria-label="Events">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#handling-events" class="md-nav__link">
-    Handling Events
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#event-listeners" class="md-nav__link">
-    Event Listeners
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#event-propagation" class="md-nav__link">
-    Event Propagation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturing-vs-bubbling" class="md-nav__link">
-    Capturing vs. Bubbling
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_event/" class="md-nav__link">
+        Events
+      </a>
     </li>
   
 
@@ -554,47 +527,6 @@
   <a href="#animations" class="md-nav__link">
     Animations
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    Events
-  </a>
-  
-    <nav class="md-nav" aria-label="Events">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#handling-events" class="md-nav__link">
-    Handling Events
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#event-listeners" class="md-nav__link">
-    Event Listeners
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#event-propagation" class="md-nav__link">
-    Event Propagation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturing-vs-bubbling" class="md-nav__link">
-    Capturing vs. Bubbling
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -802,180 +734,6 @@ Now we need to define the move() function, that changes the position of the box.
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>When the left attribute of the box reaches the value of 150, the box reaches the end of the container, based on a container width of 200 and a box width of 50.</p>
-<h3 id="events">Events</h3>
-<p>You can write JavaScript code that executes when an event occurs, such as when a user clicks an HTML element, moves the mouse, or submits a form.
-When an event occurs on a target element, a handler function is executed.
-Common HTML events:</p>
-<table>
-<thead>
-<tr>
-<th>Event</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>onchange</td>
-<td>An HTML element has been changed</td>
-</tr>
-<tr>
-<td>onclick</td>
-<td>The user clicks an HTML element</td>
-</tr>
-<tr>
-<td>onmouseover</td>
-<td>The user moves the mouse over an HTML element</td>
-</tr>
-<tr>
-<td>onmouseout</td>
-<td>The user moves the mouse away from an HTML element</td>
-</tr>
-<tr>
-<td>onkeydown</td>
-<td>The user pushes a keyboard key</td>
-</tr>
-<tr>
-<td>onload</td>
-<td>The browser has finished loading the page</td>
-</tr>
-</tbody>
-</table>
-<p>Corresponding events can be added to HTML elements as attributes.
-For example: </p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;someFunc()&quot;</span><span class="p">&gt;</span>some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div>
-<h4 id="handling-events">Handling Events</h4>
-<p>Let's display an alert popup when the user clicks a specified button:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;show()&quot;</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">show</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Event handlers can be assigned to elements.
-For example:</p>
-<div class="highlight"><pre><span></span><code>var x=document.getElementById(&quot;demo&quot;);
-x.onclick = function () {
-       document.body.innerHTML = Date();
-}
-</code></pre></div>
-<p>The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;doSomething()&quot;</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Similarly, the window.onload event can be used to run code after the whole page is loaded.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="err">​</span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-
-<span class="w">  </span><span class="err">​</span><span class="c1">//some code</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>The onchange event is mostly used on textboxes. The event handler gets called when the text inside the textbox changes and focus is lost from the element.</p>
-<h4 id="event-listeners">Event Listeners</h4>
-<p>The addEventListener() method attaches an event handler to an element without overwriting existing event handlers. You can add many event handlers to one element.
-You can also add many event handlers of the same type to one element, i.e., two "click" events.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">,</span><span class="w"> </span><span class="nx">useCapture</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<ul>
-<li>The first parameter is the event's type (like "click" or "mousedown").</li>
-<li>The second parameter is the function we want to call when the event occurs.</li>
-<li>The third parameter is a Boolean value specifying whether to use event bubbling or event capturing. This parameter is optional, and will be described in the next lesson.</li>
-</ul>
-<p>Note that you don't use the "on" prefix for this event; use "click" instead of "onclick".</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">);</span><span class="w"></span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">);</span><span class="w"></span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>This adds two event listeners to the element.
-We can remove one of the listeners:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<p>Internet Explorer version 8 and lower do not support the addEventListener() and removeEventListener() methods. However, you can use the <code>document.attachEvent()</code> method to attach event handlers in Internet Explorer.</p>
-<h4 id="event-propagation">Event Propagation</h4>
-<p>There are two ways of event propagation in the HTML DOM: bubbling and capturing.</p>
-<p>Event propagation allows for the definition of the element order when an event occurs. If you have a <code>&lt;p&gt;</code> element inside a <code>&lt;div&gt;</code> element, and the user clicks on the <code>&lt;p&gt;</code> element, which element's "click" event should be handled first?</p>
-<p>In bubbling, the innermost element's event is handled first and then the outer element's event is handled. The <code>&lt;p&gt;</code> element's click event is handled first, followed by the <code>&lt;div&gt;</code> element's click event.</p>
-<p>In capturing, the outermost element's event is handled first and then the inner. The <code>&lt;div&gt;</code> element's click event is handled first, followed by the <code>&lt;p&gt;</code> element's click event.
-Capturing goes down the DOM.
-Bubbling goes up the DOM.</p>
-<h4 id="capturing-vs-bubbling">Capturing vs. Bubbling</h4>
-<p>The addEventListener() method allows you to specify the propagation type with the "useCapture" parameter.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">,</span><span class="w"> </span><span class="nx">useCapture</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-<p>The default value is false, which means the bubbling propagation is used; when the value is set to true, the event uses the capturing propagation.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">//Capturing propagation</span><span class="w"></span>
-<span class="nx">elem1</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"> </span>
-
-<span class="c1">//Bubbling propagation</span><span class="w"></span>
-<span class="nx">elem2</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<p>This is particularly useful when you have the same event handled for multiple elements in the DOM hierarchy.</p>
-<h5 id="image-slider-example">Image Slider - Example</h5>
-<p>Now we need to handle the Next and Prev button clicks and call the corresponding functions to change the image. js</p>
-<div class="highlight"><pre><span></span><code>HTML:
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;prev()&quot;</span><span class="p">&gt;</span> Prev <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;slider&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://www.mysite.com/uploads/slider/1.jpg&quot;</span> 
-    <span class="na">width</span><span class="o">=</span><span class="s">&quot;200px&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100px&quot;</span><span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;next()&quot;</span><span class="p">&gt;</span> Next <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">//JS:</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">images</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">   </span><span class="s2">&quot;http://www.mysite.com/uploads/slider/1.jpg&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">   </span><span class="s2">&quot;http://www.mysite.com/uploads/slider/2.jpg&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">   </span><span class="s2">&quot;http://www.mysite.com/uploads/slider/3.jpg&quot;</span><span class="w"></span>
-<span class="p">];</span><span class="w"></span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">next</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">slider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;slider&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">     </span><span class="nx">num</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
-<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">&gt;=</span><span class="nx">images</span><span class="p">.</span><span class="nx">length</span><span class="p">){</span><span class="w"></span>
-<span class="w">           </span><span class="nx">num</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nx">slider</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">images</span><span class="p">[</span><span class="nx">num</span><span class="p">];</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">prev</span><span class="p">(){</span><span class="w"></span>
-<span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">slider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;slider&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">     </span><span class="nx">num</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
-<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">){</span><span class="w"></span>
-<span class="w">           </span><span class="nx">num</span><span class="o">=</span><span class="nx">images</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nx">slider</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">images</span><span class="p">[</span><span class="nx">num</span><span class="p">];</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<h5 id="form-validation">Form Validation</h5>
-<p>HTML5 adds some attributes that allow form validation. For example, the required attribute can be added to an input field to make it mandatory to fill in.
-More complex form validation can be done using JavaScript.
-The form element has an onsubmit event that can be handled to perform validation.
-For example, let's create a form with two inputs and one button. The text in both fields should be the same and not blank to pass the validation.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">onsubmit</span><span class="o">=</span><span class="s">&quot;return validate()&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
-  Number: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;num1&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;num1&quot;</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
-  Repeat: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;num2&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;num2&quot;</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span> <span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">validate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;num1&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;num2&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">n1</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">n2</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">){</span><span class="w"></span>
-<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="nx">n1</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">n2</span><span class="p">.</span><span class="nx">value</span><span class="p">){</span><span class="w"></span>
-<span class="w">                       </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The values should be equal and not blank&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
-
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>The form will not get submitted if its onsubmit event returns false</p>
 
               
             </article>
@@ -1005,13 +763,13 @@ For example, let's create a form with two inputs and one button. The text in bot
       
       
         
-        <a href="../js_ECMAScript6/" class="md-footer__link md-footer__link--next" aria-label="Next: ECMAScript 6" rel="next">
+        <a href="../js_event/" class="md-footer__link md-footer__link--next" aria-label="Next: Events" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ECMAScript 6
+              Events
             </div>
           </div>
           <div class="md-footer__button md-icon">
