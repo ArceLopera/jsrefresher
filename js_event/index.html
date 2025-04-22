@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/js_ECMAScript6/">
+        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/js_event/">
       
       <link rel="icon" href="../Images/javascript_favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>ECMAScript 6 - JS Refresher</title>
+        <title>Events - JS Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#variable-declaration" class="md-skip">
+        <a href="#events" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ECMAScript 6
+              Events
             
           </span>
         </div>
@@ -356,20 +356,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../js_event/" class="md-nav__link">
-        Events
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -378,14 +364,16 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          ECMAScript 6
+          Events
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        ECMAScript 6
+        Events
       </a>
       
         
@@ -393,6 +381,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -402,23 +392,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variable-declaration" class="md-nav__link">
-    Variable Declaration
+  <a href="#handling-events" class="md-nav__link">
+    Handling Events
   </a>
   
-    <nav class="md-nav" aria-label="Variable Declaration">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-listeners" class="md-nav__link">
+    Event Listeners
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-propagation" class="md-nav__link">
+    Event Propagation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capturing-vs-bubbling" class="md-nav__link">
+    Capturing vs. Bubbling
+  </a>
+  
+    <nav class="md-nav" aria-label="Capturing vs. Bubbling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#var-let" class="md-nav__link">
-    var &amp; let
+  <a href="#image-slider-example" class="md-nav__link">
+    Image Slider - Example
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#const" class="md-nav__link">
-    const
+  <a href="#form-validation" class="md-nav__link">
+    Form Validation
   </a>
   
 </li>
@@ -428,24 +439,24 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#template-literals-in-es6" class="md-nav__link">
-    Template Literals in ES6
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#loops" class="md-nav__link">
-    Loops
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_ECMAScript6/" class="md-nav__link">
+        ECMAScript 6
+      </a>
     </li>
   
 
@@ -474,6 +485,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -482,43 +495,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variable-declaration" class="md-nav__link">
-    Variable Declaration
+  <a href="#handling-events" class="md-nav__link">
+    Handling Events
   </a>
   
-    <nav class="md-nav" aria-label="Variable Declaration">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-listeners" class="md-nav__link">
+    Event Listeners
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-propagation" class="md-nav__link">
+    Event Propagation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capturing-vs-bubbling" class="md-nav__link">
+    Capturing vs. Bubbling
+  </a>
+  
+    <nav class="md-nav" aria-label="Capturing vs. Bubbling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#var-let" class="md-nav__link">
-    var &amp; let
+  <a href="#image-slider-example" class="md-nav__link">
+    Image Slider - Example
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#const" class="md-nav__link">
-    const
+  <a href="#form-validation" class="md-nav__link">
+    Form Validation
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#template-literals-in-es6" class="md-nav__link">
-    Template Literals in ES6
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#loops" class="md-nav__link">
-    Loops
-  </a>
   
 </li>
       
@@ -536,80 +556,180 @@
                 
 
 
-  <h1>ECMAScript 6</h1>
+<h1 id="events">Events</h1>
+<p>You can write JavaScript code that executes when an event occurs, such as when a user clicks an HTML element, moves the mouse, or submits a form.
+When an event occurs on a target element, a handler function is executed.
+Common HTML events:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onchange</td>
+<td>An HTML element has been changed</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>The user clicks an HTML element</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>The user moves the mouse over an HTML element</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>The user moves the mouse away from an HTML element</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>The user pushes a keyboard key</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>The browser has finished loading the page</td>
+</tr>
+</tbody>
+</table>
+<p>Corresponding events can be added to HTML elements as attributes.
+For example: </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;someFunc()&quot;</span><span class="p">&gt;</span>some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="handling-events">Handling Events</h2>
+<p>Let's display an alert popup when the user clicks a specified button:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;show()&quot;</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">show</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Event handlers can be assigned to elements.
+For example:</p>
+<div class="highlight"><pre><span></span><code>var x=document.getElementById(&quot;demo&quot;);
+x.onclick = function () {
+       document.body.innerHTML = Date();
+}
+</code></pre></div>
+<p>The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;doSomething()&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Similarly, the window.onload event can be used to run code after the whole page is loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="err">​</span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<p>ECMAScript (ES) is a scripting language specification created to standardize JavaScript.</p>
-<p>The Sixth Edition, initially known as ECMAScript 6 (ES6) and later renamed to ECMAScript 2015, adds significant new syntax for writing complex applications, including classes and modules, iterators and for/of loops, generators, arrow functions, binary data, typed arrays, collections (maps, sets and weak maps), promises, number and math enhancements, reflection, and proxies.</p>
-<p>In other words, ES6 is a superset of JavaScript (ES5). The reason that ES6 became so popular is that it introduced new conventions and OOP concepts such as classes.</p>
-<h2 id="variable-declaration">Variable Declaration</h2>
-<p>In ES6 we have three ways of declaring variables:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-<p>The type of declaration used depends on the necessary scope. Scope is the fundamental concept in all programming languages that defines the visibility of a variable.</p>
-<h3 id="var-let">var &amp; let</h3>
-<p>Unlike the var keyword, which defines a variable globally, or locally to an entire function regardless of block scope, let allows you to declare variables that are limited in scope to the block, statement, or expression in which they are used.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="s1">&#39;Jack&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="err">​</span><span class="c1">//some code</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span><span class="c1">//generates error</span><span class="w"></span>
 </code></pre></div>
-<p>In this case, the name variable is accessible only in the scope of the if statement because it was declared as let.</p>
-<p>To demonstrate the difference in scope between var and let, consider this example:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">varTest</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span><span class="w"></span>
-<span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w">          </span><span class="c1">// same variable</span><span class="w"></span>
-<span class="w">       </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">//2</span><span class="w"></span>
+<p>The onchange event is mostly used on textboxes. The event handler gets called when the text inside the textbox changes and focus is lost from the element.</p>
+<h2 id="event-listeners">Event Listeners</h2>
+<p>The addEventListener() method attaches an event handler to an element without overwriting existing event handlers. You can add many event handlers to one element.
+You can also add many event handlers of the same type to one element, i.e., two "click" events.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">,</span><span class="w"> </span><span class="nx">useCapture</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>The first parameter is the event's type (like "click" or "mousedown").</li>
+<li>The second parameter is the function we want to call when the event occurs.</li>
+<li>The third parameter is a Boolean value specifying whether to use event bubbling or event capturing. This parameter is optional, and will be described in the next lesson.</li>
+</ul>
+<p>Note that you don't use the "on" prefix for this event; use "click" instead of "onclick".</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">);</span><span class="w"></span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">);</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">letTest</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w">          </span><span class="c1">// different variable</span><span class="w"></span>
-<span class="w">       </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span><span class="w"></span>
+</code></pre></div>
+<p>This adds two event listeners to the element.
+We can remove one of the listeners:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Internet Explorer version 8 and lower do not support the addEventListener() and removeEventListener() methods. However, you can use the <code>document.attachEvent()</code> method to attach event handlers in Internet Explorer.</p>
+<h2 id="event-propagation">Event Propagation</h2>
+<p>There are two ways of event propagation in the HTML DOM: bubbling and capturing.</p>
+<p>Event propagation allows for the definition of the element order when an event occurs. If you have a <code>&lt;p&gt;</code> element inside a <code>&lt;div&gt;</code> element, and the user clicks on the <code>&lt;p&gt;</code> element, which element's "click" event should be handled first?</p>
+<p>In bubbling, the innermost element's event is handled first and then the outer element's event is handled. The <code>&lt;p&gt;</code> element's click event is handled first, followed by the <code>&lt;div&gt;</code> element's click event.</p>
+<p>In capturing, the outermost element's event is handled first and then the inner. The <code>&lt;div&gt;</code> element's click event is handled first, followed by the <code>&lt;p&gt;</code> element's click event.
+Capturing goes down the DOM.
+Bubbling goes up the DOM.</p>
+<h2 id="capturing-vs-bubbling">Capturing vs. Bubbling</h2>
+<p>The addEventListener() method allows you to specify the propagation type with the "useCapture" parameter.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">,</span><span class="w"> </span><span class="nx">useCapture</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>The default value is false, which means the bubbling propagation is used; when the value is set to true, the event uses the capturing propagation.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//Capturing propagation</span><span class="w"></span>
+<span class="nx">elem1</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">//Bubbling propagation</span><span class="w"></span>
+<span class="nx">elem2</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>This is particularly useful when you have the same event handled for multiple elements in the DOM hierarchy.</p>
+<h3 id="image-slider-example">Image Slider - Example</h3>
+<p>Now we need to handle the Next and Prev button clicks and call the corresponding functions to change the image. js</p>
+<div class="highlight"><pre><span></span><code>HTML:
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;prev()&quot;</span><span class="p">&gt;</span> Prev <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;slider&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://www.mysite.com/uploads/slider/1.jpg&quot;</span> 
+    <span class="na">width</span><span class="o">=</span><span class="s">&quot;200px&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100px&quot;</span><span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;next()&quot;</span><span class="p">&gt;</span> Next <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">//JS:</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">images</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">   </span><span class="s2">&quot;http://www.mysite.com/uploads/slider/1.jpg&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">   </span><span class="s2">&quot;http://www.mysite.com/uploads/slider/2.jpg&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">   </span><span class="s2">&quot;http://www.mysite.com/uploads/slider/3.jpg&quot;</span><span class="w"></span>
+<span class="p">];</span><span class="w"></span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">next</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">slider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;slider&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="nx">num</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">&gt;=</span><span class="nx">images</span><span class="p">.</span><span class="nx">length</span><span class="p">){</span><span class="w"></span>
+<span class="w">           </span><span class="nx">num</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">//1</span><span class="w"></span>
+<span class="w">    </span><span class="nx">slider</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">images</span><span class="p">[</span><span class="nx">num</span><span class="p">];</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="nx">varTest</span><span class="p">();</span><span class="w"></span>
-<span class="nx">letTest</span><span class="p">();</span><span class="w"></span>
-</code></pre></div>
-<p>One of the best uses for let is in loops:</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">prev</span><span class="p">(){</span><span class="w"></span>
+<span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">slider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;slider&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="nx">num</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">){</span><span class="w"></span>
+<span class="w">           </span><span class="nx">num</span><span class="o">=</span><span class="nx">images</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">slider</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">images</span><span class="p">[</span><span class="nx">num</span><span class="p">];</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-let is not subject to Variable Hoisting, which means that let declarations do not move to the top of the current execution context.</p>
-<h3 id="const">const</h3>
-<p>const variables have the same scope as variables declared using let. The difference is that const variables are immutable - they are not allowed to be reassigned.
-For example, the following generates an exception:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"></span>
-<span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"></span>
+<h3 id="form-validation">Form Validation</h3>
+<p>HTML5 adds some attributes that allow form validation. For example, the required attribute can be added to an input field to make it mandatory to fill in.
+More complex form validation can be done using JavaScript.
+The form element has an onsubmit event that can be handled to perform validation.
+For example, let's create a form with two inputs and one button. The text in both fields should be the same and not blank to pass the validation.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">onsubmit</span><span class="o">=</span><span class="s">&quot;return validate()&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+  Number: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;num1&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;num1&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+  Repeat: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;num2&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;num2&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>const is not subject to Variable Hoisting too, which means that const declarations do not move to the top of the current execution context.
-Also note that ES6 code will run only in browsers that support it. Older devices and browsers that do not support ES6 will return a syntax error.</p>
-<h2 id="template-literals-in-es6">Template Literals in ES6</h2>
-<p>Template literals are a way to output variables in the string.
-Prior to ES6 we had to break the string, for example:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;My name is &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">validate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;num1&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;num2&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">n1</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">n2</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="nx">n1</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">n2</span><span class="p">.</span><span class="nx">value</span><span class="p">){</span><span class="w"></span>
+<span class="w">                       </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The values should be equal and not blank&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Now we can use template literals:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`My name is </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-<p>Notice that template literals are enclosed by the backtick (<code></code>) character instead of double or single quotes.
-The ${expression} is a placeholder, and can include any expression, which will get evaluated and inserted into the template literal.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`The sum is </span><span class="si">${</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span><span class="w"></span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<p>To escape a backtick in a template literal, put a backslash \ before the backtick.</p>
-<h2 id="loops">Loops</h2>
+<p>The form will not get submitted if its onsubmit event returns false</p>
 
               
             </article>
@@ -623,7 +743,7 @@ The ${expression} is a placeholder, and can include any expression, which will g
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../js_event/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Events" rel="prev">
+        <a href="../js_dom/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DOM" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -632,11 +752,26 @@ The ${expression} is a placeholder, and can include any expression, which will g
               <span class="md-footer__direction">
                 Previous
               </span>
-              Events
+              DOM
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../js_ECMAScript6/" class="md-footer__link md-footer__link--next" aria-label="Next: ECMAScript 6" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              ECMAScript 6
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
