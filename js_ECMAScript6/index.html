@@ -440,6 +440,94 @@
     Loops
   </a>
   
+    <nav class="md-nav" aria-label="Loops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forin-loop" class="md-nav__link">
+    For..in loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forof-loop" class="md-nav__link">
+    For...of loop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-in-ecmascript-6" class="md-nav__link">
+    Functions in ECMAScript 6
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions in ECMAScript 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-parameters-in-es6" class="md-nav__link">
+    Default Parameters in ES6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#es6-objects" class="md-nav__link">
+    ES6 Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="ES6 Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computed-property-names" class="md-nav__link">
+    Computed Property Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectassign-in-es6" class="md-nav__link">
+    Object.assign() in ES6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-destructuring-in-es6" class="md-nav__link">
+    Array Destructuring in ES6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-destructuring-in-es6" class="md-nav__link">
+    Object Destructuring in ES6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#es6-rest-parameters" class="md-nav__link">
+    ES6 Rest Parameters
+  </a>
+  
 </li>
       
     </ul>
@@ -518,6 +606,94 @@
         <li class="md-nav__item">
   <a href="#loops" class="md-nav__link">
     Loops
+  </a>
+  
+    <nav class="md-nav" aria-label="Loops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forin-loop" class="md-nav__link">
+    For..in loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forof-loop" class="md-nav__link">
+    For...of loop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-in-ecmascript-6" class="md-nav__link">
+    Functions in ECMAScript 6
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions in ECMAScript 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-parameters-in-es6" class="md-nav__link">
+    Default Parameters in ES6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#es6-objects" class="md-nav__link">
+    ES6 Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="ES6 Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computed-property-names" class="md-nav__link">
+    Computed Property Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectassign-in-es6" class="md-nav__link">
+    Object.assign() in ES6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-destructuring-in-es6" class="md-nav__link">
+    Array Destructuring in ES6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-destructuring-in-es6" class="md-nav__link">
+    Object Destructuring in ES6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#es6-rest-parameters" class="md-nav__link">
+    ES6 Rest Parameters
   </a>
   
 </li>
@@ -610,6 +786,278 @@ The ${expression} is a placeholder, and can include any expression, which will g
 </code></pre></div>
 <p>To escape a backtick in a template literal, put a backslash \ before the backtick.</p>
 <h2 id="loops">Loops</h2>
+<p>In JavaScript we commonly use the for loop to iterate over values in a list:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span><span class="w"></span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="o">=</span><span class="mf">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">k</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">k</span><span class="p">]);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="forin-loop">For..in loop</h3>
+<p>The for...in loop is intended for iterating over the enumerable keys of an object.
+For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">a</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span><span class="nx">b</span><span class="o">:</span><span class="mf">2</span><span class="p">,</span><span class="nx">c</span><span class="o">:</span><span class="mf">3</span><span class="p">};</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">obj</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The for...in loop should NOT be used to iterate over arrays because, depending on the JavaScript engine, it could iterate in an arbitrary order. Also, the iterating variable is a string, not a number, so if you try to do any math with the variable, you'll be performing string concatenation instead of addition.</p>
+<h3 id="forof-loop">For...of loop</h3>
+<p>ES6 introduces the new for...of loop, which creates a loop iterating over iterable objects.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">,</span><span class="s2">&quot;z&quot;</span><span class="p">];</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">val</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">list</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>During each iteration the val variable is assigned the corresponding element in the list.</p>
+<p>The for...of loop works for other iterable objects as well, including strings</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">val</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The for...of loop also works on the newly introduced collections (Map, Set, WeakMap, and WeakSet).</p>
+<h2 id="functions-in-ecmascript-6">Functions in ECMAScript 6</h2>
+<p>Prior to ES6, a JavaScript function was defined like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">sum</span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>ES6 introduces a new syntax for writing functions. The same function from above can be written as:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>This new syntax is quite handy when you just need a simple function with one argument.
+You can skip typing function and return, as well as some parentheses and braces.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">greet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;Welcome &quot;</span><span class="o">+</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greet</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
+<p>The code above defines a function named greet that has one argument and returns a message.</p>
+<p>If there are no parameters, an empty pair of parentheses should be used, as in</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w">  </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>The syntax is very useful for inline functions. For example, let's say we have an array, and for each element of the array we need to execute a function. We use the forEach method of the array to call a function for each element:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">];</span><span class="w"></span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</code></pre></div>
+<p>However, in ES6, the code above can be rewritten as following:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">];</span><span class="w"></span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</code></pre></div>
+<h3 id="default-parameters-in-es6">Default Parameters in ES6</h3>
+<p>In ES6, we can put the default values right in the signature of the functions.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">test</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">c</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">test</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">//50 </span><span class="w"></span>
+</code></pre></div>
+<p>And here's an example of an arrow function with default parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">c</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">test</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">//50 </span><span class="w"></span>
+</code></pre></div>
+<p>Default value expressions are evaluated at function call time from left to right. This also means that default expressions can use the values of previously-filled parameters.</p>
+<h2 id="es6-objects">ES6 Objects</h2>
+<p>JavaScript variables can be Object data types that contain many values called properties.
+An object can also have properties that are function definitions called methods for performing actions on the object.
+ES6 introduces shorthand notations and computed property names that make declaring and using objects easier to understand.</p>
+<p>The new method definition shorthand does not require the colon (:) or function keyword, as in the grow function of the tree object declaration:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="mf">10</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">grow</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">+=</span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="nx">tree</span><span class="p">.</span><span class="nx">grow</span><span class="p">();</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tree</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span><span class="w">  </span><span class="c1">//12</span><span class="w"></span>
+</code></pre></div>
+<p>You can also use a property value shorthand when initializing properties with a variable by the same name.
+For example, properties height and health are being initialized with variables named height and health</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">health</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">athlete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">height</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">health</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">athlete</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span><span class="w"> </span><span class="c1">//5</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">athlete</span><span class="p">.</span><span class="nx">health</span><span class="p">);</span><span class="w"> </span><span class="c1">//100</span><span class="w"></span>
+</code></pre></div>
+<p>When creating an object by using duplicate property names, the last property will overwrite the prior ones of the same name.
+For Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">};</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">//4</span><span class="w"></span>
+</code></pre></div>
+<p>Duplicate property names generated a SyntaxError in ES5 when using strict mode. However, ES6 removed this limitation.</p>
+<h3 id="computed-property-names">Computed Property Names</h3>
+<p>With ES6, you can now use computed property names. Using the square bracket notation [], we can use an expression for a property name, including concatenating strings. This can be useful in cases where we want to create certain objects based on user data (e.g. id, email, and so on).
+It is very useful when you need to create custom objects based on some variables.
+Here are three examples:</p>
+<p><strong>Example 1</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">prop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;name&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1234&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mobile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;12345678&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="sb">`user_</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">mobile</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Example 2</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Example 3</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;size&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">[</span><span class="nx">param</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="p">[</span><span class="s1">&#39;mobile&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">param</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">param</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">)]</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">mobileSize</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="objectassign-in-es6">Object.assign() in ES6</h3>
+<p>ES6 adds a new Object method assign() that allows us to combine multiple sources into one target to create a single new object.
+Object.assign() is also useful for creating a duplicate of an existing object.</p>
+<p>Let's look at the following example to see how to combine objects:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nx">sex</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;male&#39;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nx">xp</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span><span class="w"> </span><span class="nx">person</span><span class="p">,</span><span class="w"> </span><span class="nx">student</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Here we used Object.assign() where the first parameter is the target object you want to apply new properties to.
+Every parameter after the first will be used as sources for the target. There are no limitations on the number of source parameters. However, order is important because properties in the second parameter will be overridden by properties of the same name in third parameter, and so on.</p>
+<p>In the example above, we used a new object {} as the target and used two objects as sources.</p>
+<p>Now, let's see how we can use assign() to create a duplicate object without creating a reference (mutating) to the base object.
+In the following example, assignment was used to try to generate a new object. However, using = creates a reference to the base object. Because of this reference, changes intended for a new object mutate the original object:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">person</span><span class="p">;</span><span class="w">  </span><span class="c1">//newPerson references person</span><span class="w"></span>
+<span class="nx">newPerson</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">//Bob</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newPerson</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">//Bob</span><span class="w"></span>
+</code></pre></div>
+<p>To avoid this (mutations), use Object.assign() to create a new object.
+For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span><span class="nx">person</span><span class="p">);</span><span class="w">  </span>
+<span class="nx">newPerson</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">//Jack</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newPerson</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">//Bob</span><span class="w"></span>
+</code></pre></div>
+<p>Finally, you can assign a value to an object property in the Object.assign() statement.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span><span class="nx">person</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">});</span><span class="w">  </span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">//Jack</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newPerson</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">//Bob</span><span class="w"></span>
+</code></pre></div>
+<h2 id="array-destructuring-in-es6">Array Destructuring in ES6</h2>
+<p>The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+ES6 has added a shorthand syntax for destructuring an array.</p>
+<p>The following example demonstrates how to unpack the elements of an array into distinct variables:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">one</span><span class="p">,</span><span class="w"> </span><span class="nx">two</span><span class="p">,</span><span class="w"> </span><span class="nx">three</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">;</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">);</span><span class="w"> </span><span class="c1">//1</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">two</span><span class="p">);</span><span class="w"> </span><span class="c1">//2</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">three</span><span class="p">);</span><span class="w"> </span><span class="c1">//3</span><span class="w"></span>
+</code></pre></div>
+<p>We can also destructure an array returned by a function.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">one</span><span class="p">,,</span><span class="nx">two</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">();</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">);</span><span class="w"> </span><span class="c1">//1</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">two</span><span class="p">);</span><span class="w"> </span><span class="c1">//3</span><span class="w"></span>
+</code></pre></div>
+<p>Notice that we left the second argument's place empty.</p>
+<p>The destructuring syntax also simplifies assignment and swapping values:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="o">=</span><span class="mf">8</span><span class="p">;</span><span class="w"></span>
+<span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">];</span><span class="w">  </span><span class="c1">// a=2,  b=6</span><span class="w"></span>
+<span class="p">[</span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">d</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">];</span><span class="w">  </span><span class="c1">// c=8, d = 4</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">//2</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">//6</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span><span class="w"> </span><span class="c1">//4</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span><span class="w"> </span><span class="c1">//8</span><span class="w"></span>
+</code></pre></div>
+<h2 id="object-destructuring-in-es6">Object Destructuring in ES6</h2>
+<p>Similar to Array destructuring, Object destructuring unpacks properties into distinct variables.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">h</span><span class="o">:</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">};</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="nx">h</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span><span class="p">;</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">h</span><span class="p">);</span><span class="w"> </span><span class="c1">//100</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span><span class="w"> </span><span class="c1">//true</span><span class="w"></span>
+</code></pre></div>
+<p>We can assign without declaration, but there are some syntax requirements for that:</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">;</span><span class="w"></span>
+<span class="p">({</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;world!&#39;</span><span class="p">});</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">//Hello</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">//world!</span><span class="w"></span>
+</code></pre></div>
+<p>The () with a semicolon (;) at the end are mandatory when destructuring without a declaration. However, you can also do it as follows where the () are not required:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;world!&#39;</span><span class="p">};</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">//Hello</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">//world!</span><span class="w"></span>
+</code></pre></div>
+<p>You can also assign the object to new variable names.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">h</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="o">:</span><span class="kc">true</span><span class="p">};</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="p">{</span><span class="nx">h</span><span class="o">:</span><span class="w"> </span><span class="nx">foo</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="o">:</span><span class="w"> </span><span class="nx">bar</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">o</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">//console.log(h); //Error</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span><span class="w"> </span><span class="c1">//42</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bar</span><span class="p">);</span><span class="w"> </span><span class="c1">//true</span><span class="w"></span>
+</code></pre></div>
+<p>Finally you can assign default values to variables, in case the value unpacked from the object is undefined.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="s1">&#39;Carlos&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="kd">let</span><span class="w">  </span><span class="p">{</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span><span class="p">;</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span><span class="w"> </span><span class="c1">//42</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span><span class="w"> </span><span class="c1">//20</span><span class="w"></span>
+</code></pre></div>
+<h2 id="es6-rest-parameters">ES6 Rest Parameters</h2>
 
               
             </article>
