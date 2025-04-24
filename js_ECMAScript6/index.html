@@ -530,6 +530,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#es6-the-spread-operator" class="md-nav__link">
+    ES6 The Spread Operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes-in-es6" class="md-nav__link">
+    Classes in ES6
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes in ES6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-methods-in-es6" class="md-nav__link">
+    Class Methods in ES6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inheritance-in-es6" class="md-nav__link">
+    Inheritance in ES6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#es6-collections" class="md-nav__link">
+    ES6 Collections
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -694,6 +735,47 @@
         <li class="md-nav__item">
   <a href="#es6-rest-parameters" class="md-nav__link">
     ES6 Rest Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#es6-the-spread-operator" class="md-nav__link">
+    ES6 The Spread Operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes-in-es6" class="md-nav__link">
+    Classes in ES6
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes in ES6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-methods-in-es6" class="md-nav__link">
+    Class Methods in ES6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inheritance-in-es6" class="md-nav__link">
+    Inheritance in ES6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#es6-collections" class="md-nav__link">
+    ES6 Collections
   </a>
   
 </li>
@@ -1058,6 +1140,204 @@ ES6 has added a shorthand syntax for destructuring an array.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span><span class="w"> </span><span class="c1">//20</span><span class="w"></span>
 </code></pre></div>
 <h2 id="es6-rest-parameters">ES6 Rest Parameters</h2>
+<p>Prior to ES6, if we wanted to pass a variable number of arguments to a function, we could use the arguments object, an array-like object, to access the parameters passed to the function.
+For example, let's write a function that checks if an array contains all the arguments passed:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">containsAll</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">k</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">k</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">         </span><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arguments</span><span class="p">[</span><span class="nx">k</span><span class="p">];</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">){</span><span class="w"></span>
+<span class="w">             </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">];</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">containsAll</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">7</span><span class="p">));</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">containsAll</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">9</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
+<p>We can pass any number of arguments to the function and access it using the arguments object.</p>
+<p>While this does the job, ES6 provides a more readable syntax to achieve variable number of parameters by using a rest parameter:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">containsAll</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">nums</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">nums</span><span class="p">){</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">){</span><span class="w"></span>
+<span class="w">             </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The ...nums parameter is called a rest parameter. It takes all the "extra" arguments passed to the function. The three dots (...) are called the Spread operator.
+Only the last parameter of a function may be marked as a rest parameter. If there are no extra arguments, the rest parameter will simply be an empty array; the rest parameter will never be undefined.</p>
+<h2 id="es6-the-spread-operator">ES6 The Spread Operator</h2>
+<p>This operator is similar to the Rest Parameter, but it has another purpose when used in objects or arrays or function calls (arguments).</p>
+<p><strong>Spread in function calls</strong></p>
+<p>It is common to pass the elements of an array as arguments to a function. Before ES6, we used the following method:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">){</span><span class="w"></span>
+<span class="w">       </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">w</span><span class="o">+</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="o">+</span><span class="nx">z</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">args</span><span class="w"> </span><span class="o">=</span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span><span class="w"></span>
+<span class="nx">myFunction</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mf">4</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
+<p>ES6 provides an easy way to do the example above with spread operators.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">myFunction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">w</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">       </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">w</span><span class="o">+</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="o">+</span><span class="nx">z</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">args</span><span class="w"> </span><span class="o">=</span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span><span class="w"></span>
+<span class="nx">myFunction</span><span class="p">(</span><span class="w"> </span><span class="p">...</span><span class="nx">args</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">dateFields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1981</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">26</span><span class="p">];</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(...</span><span class="nx">dateFields</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Spread in array literals</strong></p>
+<p>Before ES6, we used the following syntax to add an item at middle of an array:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;One&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Five&quot;</span><span class="p">];</span><span class="w"></span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="s2">&quot;Three&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Four&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>You can use methods such as push, splice, and concat, for example, to achieve this in different positions of the array. However, in ES6 the spread operator lets us do this more easily:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">newArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Three&#39;</span><span class="p">,</span><span class="s1">&#39;Four&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;One&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Two&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">NewArr</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Five&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Spread in object literals</strong></p>
+<p>In objects it copies the own enumerable properties from the provided object onto a new object.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">obj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="p">};</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">obj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;baz&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">};</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">cloneObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{...</span><span class="nx">obj1</span><span class="p">};</span><span class="w">  </span><span class="c1">//{foo: &#39;bar&#39;, x: 42}</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mergedObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{...</span><span class="nx">obj1</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">obj2</span><span class="p">};</span><span class="w">  </span><span class="c1">//{foo: &#39;baz&#39;, x: 42, y: 5}</span><span class="w"></span>
+</code></pre></div>
+<p>However, if you try to merge them you will not get the result you expected:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">obj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="p">};</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">obj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;baz&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">};</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(...</span><span class="nx">objects</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({...</span><span class="nx">objects</span><span class="p">});</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">mergedObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">merge</span><span class="p">(</span><span class="nx">obj1</span><span class="p">,</span><span class="w"> </span><span class="nx">obj2</span><span class="p">);</span><span class="w">  </span>
+<span class="c1">// { 0: {foo: &#39;bar&#39;, x: 42}, 1:  {foo: &#39;baz&#39;, y: 5} }</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">mergedObj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">merge</span><span class="p">({},</span><span class="nx">obj1</span><span class="p">,</span><span class="nx">obj2</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// { 0: {}, 1: {foo: &#39;bar&#39;, x: 42}, 2:  {foo: &#39;baz&#39;, y: 5} }</span><span class="w"></span>
+</code></pre></div>
+<p>Shallow cloning or merging objects is possible with another operator called Object.assign().</p>
+<h2 id="classes-in-es6">Classes in ES6</h2>
+<p>In this lesson we'll explain how to create a class that can be used to create multiple objects of the same structure.
+A class uses the keyword class and contains a constructor method for initializing.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Rectangle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">width</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>A declared class can then be used to create multiple objects using the keyword new.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Rectangle</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="mf">5</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">poster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Rectangle</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Class Declarations are not hoisted while Function Declarations are. If you try to access your class before declaring it, ReferenceError will be returned.</p>
+<p>You can also define a class with a class expression, where the class can be named or unnamed.
+A named class looks like:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">Square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Rectangle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">){</span><span class="w"></span>
+<span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"></span>
+<span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">width</span><span class="w"></span>
+<span class="w">       </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<p>In the unnamed class expression, a variable is simply assigned the class definition:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">Square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">){</span><span class="w"></span>
+<span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"></span>
+<span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">width</span><span class="w"></span>
+<span class="w">       </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<p>The constructor is a special method which is used for creating and initializing an object created with a class. There can be only one constructor in each class.</p>
+<h3 id="class-methods-in-es6">Class Methods in ES6</h3>
+<p>ES6 introduced a shorthand that does not require the keyword function for a function assigned to a method's name. One type of class method is the prototype method, which is available to objects of the class.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Rectangle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">width</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">area</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">calcArea</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="nx">calcArea</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Rectangle</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="mf">5</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">.</span><span class="nx">area</span><span class="p">);</span><span class="w">  </span><span class="c1">//25</span><span class="w"></span>
+</code></pre></div>
+<p>In the code above, area is a getter, calcArea is a method.
+Another type of method is the static method, which cannot be called through a class instance. Static methods are often used to create utility functions for an application.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Point</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="kr">constructor</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">){</span><span class="w"></span>
+<span class="w">       </span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="k">static</span><span class="w"> </span><span class="nx">distance</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">hypot</span><span class="p">(</span><span class="nx">dx</span><span class="p">,</span><span class="w"> </span><span class="nx">dy</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Point</span><span class="p">(</span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Point</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Point</span><span class="p">.</span><span class="nx">distance</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span><span class="nx">p2</span><span class="p">));</span><span class="w"></span>
+
+<span class="c1">// 5.385164807134504</span><span class="w"></span>
+</code></pre></div>
+<p>As you can see, the static distance method is called directly using the class name, without an object.</p>
+<h3 id="inheritance-in-es6">Inheritance in ES6</h3>
+<p>The extends keyword is used in class declarations or class expressions to create a child of a class. The child inherits the properties and methods of the parent.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">speak</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;makes noise&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Dog</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">speak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;Woof!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Dog</span><span class="p">(</span><span class="s1">&#39;Sparky&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">dog</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p>In the code above, the Dog class is a child of the Animal class, inheriting its properties and methods.
+If there is a constructor present in the subclass, it needs to first call super() before using this. Also, the super keyword is used to call parent's methods.
+For example, we can modify the program above to the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">speak</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;makes noise&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Dog</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">speak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;Woof!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Dog</span><span class="p">(</span><span class="s1">&#39;Sparky&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">dog</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p>In the code above, the parent's speak() method is called using the super keyword.</p>
+<h2 id="es6-collections">ES6 Collections</h2>
 
               
             </article>
