@@ -508,3 +508,281 @@ console.log(age); //20
 ```
 
 ## ES6 Rest Parameters
+
+Prior to ES6, if we wanted to pass a variable number of arguments to a function, we could use the arguments object, an array-like object, to access the parameters passed to the function.
+For example, let's write a function that checks if an array contains all the arguments passed:
+
+``` js
+function containsAll(arr){
+    for(let k=1; k < arguments.length; k++){
+         let num = arguments[k];
+         if(arr.indexOf(num) === -1){
+             return false;
+         }
+    }
+    return true;
+}
+let x =[2,4,6,7];
+console.log(containsAll(x,2,4,7));
+console.log(containsAll(x,6,4,9));
+```
+
+
+We can pass any number of arguments to the function and access it using the arguments object.
+
+While this does the job, ES6 provides a more readable syntax to achieve variable number of parameters by using a rest parameter:
+
+``` js
+function containsAll(arr, ...nums){
+    for(let num of nums){
+         if(arr.indexOf(num) === -1){
+             return false;
+         }
+    }
+    return true;
+}
+```
+
+
+The ...nums parameter is called a rest parameter. It takes all the "extra" arguments passed to the function. The three dots (...) are called the Spread operator.
+Only the last parameter of a function may be marked as a rest parameter. If there are no extra arguments, the rest parameter will simply be an empty array; the rest parameter will never be undefined.
+
+## ES6 The Spread Operator
+
+This operator is similar to the Rest Parameter, but it has another purpose when used in objects or arrays or function calls (arguments).
+
+**Spread in function calls**
+
+It is common to pass the elements of an array as arguments to a function. Before ES6, we used the following method:
+
+``` js
+function myFunction(w, x, y, z){
+       console.log(w+x+y+z);
+}
+var args =[1,2,3];
+myFunction.apply(null, args.concat(4));
+```
+
+
+ES6 provides an easy way to do the example above with spread operators.
+
+``` js
+const myFunction = (w, x, y, z) => {
+       console.log(w+x+y+z);
+};
+let args =[1,2,3];
+myFunction( ...args, 4);
+```
+
+
+Example:
+
+``` js
+var dateFields = [1981,11,26];
+var date = new Date(...dateFields);
+console.log(date);
+```
+
+
+**Spread in array literals**
+
+Before ES6, we used the following syntax to add an item at middle of an array:
+
+``` js
+var arr = ["One", "Two", "Five"];
+
+arr.splice(2, 0,"Three");
+arr.splice(3, 0, "Four");
+console.log(arr);
+```
+
+
+You can use methods such as push, splice, and concat, for example, to achieve this in different positions of the array. However, in ES6 the spread operator lets us do this more easily:
+
+``` js
+let newArr = ['Three','Four'];
+let arr = ['One', 'Two', ...NewArr, 'Five'];
+console.log(arr);
+```
+
+
+**Spread in object literals**
+
+In objects it copies the own enumerable properties from the provided object onto a new object.
+
+``` js
+const obj1 = {foo: 'bar', x: 42};
+const obj2 = {foo: 'baz', y: 5};
+
+const cloneObj = {...obj1};  //{foo: 'bar', x: 42}
+const mergedObj = {...obj1, ...obj2};  //{foo: 'baz', x: 42, y: 5}
+```
+
+
+However, if you try to merge them you will not get the result you expected:
+
+``` js
+const obj1 = {foo: 'bar', x: 42};
+const obj2 = {foo: 'baz', y: 5};
+const merge = (...objects) => ({...objects});
+
+let mergedObj = merge(obj1, obj2);  
+// { 0: {foo: 'bar', x: 42}, 1:  {foo: 'baz', y: 5} }
+
+let mergedObj2 = merge({},obj1,obj2);
+// { 0: {}, 1: {foo: 'bar', x: 42}, 2:  {foo: 'baz', y: 5} }
+```
+
+Shallow cloning or merging objects is possible with another operator called Object.assign().
+
+## Classes in ES6
+
+In this lesson we'll explain how to create a class that can be used to create multiple objects of the same structure.
+A class uses the keyword class and contains a constructor method for initializing.
+
+``` js
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+```
+
+
+A declared class can then be used to create multiple objects using the keyword new.
+
+``` js
+const square = new Rectangle(5,5);
+const poster = new Rectangle(2,3);
+```
+
+
+Class Declarations are not hoisted while Function Declarations are. If you try to access your class before declaring it, ReferenceError will be returned.
+
+You can also define a class with a class expression, where the class can be named or unnamed.
+A named class looks like:
+
+``` js
+var Square = class Rectangle {
+      constructor(height, width){
+           this.height = height;
+           this.width = width
+       }
+};
+```
+
+
+In the unnamed class expression, a variable is simply assigned the class definition:
+
+``` js
+var Square = class {
+      constructor(height, width){
+           this.height = height;
+           this.width = width
+       }
+};
+```
+
+The constructor is a special method which is used for creating and initializing an object created with a class. There can be only one constructor in each class.
+
+### Class Methods in ES6
+
+ES6 introduced a shorthand that does not require the keyword function for a function assigned to a method's name. One type of class method is the prototype method, which is available to objects of the class.
+
+``` js
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  get area(){
+        return this.calcArea();
+  }
+  calcArea(){
+        return this.height*this.width
+  }
+}
+const square = new Rectangle(5,5);
+console.log(square.area);  //25
+```
+
+
+In the code above, area is a getter, calcArea is a method.
+Another type of method is the static method, which cannot be called through a class instance. Static methods are often used to create utility functions for an application.
+
+``` js
+class Point {
+   constructor (x, y){
+       this.x = x;
+       this.y = y;
+   }
+   static distance(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        return Math.hypot(dx, dy);
+   }
+}
+const p1 = new Point(7, 2);
+const p2 = new Point(3, 8);
+
+console.log(Point.distance(p1,p2));
+
+// 5.385164807134504
+```
+
+As you can see, the static distance method is called directly using the class name, without an object.
+
+### Inheritance in ES6
+
+The extends keyword is used in class declarations or class expressions to create a child of a class. The child inherits the properties and methods of the parent.
+
+``` js
+class Animal {
+    constructor(name){
+        this.name = name; 
+    }
+    speak(){
+        console.log(this.name + 'makes noise');
+    }
+}
+
+class Dog extends Animal {
+     speak() {
+        console.log(this.name + 'Woof!');
+     }
+}
+
+let dog = new Dog('Sparky');
+dog.speak();
+```
+
+
+In the code above, the Dog class is a child of the Animal class, inheriting its properties and methods.
+If there is a constructor present in the subclass, it needs to first call super() before using this. Also, the super keyword is used to call parent's methods.
+For example, we can modify the program above to the following:
+
+``` js
+class Animal {
+    constructor(name){
+        this.name = name; 
+    }
+    speak(){
+        console.log(this.name + 'makes noise');
+    }
+}
+
+class Dog extends Animal {
+     speak() {
+        super.speak();
+        console.log(this.name + 'Woof!');
+     }
+}
+
+let dog = new Dog('Sparky');
+dog.speak();
+```
+
+In the code above, the parent's speak() method is called using the super keyword.
+
+## ES6 Collections
