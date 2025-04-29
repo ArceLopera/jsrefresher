@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/js_event/">
+        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/js_classes/">
       
       <link rel="icon" href="../Images/javascript_favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Events - JS Refresher</title>
+        <title>Classes - JS Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#events" class="md-skip">
+        <a href="#classes-in-es6" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Events
+              Classes
             
           </span>
         </div>
@@ -426,11 +426,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../js_classes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Classes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Classes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-methods-in-es6" class="md-nav__link">
+    Class Methods in ES6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inheritance-in-es6" class="md-nav__link">
+    Inheritance in ES6
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -454,93 +502,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Events
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../js_event/" class="md-nav__link">
         Events
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#handling-events" class="md-nav__link">
-    Handling Events
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#event-listeners" class="md-nav__link">
-    Event Listeners
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#event-propagation" class="md-nav__link">
-    Event Propagation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#capturing-vs-bubbling" class="md-nav__link">
-    Capturing vs. Bubbling
-  </a>
-  
-    <nav class="md-nav" aria-label="Capturing vs. Bubbling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#image-slider-example" class="md-nav__link">
-    Image Slider - Example
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#form-validation" class="md-nav__link">
-    Form Validation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -593,50 +559,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#handling-events" class="md-nav__link">
-    Handling Events
+  <a href="#class-methods-in-es6" class="md-nav__link">
+    Class Methods in ES6
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#event-listeners" class="md-nav__link">
-    Event Listeners
+  <a href="#inheritance-in-es6" class="md-nav__link">
+    Inheritance in ES6
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#event-propagation" class="md-nav__link">
-    Event Propagation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#capturing-vs-bubbling" class="md-nav__link">
-    Capturing vs. Bubbling
-  </a>
-  
-    <nav class="md-nav" aria-label="Capturing vs. Bubbling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#image-slider-example" class="md-nav__link">
-    Image Slider - Example
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#form-validation" class="md-nav__link">
-    Form Validation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -654,180 +586,121 @@
                 
 
 
-<h1 id="events">Events</h1>
-<p>You can write JavaScript code that executes when an event occurs, such as when a user clicks an HTML element, moves the mouse, or submits a form.
-When an event occurs on a target element, a handler function is executed.
-Common HTML events:</p>
-<table>
-<thead>
-<tr>
-<th>Event</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>onchange</td>
-<td>An HTML element has been changed</td>
-</tr>
-<tr>
-<td>onclick</td>
-<td>The user clicks an HTML element</td>
-</tr>
-<tr>
-<td>onmouseover</td>
-<td>The user moves the mouse over an HTML element</td>
-</tr>
-<tr>
-<td>onmouseout</td>
-<td>The user moves the mouse away from an HTML element</td>
-</tr>
-<tr>
-<td>onkeydown</td>
-<td>The user pushes a keyboard key</td>
-</tr>
-<tr>
-<td>onload</td>
-<td>The browser has finished loading the page</td>
-</tr>
-</tbody>
-</table>
-<p>Corresponding events can be added to HTML elements as attributes.
-For example: </p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;someFunc()&quot;</span><span class="p">&gt;</span>some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div>
-<h2 id="handling-events">Handling Events</h2>
-<p>Let's display an alert popup when the user clicks a specified button:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;show()&quot;</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">show</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Event handlers can be assigned to elements.
-For example:</p>
-<div class="highlight"><pre><span></span><code>var x=document.getElementById(&quot;demo&quot;);
-x.onclick = function () {
-       document.body.innerHTML = Date();
-}
-</code></pre></div>
-<p>The onload and onunload events are triggered when the user enters or leaves the page. These can be useful when performing actions after the page is loaded.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;doSomething()&quot;</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Similarly, the window.onload event can be used to run code after the whole page is loaded.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="err">​</span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-
-<span class="w">  </span><span class="err">​</span><span class="c1">//some code</span><span class="w"></span>
+<h1 id="classes-in-es6">Classes in ES6</h1>
+<p>In this lesson we'll explain how to create a class that can be used to create multiple objects of the same structure.
+A class uses the keyword class and contains a constructor method for initializing.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Rectangle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">width</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>The onchange event is mostly used on textboxes. The event handler gets called when the text inside the textbox changes and focus is lost from the element.</p>
-<h2 id="event-listeners">Event Listeners</h2>
-<p>The addEventListener() method attaches an event handler to an element without overwriting existing event handlers. You can add many event handlers to one element.
-You can also add many event handlers of the same type to one element, i.e., two "click" events.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">,</span><span class="w"> </span><span class="nx">useCapture</span><span class="p">);</span><span class="w"></span>
+<p>A declared class can then be used to create multiple objects using the keyword new.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Rectangle</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="mf">5</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">poster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Rectangle</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-<ul>
-<li>The first parameter is the event's type (like "click" or "mousedown").</li>
-<li>The second parameter is the function we want to call when the event occurs.</li>
-<li>The third parameter is a Boolean value specifying whether to use event bubbling or event capturing. This parameter is optional, and will be described in the next lesson.</li>
-</ul>
-<p>Note that you don't use the "on" prefix for this event; use "click" instead of "onclick".</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">);</span><span class="w"></span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">);</span><span class="w"></span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span>
+<p>Class Declarations are not hoisted while Function Declarations are. If you try to access your class before declaring it, ReferenceError will be returned.</p>
+<p>You can also define a class with a class expression, where the class can be named or unnamed.
+A named class looks like:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">Square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Rectangle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">){</span><span class="w"></span>
+<span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"></span>
+<span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">width</span><span class="w"></span>
+<span class="w">       </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<p>In the unnamed class expression, a variable is simply assigned the class definition:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">Square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">){</span><span class="w"></span>
+<span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"></span>
+<span class="w">           </span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">width</span><span class="w"></span>
+<span class="w">       </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<p>The constructor is a special method which is used for creating and initializing an object created with a class. There can be only one constructor in each class.</p>
+<h3 id="class-methods-in-es6">Class Methods in ES6</h3>
+<p>ES6 introduced a shorthand that does not require the keyword function for a function assigned to a method's name. One type of class method is the prototype method, which is available to objects of the class.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Rectangle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">width</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">area</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">calcArea</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="nx">calcArea</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Rectangle</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="mf">5</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">.</span><span class="nx">area</span><span class="p">);</span><span class="w">  </span><span class="c1">//25</span><span class="w"></span>
 </code></pre></div>
-<p>This adds two event listeners to the element.
-We can remove one of the listeners:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">element</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<p>Internet Explorer version 8 and lower do not support the addEventListener() and removeEventListener() methods. However, you can use the <code>document.attachEvent()</code> method to attach event handlers in Internet Explorer.</p>
-<h2 id="event-propagation">Event Propagation</h2>
-<p>There are two ways of event propagation in the HTML DOM: bubbling and capturing.</p>
-<p>Event propagation allows for the definition of the element order when an event occurs. If you have a <code>&lt;p&gt;</code> element inside a <code>&lt;div&gt;</code> element, and the user clicks on the <code>&lt;p&gt;</code> element, which element's "click" event should be handled first?</p>
-<p>In bubbling, the innermost element's event is handled first and then the outer element's event is handled. The <code>&lt;p&gt;</code> element's click event is handled first, followed by the <code>&lt;div&gt;</code> element's click event.</p>
-<p>In capturing, the outermost element's event is handled first and then the inner. The <code>&lt;div&gt;</code> element's click event is handled first, followed by the <code>&lt;p&gt;</code> element's click event.
-Capturing goes down the DOM.
-Bubbling goes up the DOM.</p>
-<h2 id="capturing-vs-bubbling">Capturing vs. Bubbling</h2>
-<p>The addEventListener() method allows you to specify the propagation type with the "useCapture" parameter.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">,</span><span class="w"> </span><span class="nx">useCapture</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-<p>The default value is false, which means the bubbling propagation is used; when the value is set to true, the event uses the capturing propagation.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">//Capturing propagation</span><span class="w"></span>
-<span class="nx">elem1</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"> </span>
+<p>In the code above, area is a getter, calcArea is a method.
+Another type of method is the static method, which cannot be called through a class instance. Static methods are often used to create utility functions for an application.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Point</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="kr">constructor</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">){</span><span class="w"></span>
+<span class="w">       </span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="k">static</span><span class="w"> </span><span class="nx">distance</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">hypot</span><span class="p">(</span><span class="nx">dx</span><span class="p">,</span><span class="w"> </span><span class="nx">dy</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Point</span><span class="p">(</span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Point</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">//Bubbling propagation</span><span class="w"></span>
-<span class="nx">elem2</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<p>This is particularly useful when you have the same event handled for multiple elements in the DOM hierarchy.</p>
-<h3 id="image-slider-example">Image Slider - Example</h3>
-<p>Now we need to handle the Next and Prev button clicks and call the corresponding functions to change the image. js</p>
-<div class="highlight"><pre><span></span><code>HTML:
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;prev()&quot;</span><span class="p">&gt;</span> Prev <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;slider&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://www.mysite.com/uploads/slider/1.jpg&quot;</span> 
-    <span class="na">width</span><span class="o">=</span><span class="s">&quot;200px&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100px&quot;</span><span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;next()&quot;</span><span class="p">&gt;</span> Next <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">//JS:</span><span class="w"></span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">images</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">   </span><span class="s2">&quot;http://www.mysite.com/uploads/slider/1.jpg&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">   </span><span class="s2">&quot;http://www.mysite.com/uploads/slider/2.jpg&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">   </span><span class="s2">&quot;http://www.mysite.com/uploads/slider/3.jpg&quot;</span><span class="w"></span>
-<span class="p">];</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Point</span><span class="p">.</span><span class="nx">distance</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span><span class="nx">p2</span><span class="p">));</span><span class="w"></span>
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">next</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">slider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;slider&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">     </span><span class="nx">num</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
-<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">&gt;=</span><span class="nx">images</span><span class="p">.</span><span class="nx">length</span><span class="p">){</span><span class="w"></span>
-<span class="w">           </span><span class="nx">num</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// 5.385164807134504</span><span class="w"></span>
+</code></pre></div>
+<p>As you can see, the static distance method is called directly using the class name, without an object.</p>
+<h3 id="inheritance-in-es6">Inheritance in ES6</h3>
+<p>The extends keyword is used in class declarations or class expressions to create a child of a class. The child inherits the properties and methods of the parent.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span><span class="w"> </span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nx">slider</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">images</span><span class="p">[</span><span class="nx">num</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="nx">speak</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;makes noise&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">prev</span><span class="p">(){</span><span class="w"></span>
-<span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">slider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;slider&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">     </span><span class="nx">num</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
-<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">){</span><span class="w"></span>
-<span class="w">           </span><span class="nx">num</span><span class="o">=</span><span class="nx">images</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nx">slider</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">images</span><span class="p">[</span><span class="nx">num</span><span class="p">];</span><span class="w"></span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Dog</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">speak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;Woof!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<h3 id="form-validation">Form Validation</h3>
-<p>HTML5 adds some attributes that allow form validation. For example, the required attribute can be added to an input field to make it mandatory to fill in.
-More complex form validation can be done using JavaScript.
-The form element has an onsubmit event that can be handled to perform validation.
-For example, let's create a form with two inputs and one button. The text in both fields should be the same and not blank to pass the validation.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">onsubmit</span><span class="o">=</span><span class="s">&quot;return validate()&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
-  Number: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;num1&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;num1&quot;</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
-  Repeat: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;num2&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;num2&quot;</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span> <span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">validate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;num1&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;num2&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">n1</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">n2</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">){</span><span class="w"></span>
-<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="nx">n1</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">n2</span><span class="p">.</span><span class="nx">value</span><span class="p">){</span><span class="w"></span>
-<span class="w">                       </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The values should be equal and not blank&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
 
-<span class="p">}</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Dog</span><span class="p">(</span><span class="s1">&#39;Sparky&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">dog</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
-<p>The form will not get submitted if its onsubmit event returns false</p>
+<p>In the code above, the Dog class is a child of the Animal class, inheriting its properties and methods.
+If there is a constructor present in the subclass, it needs to first call super() before using this. Also, the super keyword is used to call parent's methods.
+For example, we can modify the program above to the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">speak</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;makes noise&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Dog</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">speak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;Woof!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Dog</span><span class="p">(</span><span class="s1">&#39;Sparky&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">dog</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p>In the code above, the parent's speak() method is called using the super keyword.</p>
+<hr />
 
               
             </article>
@@ -841,7 +714,7 @@ For example, let's create a form with two inputs and one button. The text in bot
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../js_dom/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DOM" rel="prev">
+        <a href="../js_object/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Objects" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -850,20 +723,20 @@ For example, let's create a form with two inputs and one button. The text in bot
               <span class="md-footer__direction">
                 Previous
               </span>
-              DOM
+              Objects
             </div>
           </div>
         </a>
       
       
         
-        <a href="../js_ECMAScript/" class="md-footer__link md-footer__link--next" aria-label="Next: ECMAScript" rel="next">
+        <a href="../js_dom/" class="md-footer__link md-footer__link--next" aria-label="Next: DOM" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ECMAScript
+              DOM
             </div>
           </div>
           <div class="md-footer__button md-icon">
