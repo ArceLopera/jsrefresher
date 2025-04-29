@@ -89,7 +89,14 @@ nav:
   - Home: index.md
   - Basics: 
       - Intro: js_intro.md
+      - Operators: js_operators.md
+      - Arrays n Collections: js_arrays.md
+      - Control Flow: js_controlflow.md
+      - Exceptions: js_exceptions.md
+      - Dates: js_date.md
       - Functions: js_func.md
+      - Objects: js_object.md
+      - Classes: js_classes.md
       - DOM: js_dom.md
       - Events: js_event.md
       - ECMAScript: js_ECMAScript.md

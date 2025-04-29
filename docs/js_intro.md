@@ -104,6 +104,106 @@ On the web, JavaScript code lives inside the HTML document, and needs to be encl
 </html>
 ``` 
 
+## Variable Declaration
+
+Since [ES6](js_ECMAScript.md#ecmascript-6-2015--a-major-milestone) we have three ways of declaring variables:
+
+``` js
+var x = 5;
+let y = 5;
+const z = 5;
+```
+
+The type of declaration used depends on the necessary scope. Scope is the fundamental concept in all programming languages that defines the visibility of a variable.
+
+### var & let
+
+Unlike the var keyword, which defines a variable globally, or locally to an entire function regardless of block scope, let allows you to declare variables that are limited in scope to the block, statement, or expression in which they are used.
+
+``` js
+if(true){
+    let name ='Jack';
+}
+alert(name);//generates error
+```
+
+In this case, the name variable is accessible only in the scope of the if statement because it was declared as let.
+
+To demonstrate the difference in scope between var and let, consider this example:
+
+``` js
+function varTest(){
+    var x = 1;
+    if(true){
+       var x = 2;          // same variable
+       console.log(x); // 2
+    }
+    console.log(x); //2
+}
+function letTest(){
+    let x = 1;
+    if(true){
+       let x = 2;          // different variable
+       console.log(x); // 2
+    }
+    console.log(x); //1
+}
+
+varTest();
+letTest();
+```
+
+One of the best uses for let is in loops:
+
+``` js  
+for(let i = 0; i < 10; i++){
+    console.log(i);
+}
+```
+let is not subject to Variable Hoisting, which means that let declarations do not move to the top of the current execution context.
+
+### const
+
+const variables have the same scope as variables declared using let. The difference is that const variables are immutable - they are not allowed to be reassigned.
+For example, the following generates an exception:
+
+``` js
+const x = 5;
+x = 6;
+```
+
+const is not subject to Variable Hoisting too, which means that const declarations do not move to the top of the current execution context.
+Also note that ES6 code will run only in browsers that support it. Older devices and browsers that do not support ES6 will return a syntax error.
+
+## Template Literals in ES6
+
+Template literals are a way to output variables in the string.
+Prior to ES6 we had to break the string, for example:
+
+``` js
+var name = 'John';
+var text = 'My name is ' + name;
+```
+
+Now we can use template literals:
+
+``` js
+var name = 'John';
+var text = `My name is ${name}`;
+```
+
+Notice that template literals are enclosed by the backtick (` `) character instead of double or single quotes.
+The ${expression} is a placeholder, and can include any expression, which will get evaluated and inserted into the template literal.
+
+``` js
+let a = 8;
+let b = 3;
+let msg = `The sum is ${a+b}!`;
+console.log(msg);
+```
+
+To escape a backtick in a template literal, put a backslash \ before the backtick.
+
 
 
 ## PopUp Boxes
@@ -167,397 +267,4 @@ else
 } 
 ```
 
-
-## Operators
-
-An operator is a symbol that performs mathematical or logical manipulations.
-
-Javascript supports addition (+), subtraction(-), multiplication(*), division(/) and modulus(%). Also increment (++) and decrement (--).
-
-You can get the result of a string expression using the eval() function, which takes a string expression argument like eval("10 * 20 + 8") and returns the result. 
-
-If the argument is empty, it returns undefined. 10 * '5' or '10' * '5' will give the same result. 
-
-But trying to multiply a number with string values that aren’t numbers, like 'hello' * 5 will return NaN (Not a Number). 
-
-In JavaScript, we can use the modulus operator on integers AND on floating point numbers.
-
-Exponentiation operator was introduced in ES7.
-
-``` js
-console.log(3 ** 4);
-// expected output: 81
-
-console.log(10 ** -2);
-// expected output: 0.01
-
-console.log(2 ** 3 ** 2);
-// expected output: 512
-
-console.log((2 ** 3) ** 2);
-// expected output: 64
-```
-
-User must explicitly enable this feature.
-
-### The Math Object
-
-The Math object allows you to perform mathematical tasks, and includes several properties. Math has no constructor. There's no need to create a Math object first.
-
-``` js
-Math.E    //constant e
-Math.PI   //constant pi
-```
-
-For exponentiation, we must use Math.pow. to calculate a number raised to the power of some other number.
-
-``` js
-var number = Math.ceil(Math.random() * 10);
-```
-
-
-+ Math.abs() returns the absolute value of its parameter.
-+ Math.ceil() rounds a floating point value up to the nearest integer value. The rounded value is returned as a double
-+ Math.floor() rounds a floating point value down to the nearest integer value.
-+ Math.max() returns the largest of its parameters.
-+ Math.min() returns the smallest parameter.
-+ sqrt() for square root, sin() for sine, cos() for cosine
-
-Javascript also provides compound assignment operators that perform an operation and an assignment in one statement. 
-In-place operators allow you to write code like 'x = x + 3;' more concisely, as 'x += 3;'.
-
-``` js
-var x = 2;
-x += 3;
-x *= 4;
-x /= 2;
-```
-
-
-The increment (and decrement) operator is used to increase (decrease) an integer's value by one.
-
-``` js
-x++; //equivalent to x = x + 1
-x--; //equivalent to x = x - 1
-```
-
-The increment (and decrement) operator has two forms, prefix and postfix. 
-Prefix increments the value, and then proceeds with the expression.
-Postfix evaluates the expression and then performs the incrementing.
-
-``` js
-++x; //prefix
-x++; //postfix
-```
-
-### Logical Operators 
-
-(Boolean Operators)
-
-Logical operators are used to join multiple expressions and return true or false. 
-
-The AND operator (&&), the OR operator(||) and the NOT operator(!)
-
-### The ?: Operator 
-
-(Conditional (Ternary) Operator)
-
-Exp1 ? Exp2 : Exp3; The ?: operator works the following way: Exp1 is evaluated. 
-
-If it is true, then Exp2 is evaluated and becomes the value of the entire expression. 
-
-If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the expression.
-
-``` js
-var msg= (age >= 18) ? "Welcome" : "Sorry" ;
-```
-
-## Exceptions
-
-An exception is a problem that occurs during program execution. Exceptions cause abnormal termination of the program.
-An exception can occur for many different reasons. Some examples:
-
-- A user has entered invalid data.
-- A file that needs to be opened cannot be found.
-- A network connection has been lost in the middle of communications.
-- Insufficient memory and other issues related to physical resources.
-
-
-JavaScript (similar to Java and C#) provides a flexible mechanism called the try-catch statement to handle exceptions so that a program won't crash when an error occurs.
-The code that might generate an exception is placed in the try block. If an exception occurs, the catch blocks is executed without stopping the program.
-The type of exception you want to catch appears in parentheses following the keyword catch.
-We use the general Exception type to handle all kinds of exceptions. We can also use the exception object e to access the exception details, such as the original error message (e.Message):
-A single try block can contain multiple catch blocks that handle different exceptions separately.
-Exception handling is particularly useful when dealing with user input.
-
-``` js
-try {
-  nonExistentFunction();
-} catch (error) {
-  console.error(error);
-  // expected output: ReferenceError: nonExistentFunction is not defined
-  // Note - error messages will vary depending on browser
-}
-```
-
-An optional finally block can be used after the catch blocks. The finally block is used to execute a given set of statements, whether an exception is thrown or not.
-
-``` js
-try {
-  try_statements
-}
-catch (exception_var) {
-  catch_statements
-}
-finally {
-  finally_statements
-}
-```
-
-``` js
-try {
-  myroutine(); // may throw three types of exceptions
-} catch (e) {
-  if (e instanceof TypeError) {
-    // statements to handle TypeError exceptions
-  } else if (e instanceof RangeError) {
-    // statements to handle RangeError exceptions
-  } else if (e instanceof EvalError) {
-    // statements to handle EvalError exceptions
-  } else {
-    // statements to handle any unspecified exceptions
-    logMyErrors(e); // pass exception object to error handler
-  }
-}
-```
-
-
-### throw
-
-The throw keyword allows you to manually generate exceptions from your methods. A common use case for this is to only catch (and silence) a small subset of expected errors, and then re-throw the error in other cases:
-
-``` js
-try {
-  myRoutine();
-} catch (e) {
-  if (e instanceof RangeError) {
-    // statements to handle this very common expected error
-  } else {
-    throw e;  // re-throw the error unchanged
-  }
-}
-```
-
-
-## JavaScript Arrays
-
-An array is a special type of object.
-An array uses numbers to access its elements, and an object uses names to access its members.
-
-``` js
-var courses = new Array(3);
-courses[0]="HTML";
-courses[1]="CSS";
-courses[2]="JS";
-```
-
-You refer to an array element by referring to the index number written in square brackets.
-This statement accesses the value of the first element in courses and changes the value of the second element.
-
-``` js
-var courses = new Array("HTML", "CSS", "JS"); 
-var course = courses[0]; // HTML
-courses[1] = "C++"; //Changes the second element 
-```
-
-JS[0] is the first element in an array. [1] is the second. Array indexes start with 0. Attempting to access an index outside of the array, returns the value undefined.
-JavaScript arrays are dynamic, so you can declare an array and not pass any arguments with the Array() constructor. You can then add the elements dynamically.
-
-``` js
-var courses = new Array();
-courses[0]="HTML";
-courses[1]="CSS";
-courses[2]="JS";
-courses[3]="CS";
-```
-
-
-### Array Literal
-
-For greater simplicity, readability, and execution speed, you can also declare arrays using the array literal syntax.
-
-``` js
-var course = ["HTML","CSS";"JS"];
-```
-
-This results in the same array as the one created with the new Array() syntax.
-You can access and modify the elements of the array using the index number, as you did before.
-The array literal syntax is the recommended way to declare arrays.
-
-
-### Arrays Properties and Methods
-
-The length property returns the number of elements of the array. The length property is always one more than the highest array index. If the array is empty, the length property returns 0.
-JavaScript's concat() method allows you to join arrays and create an entirely new array.
-
-``` js
-var c1 =["HTML","CSS"];
-var c2=["JS","CS"];
-var courses=c1.concat(c2);
-```
-
-The concat operation does not affect the c1 and c2 arrays - it returns the resulting concatenation as a new array.
-
-### Associative Arrays
-
-Remember that JavaScript does not support arrays with named indexes.
-In JavaScript, arrays always use numbered indexes.
-It is better to use an object when you want the index to be a string (text).
-Use an array when you want the index to be a number.
-If you use a named index, JavaScript will redefine the array to a standard object.
-
-## Date Object
-#### setInterval
-
-The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
-It will continue calling the function until clearInterval() is called or the window is closed.
-
-``` js
-function myAlert()[
-     	alert("HI");
-}
-setInterval(myAlert, 3000);
-```
-
-This will call the myAlert function every 3 seconds (1000 ms = 1 second).
-Write the name of the function without parentheses when passing it into the setInterval method.
-
-The Date object enables us to work with dates.
-A date consists of a year, a month, a day, an hour, a minute, a second, and milliseconds.
-
-Using new Date(), create a new date object with the current date and time
-
-``` js
-var d = new Date();
-//d stores the current date and time
-```
-
-
-The other ways to initialize dates allow for the creation of new date objects from the specified date and time
-
-- new Date(milliseconds)
-- new Date(dateString)
-- new Date(year, month, day, hours, minutes, seconds, milliseconds)
-
-
-JavaScript dates are calculated in milliseconds from 01 January, 1970 00:00:00 Universal Time (UTC). One day contains 86,400,000 millisecond.
-For example:
-
-``` js
-//Fri Jan 02 1970 00:00:00
-var d1 = new Date(86400000); 
-
-//Fri Jan 02 2015 10:42:00
-var d2 = new Date("January 2, 2015 10:42:00");
-
-//Sat Jun 11 1988 11:42:00
-var d3 = new Date(88,5,11,11,42,0,0);
-```
-
-JavaScript counts months from 0 to 11. January is 0, and December is 11.
-Date objects are static, rather than dynamic. The computer time is ticking, but date objects don't change, once created.
-When a Date object is created, a number of methods make it possible to perform operations on it. getMonth(), getDate(), getDay(),etc…
-
-``` js
-var d = new Date();
-var hours= d.getHours();
-//hours equals to the current hour
-```
-
-## Control Flow
-### For-Loops
-
-A for loop executes a set of statements a specific number of times. The init and increment statements may be left out, if not needed, but remember that the semicolons are mandatory. 
-for (; ;) {} is an infinite loop.
-
-``` js
-for ( var i=0; i <10;  i++ ) {
-     //...;
-}
-```
-
-### While-Loops
-
-A while loop repeatedly executes a block of code as long as a given condition is true.
-
-``` js
-var num = 1;
-while(num < 6 )
-{
-       console.log(num);
-       num++;
-}
-```
-
-### Do-While Loops
-
-A do-while loop is similar to a while loop, except that a do-while loop is guaranteed to execute at least one time.
-
-``` js
-var a = 0;
-do {
-      console.log(a);
-      a++;
-}while( a < 5);
-```
-
-### Conditionals
-The general form of the if statement is:
-
-``` js
-if(x == 3)
-{
-      //....
-}
-else if (x == 0)
-{
-      //....
-}
-else
-{
-      //....
-}
-```
-Use relational operators (Comparison Operators) to evaluate conditions. They only work when they’re comparing the same data type; numbers with numbers, strings with strings. In addition to the less than (<) and greater than (>) operators, the following operators are available: >=, <=, ==(Equal to), !=(Not Equal to), ===(Identical, Equal and same type), !==(Not identical).
-Remember, that an if can have zero or more else if's and they must come before the last else, which is optional. Once an else if succeeds, none of the remaining else if's or else clause will be tested.
-
-The switch statement provides a more elegant way to test a variable for equality against a list of values.
-Each value is called a case, and the variable being switched on is checked for each switch case. The default code executes when none of the cases matches the switch expression.
-
-``` js
-// Or using a switch:
-switch(x) {
-  case 3:
-    // ...
-    break;
-  case 0:
-    // ...
-    break;
-  default:
-    // ...
-    break;
-}
-```
-
-### Break and Continue
-When the break statement is encountered inside a loop, the loop is immediately terminated and the program execution moves on to the next statement following the loop body. If you are using nested loops (i.e., one loop inside another loop), the break statement will stop the execution of the innermost loop and start executing the next line of code after the block.
-The continue statement is similar to the break statement, but instead of terminating the loop entirely, it skips the current iteration of the loop and continues with the next iteration.
-
-``` js
-for( var i = 0; i < 10; i++)
-{
-        if( i % 2 == 0)  continue;
-        if( i == 6) break;
-        console.log(i);
-}
-```
+---

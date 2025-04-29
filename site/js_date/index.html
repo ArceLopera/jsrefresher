@@ -12,21 +12,21 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/">
+        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/js_date/">
       
-      <link rel="icon" href="Images/javascript_favicon.ico">
+      <link rel="icon" href="../Images/javascript_favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>JS Refresher</title>
+        <title>Dates - JS Refresher</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javascript-mastery" class="md-skip">
+        <a href="#date-object" class="md-skip">
           Skip to content
         </a>
       
@@ -83,9 +83,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="JS Refresher" class="md-header__button md-logo" aria-label="JS Refresher" data-md-component="logo">
+    <a href=".." title="JS Refresher" class="md-header__button md-logo" aria-label="JS Refresher" data-md-component="logo">
       
-  <img src="Images/js.png" alt="logo">
+  <img src="../Images/js.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Dates
             
           </span>
         </div>
@@ -195,12 +195,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="." class="md-tabs__link md-tabs__link--active">
+    <a href=".." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -209,13 +207,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="js_intro/" class="md-tabs__link">
+      <a href="../js_intro/" class="md-tabs__link md-tabs__link--active">
         Basics
       </a>
     </li>
@@ -243,9 +243,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="JS Refresher" class="md-nav__button md-logo" aria-label="JS Refresher" data-md-component="logo">
+    <a href=".." title="JS Refresher" class="md-nav__button md-logo" aria-label="JS Refresher" data-md-component="logo">
       
-  <img src="Images/js.png" alt="logo">
+  <img src="../Images/js.png" alt="logo">
 
     </a>
     JS Refresher
@@ -271,59 +271,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         Home
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contribute" class="md-nav__link">
-    Contribute
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -334,12 +286,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -362,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_intro/" class="md-nav__link">
+      <a href="../js_intro/" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -376,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_operators/" class="md-nav__link">
+      <a href="../js_operators/" class="md-nav__link">
         Operators
       </a>
     </li>
@@ -390,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_arrays/" class="md-nav__link">
+      <a href="../js_arrays/" class="md-nav__link">
         Arrays n Collections
       </a>
     </li>
@@ -404,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_controlflow/" class="md-nav__link">
+      <a href="../js_controlflow/" class="md-nav__link">
         Control Flow
       </a>
     </li>
@@ -418,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_exceptions/" class="md-nav__link">
+      <a href="../js_exceptions/" class="md-nav__link">
         Exceptions
       </a>
     </li>
@@ -430,11 +384,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="js_date/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Dates
       </a>
+      
     </li>
   
 
@@ -446,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_func/" class="md-nav__link">
+      <a href="../js_func/" class="md-nav__link">
         Functions
       </a>
     </li>
@@ -460,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_object/" class="md-nav__link">
+      <a href="../js_object/" class="md-nav__link">
         Objects
       </a>
     </li>
@@ -474,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_classes/" class="md-nav__link">
+      <a href="../js_classes/" class="md-nav__link">
         Classes
       </a>
     </li>
@@ -488,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_dom/" class="md-nav__link">
+      <a href="../js_dom/" class="md-nav__link">
         DOM
       </a>
     </li>
@@ -502,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_event/" class="md-nav__link">
+      <a href="../js_event/" class="md-nav__link">
         Events
       </a>
     </li>
@@ -516,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="js_ECMAScript/" class="md-nav__link">
+      <a href="../js_ECMAScript/" class="md-nav__link">
         ECMAScript
       </a>
     </li>
@@ -550,28 +514,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contribute" class="md-nav__link">
-    Contribute
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -584,56 +526,48 @@
                 
 
 
-<h1 id="javascript-mastery">JavaScript Mastery</h1>
-<p>JavaScript is the backbone of modern web development. Whether you're a beginner taking your first steps or an experienced coder looking to sharpen your skills, this website will guide you through the world of JavaScript. JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.</p>
-<table>
-<thead>
-<tr>
-<th>Topic</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="js_intro/"><strong>Introduction to JavaScript</strong></a></td>
-<td>Understanding syntax, variables, and data types.</td>
-</tr>
-<tr>
-<td><a href="js_func/"><strong>Functions and Scope</strong></a></td>
-<td>Mastering functions, closures, and scope.</td>
-</tr>
-<tr>
-<td><a href="js_dom/"><strong>DOM Manipulation</strong></a></td>
-<td>How JavaScript interacts with HTML and CSS.</td>
-</tr>
-<tr>
-<td><a href="js_event/"><strong>Event Handling</strong></a></td>
-<td>Making web pages interactive with events.</td>
-</tr>
-<tr>
-<td><strong>Asynchronous JavaScript</strong></td>
-<td>Understanding callbacks, promises, and async/await.</td>
-</tr>
-<tr>
-<td><strong>Object-Oriented JavaScript</strong></td>
-<td>Exploring prototypes, classes, and inheritance.</td>
-</tr>
-<tr>
-<td><strong>JavaScript Frameworks</strong></td>
-<td>Overview of React, Vue, and Angular.</td>
-</tr>
-<tr>
-<td><strong>Advanced Concepts</strong></td>
-<td>Performance optimization, design patterns, and best practices.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="references">References</h2>
+<h1 id="date-object">Date Object</h1>
+<h5 id="setinterval">setInterval</h5>
+<p>The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
+It will continue calling the function until clearInterval() is called or the window is closed.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">myAlert</span><span class="p">()[</span><span class="w"></span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;HI&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">myAlert</span><span class="p">,</span><span class="w"> </span><span class="mf">3000</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>This will call the myAlert function every 3 seconds (1000 ms = 1 second).
+Write the name of the function without parentheses when passing it into the setInterval method.</p>
+<p>The Date object enables us to work with dates.
+A date consists of a year, a month, a day, an hour, a minute, a second, and milliseconds.</p>
+<p>Using new Date(), create a new date object with the current date and time</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span><span class="w"></span>
+<span class="c1">//d stores the current date and time</span><span class="w"></span>
+</code></pre></div>
+<p>The other ways to initialize dates allow for the creation of new date objects from the specified date and time</p>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">JavaScript Guide</a></li>
+<li>new Date(milliseconds)</li>
+<li>new Date(dateString)</li>
+<li>new Date(year, month, day, hours, minutes, seconds, milliseconds)</li>
 </ul>
-<h2 id="contribute">Contribute</h2>
-<p>Help us improve this tutorial! If you find any issues or have suggestions, please report them on our <a href="https://github.com/ArceLopera/jsrefresher/issues">GitHub repository</a>.</p>
+<p>JavaScript dates are calculated in milliseconds from 01 January, 1970 00:00:00 Universal Time (UTC). One day contains 86,400,000 millisecond.
+For example:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//Fri Jan 02 1970 00:00:00</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">d1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">86400000</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">//Fri Jan 02 2015 10:42:00</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;January 2, 2015 10:42:00&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">//Sat Jun 11 1988 11:42:00</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">d3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">88</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>JavaScript counts months from 0 to 11. January is 0, and December is 11.
+Date objects are static, rather than dynamic. The computer time is ticking, but date objects don't change, once created.
+When a Date object is created, a number of methods make it possible to perform operations on it. getMonth(), getDate(), getDay(),etc…</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">hours</span><span class="o">=</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span><span class="w"></span>
+<span class="c1">//hours equals to the current hour</span><span class="w"></span>
+</code></pre></div>
+<hr />
 
               
             </article>
@@ -646,15 +580,30 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="../js_exceptions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exceptions" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Exceptions
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="js_intro/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro" rel="next">
+        <a href="../js_func/" class="md-footer__link md-footer__link--next" aria-label="Next: Functions" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Intro
+              Functions
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -725,10 +674,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.expand"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
       

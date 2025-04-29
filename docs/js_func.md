@@ -176,3 +176,134 @@ console.log(p.yearOfBirth());
 Note that it's not necessary to write the function's parentheses when assigning it to an object.
 Call the method by the property name you specified in the constructor function, rather than the function name.
 
+---
+
+
+## Functions in ECMAScript 6
+
+Prior to ES6, a JavaScript function was defined like this:
+
+``` js
+function add(x,y){
+    var sum= x+y;
+    console.log(sum);
+}
+```
+
+
+ES6 introduces a new syntax for writing functions. The same function from above can be written as:
+
+``` js
+const add = (x,y) => {
+    let sum= x+y;
+    console.log(sum);
+}
+```
+
+
+This new syntax is quite handy when you just need a simple function with one argument.
+You can skip typing function and return, as well as some parentheses and braces.
+
+For example:
+
+``` js
+const greet = x => "Welcome "+ x;
+console.log(greet("John"));
+```
+
+The code above defines a function named greet that has one argument and returns a message.
+
+If there are no parameters, an empty pair of parentheses should be used, as in
+
+``` js
+const  x = () => alert("Hi");
+```
+
+
+The syntax is very useful for inline functions. For example, let's say we have an array, and for each element of the array we need to execute a function. We use the forEach method of the array to call a function for each element:
+
+``` js
+var arr = [2,3,7,8];
+
+arr.forEach(function(el) {
+    console.log(el * 2);
+});
+```
+
+However, in ES6, the code above can be rewritten as following:
+
+``` js
+var arr = [2,3,7,8];
+
+arr.forEach(v => {
+    console.log(v * 2);
+});
+```
+
+
+### Default Parameters in ES6
+
+In ES6, we can put the default values right in the signature of the functions.
+
+``` js
+function test(a, b = 3, c = 42){
+  return a + b + c;
+}
+console.log(test(5)); //50 
+```
+
+And here's an example of an arrow function with default parameters:
+
+``` js
+const test = (a, b = 3, c = 42) => {
+  return a + b + c;
+}
+console.log(test(5)); //50 
+```
+
+Default value expressions are evaluated at function call time from left to right. This also means that default expressions can use the values of previously-filled parameters.
+
+---
+
+
+## ES6 Rest Parameters
+
+Prior to ES6, if we wanted to pass a variable number of arguments to a function, we could use the arguments object, an array-like object, to access the parameters passed to the function.
+For example, let's write a function that checks if an array contains all the arguments passed:
+
+``` js
+function containsAll(arr){
+    for(let k=1; k < arguments.length; k++){
+         let num = arguments[k];
+         if(arr.indexOf(num) === -1){
+             return false;
+         }
+    }
+    return true;
+}
+let x =[2,4,6,7];
+console.log(containsAll(x,2,4,7));
+console.log(containsAll(x,6,4,9));
+```
+
+
+We can pass any number of arguments to the function and access it using the arguments object.
+
+While this does the job, ES6 provides a more readable syntax to achieve variable number of parameters by using a rest parameter:
+
+``` js
+function containsAll(arr, ...nums){
+    for(let num of nums){
+         if(arr.indexOf(num) === -1){
+             return false;
+         }
+    }
+    return true;
+}
+```
+
+
+The ...nums parameter is called a rest parameter. It takes all the "extra" arguments passed to the function. The three dots (...) are called the Spread operator.
+Only the last parameter of a function may be marked as a rest parameter. If there are no extra arguments, the rest parameter will simply be an empty array; the rest parameter will never be undefined.
+
+---
