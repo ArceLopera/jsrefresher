@@ -204,6 +204,54 @@ console.log(msg);
 
 To escape a backtick in a template literal, put a backslash \ before the backtick.
 
+---
+
+
+
+### Repeating Strings
+
+Before ES6 the following syntax was the correct way to repeat a string multiple times:
+
+
+``` js
+
+console.log(Array(3 + 1).join("foo"));   //foofoofoo
+```
+
+
+With the new syntax, it becomes:
+
+
+``` js
+
+console.log("foo".repeat(3));   //foofoofoo
+```
+
+
+### Searching Strings
+
+Before ES6 we only used the indexOf() method to find the position of the text in the string. For example:	
+
+
+``` js
+
+"Hello World!".indexOf("Wo");
+"Hello World!".indexOf("Wo")===6;
+```
+
+
+ES6 has replaced this with a version that has cleaner and more simplified syntax:
+
+
+``` js
+
+"Hello World!".startsWith("He");
+"Hello World!".endsWith("He");
+"Hello World!".includes("He");
+```
+
+---
+
 
 
 ## PopUp Boxes

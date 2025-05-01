@@ -115,6 +115,39 @@ console.log(d); //8
 
 ---
 
+
+### Array Element Finding
+
+The legacy way to find the first element of an array by its value and a rule was the following:
+
+
+``` js
+
+[4, 5, 8, 1, 2, 0].filter(function (x) {
+     return x > 3;
+})[0];
+```
+
+
+The new syntax is cleaner and more robust:
+
+
+``` js
+
+[4, 5, 8, 1, 2, 0].find(x => x > 3);
+```
+
+
+You can also get the index of the item above by using the findIndex() method:
+
+
+``` js
+
+[4, 5, 8, 1, 2, 0].findIndex(x => x > 3);
+```
+
+---
+
 ## ES6 Collections
 
 ### ES6 Map

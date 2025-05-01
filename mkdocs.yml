@@ -100,4 +100,5 @@ nav:
       - DOM: js_dom.md
       - Events: js_event.md
       - Promises: js_promises.md
+      - Modules: js_module.md
       - ECMAScript: js_ECMAScript.md

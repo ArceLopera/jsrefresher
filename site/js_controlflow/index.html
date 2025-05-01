@@ -453,6 +453,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#iterators-generators" class="md-nav__link">
+    Iterators &amp; Generators
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -580,6 +587,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../js_module/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../js_ECMAScript/" class="md-nav__link">
         ECMAScript
       </a>
@@ -678,6 +699,13 @@
         <li class="md-nav__item">
   <a href="#break-and-continue" class="md-nav__link">
     Break and Continue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterators-generators" class="md-nav__link">
+    Iterators &amp; Generators
   </a>
   
 </li>
@@ -798,6 +826,56 @@ The continue statement is similar to the break statement, but instead of termina
 <span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<hr />
+<h2 id="iterators-generators">Iterators &amp; Generators</h2>
+<p>Symbol.iterator is the default iterator for an object. The for...of loops are based on this type of iterator.</p>
+<p>In the example below, we will see how we should implement it and how generator functions are used.
+Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">myIterableObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">yield</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="k">yield</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="k">yield</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([...</span><span class="nx">myIterableObj</span><span class="p">]);</span><span class="w"></span>
+
+<span class="c1">// [1, 2, 3]</span><span class="w"></span>
+</code></pre></div>
+<p>First, we create an object, and use the Symbol.iterator and generator function to fill it with some values.</p>
+<p>In the second line of the code, we use a * with the function keyword. It's called a generator function (or gen function).</p>
+<p>For example, here is a simple case of how gen functions can be useful:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">idMaker</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">       </span><span class="k">yield</span><span class="w"> </span><span class="nx">index</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">gen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">idMaker</span><span class="p">();</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gen</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// 0</span><span class="w"></span>
+</code></pre></div>
+<p>We can exit and re-enter generator functions later. Their variable bindings (context) will be saved across re-entrances. They are a very powerful tool for asynchronous programming, especially when combined with Promises. They can also be useful for creating loops with special requirements.</p>
+<p>We can nest generator functions inside each other to create more complex structures and pass them arguments while we are calling them.
+The example below will show a useful case of how we can use generator functions and Symbol.iterators together.
+Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;9&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;16&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">my_obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">arr</span><span class="p">){</span><span class="w"></span>
+<span class="w">             </span><span class="k">yield</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">index</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="p">}</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">my_obj</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="mf">10</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">d</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">all</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// 3.1622776601683795</span><span class="w"></span>
+</code></pre></div>
+<p>We create an object of 7 elements by using Symbol.iterator and generator functions. 
+In the second part, we assign our object to a constant all. At the end, we print its value.</p>
 <hr />
 
               
