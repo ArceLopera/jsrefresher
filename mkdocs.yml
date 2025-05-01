@@ -99,4 +99,5 @@ nav:
       - Classes: js_classes.md
       - DOM: js_dom.md
       - Events: js_event.md
+      - Promises: js_promises.md
       - ECMAScript: js_ECMAScript.md
