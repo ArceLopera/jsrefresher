@@ -1,0 +1,1578 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="JavaScript refresher.">
+      
+      
+        <meta name="author" content="ArceLopera">
+      
+      
+        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/js_react/">
+      
+      <link rel="icon" href="../Images/javascript_favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>React - JS Refresher</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="JS Refresher" class="md-header__button md-logo" aria-label="JS Refresher" data-md-component="logo">
+      
+  <img src="../Images/js.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JS Refresher
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              React
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ArceLopera/jsrefresher" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ArceLopera/jsrefresher
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../js_intro/" class="md-tabs__link">
+        Basics
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Front-end Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="JS Refresher" class="md-nav__button md-logo" aria-label="JS Refresher" data-md-component="logo">
+      
+  <img src="../Images/js.png" alt="logo">
+
+    </a>
+    JS Refresher
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ArceLopera/jsrefresher" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ArceLopera/jsrefresher
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_intro/" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_operators/" class="md-nav__link">
+        Operators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_arrays/" class="md-nav__link">
+        Arrays n Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_controlflow/" class="md-nav__link">
+        Control Flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_exceptions/" class="md-nav__link">
+        Exceptions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_date/" class="md-nav__link">
+        Dates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_func/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_object/" class="md-nav__link">
+        Objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_classes/" class="md-nav__link">
+        Classes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_dom/" class="md-nav__link">
+        DOM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_event/" class="md-nav__link">
+        Events
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_promises/" class="md-nav__link">
+        Promises
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_module/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_ECMAScript/" class="md-nav__link">
+        ECMAScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Front-end Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Front-end Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Front-end Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        React
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p>Front-end development refers to what the end user (also commonly referred to as the "client") can see. In the most basic forms, front-end development consists of HTML, CSS, and JavaScript.</p>
+<p>As a developer, you will find that it is very easy for your front-end (website, web application, etc.) to become very complex and have a lot of different moving parts. It makes solving problems much more difficult when you have to go through a maze of code to find the issue.</p>
+<p>Eventually, developers decided that there must be a better way to manage all of that code, so they created libraries that could make life easier. React was one of those libraries.
+React was created by Facebook and released to the public in May of 2013 and has been consistently maintained since then.</p>
+<p>Why React?</p>
+<p>React is one of the most popular JavaScript libraries for front-end web applications.</p>
+<p>Here are some of the advantages of React:</p>
+<p>Speed
+Interactive websites need to update the DOM (Document Object Model) each time a change happens. This process is generally resourceful and slow.
+Compared to other libraries that manipulate the DOM, React uses a Virtual DOM, allowing to update only the parts of the website that have changed. This increases the speed of updates dramatically, as modern web applications may contain thousands of elements.
+We will learn more about the Virtual DOM in the coming lessons.</p>
+<p>Ease of Use
+React allows developers to group related code together, thereby making building and maintaining large scale applications much less complex.</p>
+<p>Support
+React has an amazingly large community and is open source. It is maintained by Facebook and the community.</p>
+<p>Adding React</p>
+<p>React can be added to a website without any special tools and installations.</p>
+<p>First, we need to add the React library as two script tags to the head of our HTML document:</p>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+<p>Next, we need to add another script, to enable the use of JSX.
+JSX is a syntax extension to JavaScript, and it is recommended to be used with React.
+Don't worry, we will learn more about JSX in the next lessons. For now, let's just add the following script tag:</p>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<p>This approach of adding React to a website is only suitable for creating small demos.</p>
+<p>After adding the required script tags, we can start building our React app!</p>
+<p>We add a container, that will be used to display something using React.</p>
+<div id="container"></div>
+
+<p>You can use any id for your container. It will be used by React to find the container and add content to it.
+Now, it's time for our first React code!
+Let's display a simple message as a heading:</p>
+<script type="text/babel">
+ReactDOM.render(
+  <h1>Hello, React!</h1>
+  document.getElementById('container')
+)
+</script>
+
+<p>The code finds the container div, and adds the h1 heading to it.</p>
+<p>Create React App</p>
+<p>In the previous lesson we learned how to add React to a simple HTML document using the script tags.
+However, real web apps have a different scale, contain multiple files, use 3rd party libraries, etc.</p>
+<p>Facebook has created a handy tool called Create React App that makes it easy to setup a React project with just a simple command!</p>
+<p>To get started, make sure you have a recent version of Node installed on your machine.
+Run the following commands in the Terminal to create and start a React app called "my-app":
+npx create-react-app my-app
+cd my-app
+npm start </p>
+<p>This will install all the required dependencies, configure and start the project on localhost:3000.</p>
+<p>Create React App allows us to focus on the code, rather than installing and configuring different tools.</p>
+<p>Project Structure</p>
+<p>Let's explore the structure of our project by opening it using a code editor.
+We will be using Visual Studio Code in our example, but you are free to use any code editor.
+The public folder contains files related to how the application will display on the client, the most important of those being index.html, which is the HTML template of our page.
+The src folder contains all of the JavaScript, CSS, and image files that will be compiled into a bundle file and injected into index.html.</p>
+<p>How is React compiled into a bundle file? It uses what is called a "file loader". In the case of Create React App, Webpack is used.
+Webpack creates a "bundle" file containing the content of multiple files that need to be "bundled" together and it is all added together into a single file. Instead of making the HTML file go and find multiple files, which can slow down load times tremendously, it only has to find one file.
+Remember, all CSS and JS files need to be added to the src folder, otherwise webpack won't see them.
+While there are other files in the src folder that come with Create React App when it is generated, the two files below are the only critical files:
+• index.js: This file is the entry point into our application. In our code, a method called ReactDOM.render() is used to find an element with id="root" in the HTML and add our React application inside of that element (similar to the previous lesson).
+• App.js: This file is the main component that will be rendered to the DOM, which currently includes the React logo image and the default text, that we see in the output.</p>
+<p>Changing the Output</p>
+<p>Now, when we know how to create and run a React project, let's change the default output to a simple Hello message.</p>
+<p>To do that, we need to open src/index.js and change the code to the following:
+ReactDOM.render(
+<br />
+<h1>Hello, React!</h1></p>
+<p>,
+  document.getElementById('root')
+);</p>
+<p>A really cool feature of Create React App is Fast Refresh, which automatically reflects the changes made to the code in the browser.</p>
+<p>StackBlitz</p>
+<p>To make it easier to play around with React, we will be using StackBlitz as our online playground to enable changing and running real React code.</p>
+<p>Try it on StackBlitz</p>
+<p>We have removed all the extra files, such as the logo images, to make the project structure simpler.
+Now we have the following files:
+index.html: The HTML page template.
+index.js: The entry point of our app.
+style.css: the stylesheet for our project.
+package.json: holds various metadata relevant to the project, like dependencies.</p>
+<p>What is JSX?</p>
+<p>In the previous module we used the following code to show an output using React:
+ReactDOM.render(
+<br />
+<h1>Hello, React!</h1></p>
+<p>,
+  document.getElementById('root')
+);</p>
+<p>Try it on StackBlitz</p>
+<p>Let's start to break down the code and understand each part of it.
+We will start with the <h1>Hello, React!</h1> element.</p>
+<p>As you can see, the element is not in quotes to represent a string. It's like an HTML element, however we use it right in the JavaScript code!
+This is called JSX, and it is a syntax extension to JavaScript. It allows us to build UI elements right in the JavaScript code!
+React does not require using JSX, however, it is common practice in the React community to use JSX as it eases the development of user interfaces, as well as allows React to show useful error and warning messages.</p>
+<p>Intro to JSX</p>
+<p>Let's have a look at our code again:
+ReactDOM.render(
+<br />
+<h1>Hello, React!</h1></p>
+<p>,
+  document.getElementById('root')
+); </p>
+<p>The code calls React's render method, and passes it two arguments, a JSX element and a container. The render method displays the provided element in the container, which, in our case, is the HTML element with id="root".</p>
+<p>When you call the render method, any existing content of the container gets replaced. That is why, usually, the containers are empty in the HTML.</p>
+<p>Expressions in JSX</p>
+<p>We can use any JavaScript expression inside JSX using curly braces.</p>
+<p>For example:
+const name = "David";
+const el = <p>Hello, {name}</p>;</p>
+<p>ReactDOM.render(
+  el,
+  document.getElementById('root')
+); </p>
+<p>In the example above, we use the variable name in the JSX element.
+As you can see, JSX can be used just like JavaScript expressions. You can assign a JSX expression to a variable, return it from a function, etc.</p>
+<p>Attributes in JSX</p>
+<p>We can specify attributes using quotes, just like in HTML:</p>
+<div id="name"></div>
+
+<p>When using a JavaScript expression as the attributes value, the quotes should not be used:</p>
+<div id={user.id}></div>
+
+<p>React DOM uses camelCase property naming convention instead of HTML attribute names.
+For example, class becomes className in JSX.</p>
+<p>How Does JSX Work?</p>
+<p>When the JSX expressions are compiled, they are converted into JavaScript objects, representing React elements.
+React then uses these elements to build the corresponding HTML DOM and display it in the browser.</p>
+<p>Let's create a counter app, that increments a counter variable every second and displays it on the page as a paragraph:
+let counter = 0;</p>
+<p>function show() {
+  counter++;
+  const el = <p>{counter}</p>;
+  ReactDOM.render(
+    el, document.getElementById('root')
+  );
+}</p>
+<p>setInterval(show, 1000); </p>
+<p>Try it on StackBlitz</p>
+<p>We use setInterval to call the show function every second and render the counter element on the page.</p>
+<p>One of the great features of React is that it updates only the elements that need an update. You can inspect the HTML output of the example above and see that only the text in the paragraph gets updated every second.
+In practice, most React apps call ReactDOM.render() once.</p>
+<p>Virtual DOM</p>
+<p>We learned in the previous part that React updates only the elements that are necessary.
+This allows React apps to be much faster than apps built with other front-end technologies.</p>
+<p>But how does React achieve that?
+React uses a Virtual DOM, which is a lightweight representation of the DOM.
+When an element gets changed, it is first updated in the Virtual DOM. That process is fast, as the virtual DOM is represented by simple objects.</p>
+<p>After that, React compares the Virtual DOM to its previous state and only applies the DOM updates necessary to bring the DOM to the desired state.
+DOM stands for Document Object Model and is a tree-like representation of the HTML page.</p>
+<p>Components</p>
+<p>Components let you split the page into independent and reusable parts.
+Notice that the page can be split into multiple parts. Each of these "parts" are a component.
+The heading is a component, the button is a component, and the search bar is its own component.
+This makes organizing the page leaps and bounds easier, but even more importantly, components allow us as the developers to separate concerns from one another.
+Separation of concerns is a programming principle that states that each concern should be separated into individual pieces.</p>
+<p>Functional Components</p>
+<p>In React, there are two types of components that you can use: Functional Components and Class Components.
+In this part, we will talk about functional components.</p>
+<p>A functional component is a simple JavaScript function:
+function Hello() {
+  return <h1>Hello world.</h1>;
+}</p>
+<p>The code above defined a functional component called Hello, that returns a simple React element.
+Notice that the name of the functional component begins with a capital letter. This is absolutely critical. If we start the name of a component with a lowercase letter, the browser will treat our component like a regular HTML element instead of a Component.</p>
+<p>Rendering Components</p>
+<p>In order to display the component, we need to create the corresponding JSX element.</p>
+<p>For example, for our user-defined component Hello:
+const el = <Hello />; </p>
+<p>Now, we can use our user-defined element and render it on the page:
+function Hello() {
+  return <h1>Hello world.</h1>;
+}</p>
+<p>const el = <Hello />; 
+ReactDOM.render(
+  el, 
+  document.getElementById('root')
+);</p>
+<p>Try it on StackBlitz
+Remember, all component names need to start with a capital letter.</p>
+<p>Class Components</p>
+<p>Class components are typically used when there are more advanced user interactions, like forms, and animations.</p>
+<p>All class components need to extend the React.Component class.</p>
+<p>We can rewrite our Hello functional component as a class component:
+class Hello extends React.Component {
+  render() {
+    return <h1>Hello world.</h1>;
+  }
+} </p>
+<p>Try it on StackBlitz</p>
+<p>Class components need to have a render method, which is in charge of telling what the page should show.</p>
+<p>Props</p>
+<p>Functional components can accept arguments, similar to JavaScript functions. These arguments are called props, and represent an object.</p>
+<p>For example, we can use props in our Hello component:
+function Hello(props) {
+  return <p>Hello, {props.name}!</p>;
+}</p>
+<p>Now, we can add a name attribute to our element:
+const el = <Hello name="David" />; </p>
+<p>The attribute value will be passed to the component when rendered.</p>
+<p>Try it on StackBlitz</p>
+<p>An element can have multiple custom attributes, which will be passed to the component using the props object. You can use any custom names for your attributes.</p>
+<p>Components using Components</p>
+<p>Components can use other components to generate an output.</p>
+<p>For example:
+function App() {
+  return <div>
+    <Hello name="David" />
+    <Hello name="James" />
+    <Hello name="Amy" />
+  </div>;
+}</p>
+<p>Here, our App component uses the Hello component three times, each times with a new name attribute.</p>
+<p>Try it on StackBlitz</p>
+<p>Generally, it is a good practice to split complex components into multiple smaller components, that are reusable.
+For example, a Post component can use an Avatar component, an Image component, a Date component, etc.</p>
+<p>Props in Class Components</p>
+<p>Props can be accessed in class components using this.props.</p>
+<p>For example:
+class Hello extends React.Component {
+  render() {
+    return <p>Hello, {this.props.name}!</p>;
+  }
+} </p>
+<p>Try it on StackBlitz</p>
+<p>An important thing to consider is that props are read-only, meaning components cannot modify their props.
+Interactive apps generally need to change data and the page elements.</p>
+<p>An Example</p>
+<p>Now that we know how to create components and pass them data, let's create a shopping list.</p>
+<p>Each item in our list will have a name and a price.</p>
+<p>For example:
+<Item name="Cheese" price="4.99" /> </p>
+<p>The Item component will render a simple div element with the data:
+function Item(props) {
+  return <div className="item">
+  <b>Name:</b> {props.name} <br />
+  <b>Price:</b> {props.price}
+  </div>;
+}</p>
+<p>Now we can use our component and create multiple items for our shopping list:
+<Item name="Cheese" price="4.99" />
+<Item name="Bread" price="1.5" />
+<Item name="Ice cream" price="24" /></p>
+<p>Try it on StackBlitz</p>
+<p>We have added some simple CSS styles to separate the items visually.</p>
+<p>State</p>
+<p>Up until this point, we have learned how to pass data to components using props.</p>
+<p>Many web apps need their components to change their data, for example, after user interaction (clicking a button, submitting a form, etc.).
+However, props cannot be changed.</p>
+<p>In order to allow components to manage and change their data, React provides a feature called state.
+State is an object that is added as a property in class components.</p>
+<p>For example:
+class Hello extends React.Component {
+  state = {
+    name: "James"
+  }</p>
+<p>render() {
+    return <h1>Hello {this.state.name}.</h1>;
+  }
+}</p>
+<p>As you can see, state is just a simple object, that contains key:value pairs.
+Similar to props, the values can be accessed using this.state.</p>
+<p>Now, when the component renders, the state is initialized with the given value and there will be a heading that says "Hello James.".</p>
+<p>Try It on StackBlitz
+The state object can contain multiple key:value pairs, separated by commas.</p>
+<p>Changing State</p>
+<p>State should not be modified directly. Instead, React provides a setState() method, that can be used to modify state.</p>
+<p>For example:
+this.setState({ 
+  name: "James",
+  age: 25
+}); </p>
+<p>You need to pass an object with the new key:value pairs to the setState method.</p>
+<p>Why should we use setState, instead of simply changing the values of the object properties directly?
+The answer uncovers one of the most useful features of React: when setState is called, React automatically re-renders the affected component with the new state!</p>
+<p>Usually, the change in state happens in event handlers. We will look at an example in the next part!
+When state changes using the setState method, React gets informed and immediately re-renders the component with the updated state.</p>
+<p>Counter App</p>
+<p>To better understand how state works, let's create a counter app, which increments the counter each time a button is clicked.
+We start by creating our Counter component, which includes the counter and a button:
+class Counter extends React.Component {
+  state = {
+    counter: 0
+  }
+  render() {
+    return <div>
+    <p>{this.state.counter}</p>
+    <button>Increment</button>
+    </div>;
+  }
+} </p>
+<p>We have initialized our counter to the value 0 in the state.</p>
+<p>Now, we need to add a click event handler to the button and increment the counter in the state.
+Here is the final code:
+class Counter extends React.Component {
+  state = {
+    counter: 0
+  }
+  increment = () =&gt; {
+    this.setState({
+     counter: this.state.counter+1});
+  }
+  render() {
+    return <div>
+    <p>{this.state.counter}</p>
+    <button onClick={this.increment}>Increment</button>
+    </div>;
+  }
+}</p>
+<p>Try it on StackBlitz</p>
+<p>The onClick event calls the increment function of our component, which uses setState to change the value of our counter. When the state is changed, React automatically triggers a re-render of the component.</p>
+<p>Notice that the event handler uses camelCase syntax and that the handler function is passed in curly braces.</p>
+<p>Props vs State</p>
+<p>As a recap, here is a summary of the main differences between props and state:</p>
+<ul>
+<li>We use props to pass data to components.</li>
+<li>Components use state to manage their data.</li>
+<li>Props are read-only and cannot be modified.</li>
+<li>State can be modified by its component using the setState() method.</li>
+<li>The setState() method results in re-rendering the component affected.
+Components that have state are called stateful, while components that do not use state are called stateless.</li>
+</ul>
+<p>Hooks</p>
+<p>Earlier version of React allowed to use state only with class components.
+In recent iterations of React, a new feature called hooks was introduced, allowing to use state inside of functional components.</p>
+<p>First, we need to import the useState hook:
+import React, { useState } from 'react'; </p>
+<p>useState returns a pair, the current state value and a function, that lets you change the state.
+useState takes one argument, which is the initial value of the state.</p>
+<p>Let's look at an example:
+function Hello() {
+  const [name, setName] = useState("David");</p>
+<p>return <h1>Hello {name}.</h1>;
+}</p>
+<p>Try it on StackBlitz</p>
+<p>In the example above, we create a name state variable and a setName function. The square brackets syntax is called array destructuring. It assigns the name variable to the current state value, and setName to the function that allows to change the state. You can name these variables anything you like.
+Then, we pass "David" as the initial value for our name variable to useState().
+You can create multiple state variables with their corresponding set methods. Just use separate statements for each variable using the useState hook.</p>
+<p>Counter App using Hooks</p>
+<p>Now we can rewrite our Counter app from the previous lesson using a functional component and hooks!</p>
+<p>Here is the code:
+function Counter() {
+  const [counter, setCounter] = useState(0);</p>
+<p>function increment() {
+    setCounter(counter+1);
+  }</p>
+<p>return <div>
+<br />
+<p>{counter}</p></p>
+<p><button onClick={increment}>
+    Increment
+  </button>
+  </div>;
+} </p>
+<p>Try it on StackBlitz</p>
+<p>As you can see, compared to the class component, the code is much shorter and easier to read and understand. That was one of the reasons why the React team created Hooks.
+Remember, hooks can only be used inside functional components.
+Hooks are functions that allow to "hook into" React features from function components.</p>
+<p>Lifecycle Methods</p>
+<p>React provides special lifecycle methods for class components, which are called when components are mounted, updated or unmounted.</p>
+<p>Mounting is the process when a component is rendered on the page.
+Unmounting is the process when a component is removed from the page.</p>
+<p>The componentDidMount method is called when a component is rendered on the page.</p>
+<p>For example, we can use componentDidMount in our Counter app to set the initial value of the counter:
+componentDidMount() {
+  this.setState({counter: 42});
+}</p>
+<p>Try it on StackBlitz</p>
+<p>This will set an initial value of the counter when the component is rendered.</p>
+<p>componentDidMount is typically used for populating the state inside of a component when it initially mounts to the DOM.
+Similarly, the componentWillUnmount() lifecycle method is called right before the component is removed from the DOM. It can be used to free up resources taken by the component.</p>
+<p>componentDidUpdate</p>
+<p>Another lifecycle method is componentDidUpdate(), which is called when a component is updated in the DOM.</p>
+<p>We can, for example, alert the current counter value when it is incremented:
+componentDidUpdate() {
+  alert("Number of clicks: " + this.state.counter);
+}</p>
+<p>Try it on StackBlitz
+componentDidUpdate() is only called when the component is updated.</p>
+<p>The useEffect Hook</p>
+<p>The lifecycle methods we covered are only available for class components.
+However, React provides a special Hook called useEffect to make lifecycle methods available in functional components. It combines the componentDidMount, componentDidUpdate, and componentWillUnmount methods into one.</p>
+<p>For example, we can achieve the behavior of our last example using a functional Counter component:
+function Counter() {
+  const [counter, setCounter] = useState(0);</p>
+<p>useEffect(() =&gt; {
+    alert("Number of clicks: " + counter);
+  });</p>
+<p>function increment() {
+    setCounter(counter+1);
+  }
+  return <div>
+<br />
+<p>{counter}</p></p>
+<p><button onClick={increment}>Increment</button>
+  </div>;
+}</p>
+<p>Try It on StackBlitz</p>
+<p>When you run the code, you'll notice that the alert dialog appears also during the first render. This is caused by the fact that, by default, useEffect runs both, after the first render and after every update.</p>
+<p>To call the method only when something changes, we can provide it a second argument:
+useEffect(() =&gt; {
+  //do something
+}, [count]);  </p>
+<p>Now, the useEffect() method will run only if count changes.</p>
+<p>To mimic componentWillUnmount, useEffect may return a function that cleans up after it:
+useEffect(() =&gt; {
+  // do something</p>
+<p>return () =&gt; {
+    // cleanup
+  }; 
+});</p>
+<p>You can have multiple effects in the same component.
+Just like with the useState hook, we need to import useEffect to be able to use it: import React, { useState, useEffect } from 'react';</p>
+<p>Event Handling</p>
+<p>Handling events in React is very similar to handling events in the DOM.</p>
+<p>The only difference is that event names use camelCase syntax and the event handler needs to be passed in curly braces.</p>
+<p>For example, to handle the click event on a button:
+<button onClick={handleClick}>
+  My Button
+</button> </p>
+<p>Clicking the button will call the handleClick function of the component.</p>
+<p>Let's explore our Counter app:
+function Counter() {
+  const [counter, setCounter] = useState(0);</p>
+<p>function increment() {
+    setCounter(counter+1);
+  }
+  return <div>
+<br />
+<p>{counter}</p></p>
+<p><button onClick={increment}>Increment</button>
+  </div>;
+}</p>
+<p>Try it on StackBlitz</p>
+<p>The onClick event calls the increment function, which is incrementing the counter state variable.
+Check out the same Counter app built using a class component here.</p>
+<p>Handling User Input</p>
+<p>One of the common ways that users interact with web pages is through text fields.</p>
+<p>We can handle user input in React using the onChange event of the text field.
+When the value of the text field changes, the event handler is called, updating the value of the field in the component's state.
+This way you always have the actual value of the text field in the state.</p>
+<p>Let's make an app to convert Km to Miles. We will take the Km value from a text field and calculate the miles value upon input:
+function Converter() {
+  const [km, setKm] = useState(0);</p>
+<p>function handleChange(e) {
+    setKm(e.target.value);
+  }
+  function convert(km) {
+    return (km/1.609).toFixed(2);
+  }</p>
+<p>return <div>
+  <input type="text" value={km}
+     onChange={handleChange} />
+<br />
+<p> {km} km is {convert(km)} miles </p></p>
+<p></div>;
+}</p>
+<p>Try it on StackBlitz</p>
+<p>Our Converter component includes a text field, which calls the handleChange function when its value changes.
+The handleChange function updates the state with the current value of the textfield, causing the component to re-render and show the corresponding miles value, which is calculated using the convert function.
+The value of the text field is accessed via the e object, which represents the React event. It is passed to the event handler function as an argument and can be used to access the event object.</p>
+<p>Forms</p>
+<p>In the previous part, we learned how to handle user input in text fields. Text fields are usually part of a form.</p>
+<p>Similar to the previous example, React form elements keep their state and update it based on user input.
+This way you always have the data of your form at your disposal in the state.</p>
+<p>To demonstrate this, we will create a form, that will add numbers every time the form is submitted and display the sum.
+Our form contains an input field and a submit button:
+function AddForm() {
+  const [sum, setSum] = useState(0);
+  const [num, setNum] = useState(0);</p>
+<p>function handleChange(e) {
+    setNum(e.target.value);
+  }</p>
+<p>function handleSubmit(e) {
+    setSum(sum + Number(num));
+    e.preventDefault();
+  }</p>
+<p>return <form onSubmit={handleSubmit}>
+  <input type="number" value={num} onChange={handleChange} />
+  <input type="submit" value="Add" />
+<br />
+<p> Sum is {sum} </p></p>
+<p></form>;
+}</p>
+<p>Try it on StackBlitz</p>
+<p>In the code above, the value of the input is controlled by React (we keep the value in the state).
+When the form is submitted using the submit button, the handleSubmit function gets called, which updates the value of sum in the state.</p>
+<p>An input form element whose value is controlled by React in this way is called a "controlled component".
+Notice the e.preventDefault(); statement. This statement prevents the default behavior of the form, which, by default, reloads the page when submitted. In JavaScript we would use return false; for that, but in React we need to call preventDefault().</p>
+<p>Lists</p>
+<p>Web apps commonly contain repeating elements, such as lists or sections, where the same DOM element is repeated with a different data set.</p>
+<p>Consider an array of strings:
+const arr = ["A", "B", "C"];</p>
+<p>We need to render a list <li> element for each item in the array.
+We can define a MyList component and pass it the array as a prop using a custom data attribute:
+<MyList data={arr} /></p>
+<p>Now, when the array is accessible via props, we can write the component logic:
+function MyList(props) {
+  const arr = props.data;
+  const listItems = arr.map((val) =&gt;
+    <li>{val}</li>
+  );
+  return <ul>{listItems}</ul>;
+}</p>
+<p>Try it on StackBlitz</p>
+<p>We take the input array from the incoming props, loop through the array using the JavaScript map function and return a <li> element for each item.
+The resulted array is stored in the listItems variable.
+Then, the component returns the listItems array inside a <ul> tag.</p>
+<p>This code results in a warning, saying that each element needs a unique key</p>
+<p>Keys</p>
+<p>Each element in a list must have a key attribute.
+Keys act as a unique identity, identifying each element.
+Usually, these are IDs from your data, or can be auto-generated indexes.</p>
+<p>For example:
+const listItems = arr.map((val, index) =&gt;
+<br />
+<li key={index}>{val}</li></p>
+<p>);</p>
+<p>Try it on StackBlitz</p>
+<p>Keys are important, because they uniquely identify elements, helping React understand which items have changed, are added, or are removed.</p>
+<p>Example : Contact Manager</p>
+<p>Now, that we know how to create components, pass them data using props and manage their data using state, let's start building our Contact Manager.</p>
+<p>Our Contact Manager will allow to view the list of contacts and add new ones to the list.</p>
+<p>By looking at the mockup, it makes sense to have two components:
+AddPersonForm: a form with the text field and Add button.
+PeopleList: a list of contacts.</p>
+<p>Let's create these components.
+AddPersonForm uses state to manage the value of the text field:
+function AddPersonForm() {
+  const [ person, setPerson ] = useState("");</p>
+<p>function handleChange(e) {
+    setPerson(e.target.value);
+  }</p>
+<p>function handleSubmit(e) {
+    e.preventDefault();
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+    <input type="text" 
+    placeholder="Add new contact" 
+    onChange={handleChange} 
+    value={person} />
+    <button type="submit">Add</button>
+    </form>
+    );
+}</p>
+<p>For now, we just prevent the default behavior when the form is submitted.</p>
+<p>PeopleList received an array representing the contacts and renders a list on the page:
+function PeopleList(props) {
+  const arr = props.data;
+  const listItems = arr.map((val, index) =&gt;
+    <li key={index}>{val}</li>
+  );
+  return <ul>{listItems}</ul>;
+}</p>
+<p>Now we can render our components on the page and include some initial data:
+const contacts = ["James Smith", "Thomas Anderson", "Bruce Wayne"];</p>
+<p>const el = (
+<br />
+<div>
+    <AddPersonForm />
+    <PeopleList data={contacts} />
+  </div></p>
+<p>);</p>
+<p>Try it on StackBlitz</p>
+<p>Adding a new contact does not work, as we have not built the logic in the handleSubmit function yet.</p>
+<p>Sharing State</p>
+<p>Right now, our AddPersonForm independently keeps its state. How can we add a new contact to our PeopleList then, when the form is submitted?</p>
+<p>To accomplish that, we need to share the state between the components. We can do that by lifting the state up to a parent component. This means that the parent component will hold the data that needs to be shared between the components. In our case, that is the contacts list.</p>
+<p>Let's create a parent component called ContactManager, which includes the AddPersonForm and PeopleList as child components and holds the contacts list in its state:
+function ContactManager(props) {
+  const [contacts, setContacts] = useState(props.data);</p>
+<p>return (
+    <div>
+      <AddPersonForm />
+      <PeopleList data={contacts} />
+    </div>
+  );
+} </p>
+<p>Try it on StackBlitz</p>
+<p>The ContactManager component receives the initial contacts list using props, saves it in its state.
+Then it passes down the contacts list to its child component.
+Data can be passed from the parent to the child, but not from the child to the parent. React uses what is called unidirectional data flow, in other words, data only flows downward, so to speak.</p>
+<p>Adding a Contact</p>
+<p>Now, we can create an addPerson() function to our ContactManager component to add a new person to our contacts state array:
+function ContactManager(props) {
+  const [contacts, setContacts] = useState(props.data);</p>
+<p>function addPerson(name) {
+    setContacts([...contacts, name]);
+  }
+ ...
+} </p>
+<p>But how are we going to call this function from our child AddPersonForm component, where the data for the new person is stored?
+Just like we passed down data using props, React allows us to pass down function references!
+function ContactManager(props) {
+  const [contacts, setContacts] = useState(props.data);</p>
+<p>function addPerson(name) {
+    setContacts([...contacts, name]);
+  }</p>
+<p>return (
+    <div>
+      <AddPersonForm handleSubmit={addPerson} />
+      <PeopleList data={contacts} />
+    </div>
+  );
+} </p>
+<p>Similar to passing the contacts list to our PeopleList component, we passed down the addPerson() function to our AddPersonForm using a prop called handleSubmit.</p>
+<p>Now, our PeopleList can call the handleSubmit function that it received when the form is submitted, to add a new person to the list:
+function AddPersonForm(props) {
+  const [ person, setPerson ] = useState('');</p>
+<p>function handleChange(e) {
+    setPerson(e.target.value);
+  }</p>
+<p>function handleSubmit(e) {
+    props.handleSubmit(person);
+    setPerson('');
+    e.preventDefault();
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" 
+        placeholder="Add new contact" 
+        onChange={handleChange} 
+        value={person} />
+      <button type="submit">Add</button>
+    </form>
+  );
+} </p>
+<p>Try it on StackBlitz
+We also clear the value of the text field using setPerson('') after adding a new person.</p>
+<p>Summary</p>
+<p>An important takeaway from this lesson is that props can be used to pass down not only state, but also functions, that may manipulate the state.
+This way, we are able to store the application state in the parent and allow its child components to use and manipulate the state.</p>
+<p>Now, when our app is fully functional, we can add some CSS styles and a check, to prevent creation of blank contacts.</p>
+<p>Try It on StackBlitz</p>
+<p>Intro to Redux</p>
+<p>State Management</p>
+<p>In the previous module we built a Contact Manager app, which stores the state in the parent component, and passes it down to the corresponding child components.</p>
+<p>In the real world with larger scale applications, this can get far more complex. We might have to pass down the state data multiple levels to get to the desired component.</p>
+<p>Having to pass down data to multiple levels of nested components would make it hard to understand what caused a change to the state, as there might be multiple potential components that can change the state.</p>
+<p>This would also cause a lot of redundant code, make it hard to maintain and debug the code.</p>
+<p>Redux was created to make state management predictable, providing a single state container and strict rules on how state can be changed.</p>
+<p>Redux is a small JavaScript library and can be used with any front-end framework, such as React, Angular, jQuery.</p>
+<p>It employs the "single source of truth" pattern.
+In short, single source of truth just refers to relocating the application state and all associated logic outside of the application, allowing ANY component to access the data it needs.
+Having a single state container makes it easier to manage the state of your application, as you can access and change the data from any component that needs it, without having to pass down the data.</p>
+<p>Core Concepts</p>
+<p>Store</p>
+<p>Let's look into the core concepts of Redux.</p>
+<p>In Redux, the application's state is stored as a simple object, called store.
+There should only be a single store in an app.</p>
+<p>For example, a store can look like this:
+{
+  contacts: [{
+    name: 'David'
+  }, {
+    name: 'Amy'
+  }],
+  toggle: true
+}</p>
+<p>You cannot change the state directly. Instead, you need to dispatch an action.</p>
+<p>Actions &amp; Reducers</p>
+<p>An action is just a plain JavaScript object:
+{ 
+  type: 'ADD_CONTACT', 
+  name: 'James' 
+}</p>
+<p>The code above defines an action with type ADD_CONTACT and a name property.</p>
+<p>An action clearly describes why the state change happened, and can be dispatched from anywhere in your app.</p>
+<p>At this point we just have a store, which includes our state data and an object, that includes some data that needs to be changed in the state. So, how do we actually do the change?
+To tie the store and the action together, we need to write a function, called a reducer.
+It takes state and action as arguments, and returns the next state of the app.</p>
+<p>For example:
+function contactsApp(state, action) {
+  if (action.type === 'ADD_CONTACT') {
+    return [ ...state,  action.name ]
+  } else {
+    return state
+  }
+}</p>
+<p>The code above defines a simple reducer function, that checks the action and returns the new state.</p>
+<p>These concepts are basically the idea of Redux: you hold the global state in a store, define actions to describe what to change in the store and write reducer functions to handle those actions.
+Notice, we have not touched any React specific syntax, all of the above is plain JavaScript.</p>
+<p>Core Concepts</p>
+<p>Redux can be described using the following principles:</p>
+<p>Single source of truth
+The global state of the app is stored in a single store.</p>
+<p>State is read-only
+You can change the state only by dispatching actions. Action are objects, that contain information about what should be changed.</p>
+<p>Pure reducers
+Reducers are functions that handle the actions and return the next state of the application. Reducers need to be pure, meaning they cannot modify the state, they need to return a new state object.</p>
+<p>Actions</p>
+<p>Action can be viewed as payloads of information that send data to the store.
+Actions are represented by simple JavaScript object and need to have a type property:
+{
+  type: 'ADD_CONTACT',
+  name: 'James'
+}</p>
+<p>In the example above, we define an action with the type ADD_CONTACT and provide it a name property as its payload.
+Notice that for the type we're using all uppercase letters and words separated by underscores. This is also called "snake case". This is the generally accepted way to create an action type.
+You can use any naming and structure for the other properties defining the data in the action.</p>
+<p>You can, for instance, call it payload, and provide it an object with the data:
+{
+    type: 'ADD_CONTACT',
+    payload: {
+        name: "Jimmy Barnes"
+    }
+ }</p>
+<p>You should pass as little data in each action as possible. That keeps the actions clean and easy to read.</p>
+<p>Action Creators</p>
+<p>In order to use the same action with different payloads, as well as create reusable code, we can create Action creators.</p>
+<p>Action creators are simple functions that return actions.</p>
+<p>For example:
+function addContact(person) {
+  return {
+    type: 'ADD_CONTACT',
+    payload: person
+  }
+}</p>
+<p>The action creator function takes a person parameter and uses that as the actions payload.
+Now, we can use the action creator to create multiple new contacts by passing it the corresponding data.
+Action creators are not built into the Redux library by default. It is a pattern that was implemented to create code that reflects a more DRY (Don't Repeat Yourself) approach.</p>
+<p>Reducer Function</p>
+<p>Reducers are functions that handle the actions.
+The function takes the current state and the action as its parameters and returns the new state.</p>
+<p>A reducer can handle multiple actions, so usually it includes a switch statement for each action case.</p>
+<p>For example:
+function contactsApp(state, action) {
+  switch (action.type) {
+    case 'ADD_CONTACT':
+      return [ ...state,  action.person ]
+    default:
+      return state
+  }
+}</p>
+<p>In the code above, our reducer function uses a switch statement to handle the appropriate actions.
+As the default case, it just returns the current state.</p>
+<p>Remember, the reducer has to be a pure function, meaning it cannot modify the current state. It has to return a new state object instead.
+The default case is added for handling unknown actions.</p>
+<p>Multiple Reducers</p>
+<p>If you have more than one entity (i.e. users, products, invoices, orders, etc.), it's typically a good idea to break them into multiple reducer functions to separate concerns.</p>
+<p>Redux gives us a method that we can use called combineReducers. This allows us to use more than one reducer so that when an action gets dispatched, the action would get run through all of the reducers instead of only one. It also allows us to separate the concerns of our store state.</p>
+<p>For example:
+const contactsApp = combineReducers({
+  addContacts,
+  doSomething
+})</p>
+<p>Now, our contactsApp is combining two reducers into one.
+It's a good practice to provide each reducer only the part of the state that it needs to manage. This is called reducer composition, and is a fundamental pattern of building Redux apps.</p>
+<p>Redux with React</p>
+<p>Now, that we know what Redux is, we can start building React apps that use Redux!</p>
+<p>First, we need to install Redux:
+npm install redux </p>
+<p>This will install the Redux library.
+However, Redux itself is just a small library, that can be used with different technologies.
+To use it with React, we need to install another library, called react-redux:
+npm install react-redux</p>
+<p>The react-redux library binds React with Redux, allowing React components to read data from a Redux store, and dispatch actions to the store to update data.</p>
+<p>Counter App</p>
+<p>As our first example, let's build the Counter app we made in the previous module using Redux!</p>
+<p>First, we need to create our action and corresponding reducer.
+function incrementCounter(num) {
+  return { 
+    type: 'INCREMENT', 
+    num: num 
+  }
+}</p>
+<p>The code above declares an action creator function named incrementCounter(), which returns an action with type INCREMENT and the corresponding payload.</p>
+<p>Our reducer:
+const initialState = {
+  count: 0
+};</p>
+<p>function reducer(state = initialState, action) {
+  switch(action.type) {
+    case 'INCREMENT':
+      return { count: state.count + action.num };
+    default:
+      return state;
+  }
+}</p>
+<p>The code above defines a reducer function, which returns the new state based on the given action. We increment the count state variable by the provided num value.</p>
+<p>We also provide a default value for our state using the initialState variable.
+Nothing fancy until now, we just created two simple functions, one returning our action object, the other one returning a new state with the incremented count.</p>
+<p>Creating the Store</p>
+<p>To create the store, we call the createStore() function, which takes the reducer as its parameter:
+const store = createStore(reducer);</p>
+<p>But how do we pass the store to our components?
+That is achieved using a special <Provider> element. It makes the store available to any nested child component.</p>
+<p>So, for our counter, we would have the following:
+const el = <Provider store={store}>
+    <Counter/>
+  </Provider>; </p>
+<p>Provider takes the store as an attribute and makes it available to its child component.
+We need to import { createStore } and { Provider } using the following syntax:
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';</p>
+<p>Connecting to the Store</p>
+<p>At this point, we have created our action, the reducer, the store, and made it available to our Counter component using the Provider element.</p>
+<p>In order to connect our component to the store, we need to call the connect() function.
+The connect() function returns a new component, that wraps the component you passed to it and connects it to the store using its special parameter functions.
+function connect(mapStateToProps?, mapDispatchToProps?) </p>
+<p>connect() takes two optional parameters:</p>
+<p>mapStateToProps
+This function is called every time the store state changes. It receives the state as a parameter and returns the state for the component.
+For example, for our Counter, we need to return the count state variable:
+function mapStateToProps(state) {
+  return {
+    count: state.count
+  };
+}</p>
+<p>Now, our component can access the count variable using its props! Just as the name of the function states, it maps the state to the props.</p>
+<p>mapDispatchToProps
+As you may have guessed from the name, this parameter is used to map the dispatch functions to props.
+It can be a simple object, defining the function that needs to be mapped:
+const mapDispatchToProps = {
+  incrementCounter
+}</p>
+<p>This might seem a bit confusing, but its very straightforward: mapStateToProps simply returns the state variables as props to our component, while mapDispatchToProps allows to define how we dispatch actions and make the dispatching functions available as props.</p>
+<p>Both are optional, as, for example, your component might only need to read from the store.
+mapDispatchToProps can also be defined as a function. Take a look at the official documentation for more details.
+Note, that we need to import the connect function: import { connect } from 'react-redux';</p>
+<p>Accessing The Store</p>
+<p>Inside our component we just access the store properties using props
+function Counter(props) {
+  function handleClick() {
+    props.incrementCounter(1);
+  }
+    return <div>
+    <p>{props.count}</p>
+    <button onClick={handleClick}>Increment</button>
+    </div>;
+}</p>
+<p>Notice, that we pass 1 as the argument to our incrementCounter(), making our counter increment by 1. We can change the value to any other number, and our counter will behave as expected, because we handled the increment parameter in our reducer.</p>
+<p>Now, the only thing left is to call the connect() function for our Counter component and render it on the page:
+const Counter = connect(mapStateToProps, mapDispatchToProps)(Counter);</p>
+<p>const el = <Provider store={store}>
+          <Counter/>
+        </Provider>;</p>
+<p>Try in on StackBlitz</p>
+<p>Remember, connect() returns a new component, which wraps the component it received.
+Now we have a fully functional React+Redux app!
+This might seem too much code for a simple counter app, however this architecture is great when building large scale apps, that use many components, multiple levels of nesting and manage a lot of data.</p>
+<p>Project Structure</p>
+<p>In our Counter example, we wrote the whole code in a single source file.
+Usually, web apps contain multiple component, reducers and actions.</p>
+<p>To make our project more manageable, we can use separate source files (and folders) for components, reducers and actions.
+For example, we can move our Counter component and the action creator function to a separate Counter.js file.</p>
+<p>In order to use the Counter component in our index.js, we need to export it first:
+export default connect(mapStateToProps, mapDispatchToProps)(Counter); </p>
+<p>Notice, we export the connected component.</p>
+<p>Now, we can import the component in index.js:
+import Counter from './Counter'; </p>
+<p>Try it on StackBlitz</p>
+<p>We use the ES6 modules system, which allows use to export and import modules.</p>
+<p>Contact Manager</p>
+<p>Let's change our Contact Manager app to use Redux!</p>
+<p>We created a separate folder named components for our components.</p>
+<p>We use Redux to keep the contacts list.</p>
+<p>The ADD_PERSON action is used to add a new person to the list.
+Check out the complete project code on StackBlitz!</p>
+<p>Notice, that we manage the new contact form's state in React, not Redux, because the data is used only by the AddPersonForm component to temporarily keep the input value. You can move it to Redux, if you want to; we just used local component state for simplicity.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../js_ECMAScript/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ECMAScript" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              ECMAScript
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/carlos-arcelopera" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ArceLopera" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    <a href="mailto:arcelopera.carlos@gmail.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m511.6 36.86-64 415.1a32.008 32.008 0 0 1-31.65 27.147c-4.188 0-8.319-.815-12.29-2.472l-122.6-51.1-50.86 76.29C226.3 508.5 219.8 512 212.8 512c-11.5 0-20.8-9.3-20.8-20.8v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96 122.3 360.3 19.69 317.5C8.438 312.8.812 302.2.062 289.1s5.47-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
