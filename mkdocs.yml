@@ -102,3 +102,5 @@ nav:
       - Promises: js_promises.md
       - Modules: js_module.md
       - ECMAScript: js_ECMAScript.md
+  - Front-end Development:
+      - React: js_react.md
