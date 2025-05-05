@@ -1,158 +1,159 @@
-Front-end development refers to what the end user (also commonly referred to as the "client") can see. In the most basic forms, front-end development consists of HTML, CSS, and JavaScript.
+Front-end development refers to what the end user (also commonly referred to as the "client") can see. 
+In the most basic forms, front-end development consists of HTML, CSS, and JavaScript.
 
-As a developer, you will find that it is very easy for your front-end (website, web application, etc.) to become very complex and have a lot of different moving parts. It makes solving problems much more difficult when you have to go through a maze of code to find the issue.
+As a developer, you will find that it is very easy for your front-end (website, web application, etc.) to become very complex and have a lot of different moving parts. 
+It makes solving problems much more difficult when you have to go through a maze of code to find the issue.
 
 Eventually, developers decided that there must be a better way to manage all of that code, so they created libraries that could make life easier. React was one of those libraries.
 React was created by Facebook and released to the public in May of 2013 and has been consistently maintained since then.
 
-Why React?
+## Why React?
 
 React is one of the most popular JavaScript libraries for front-end web applications.
 
 Here are some of the advantages of React:
 
-Speed
-Interactive websites need to update the DOM (Document Object Model) each time a change happens. This process is generally resourceful and slow.
++ **Speed** : Interactive websites need to update the DOM (Document Object Model) each time a change happens. This process is generally resourceful and slow.
 Compared to other libraries that manipulate the DOM, React uses a Virtual DOM, allowing to update only the parts of the website that have changed. This increases the speed of updates dramatically, as modern web applications may contain thousands of elements.
-We will learn more about the Virtual DOM in the coming lessons.
 
-Ease of Use
-React allows developers to group related code together, thereby making building and maintaining large scale applications much less complex.
++ **Ease of Use** : React allows developers to group related code together, thereby making building and maintaining large scale applications much less complex.
 
-Support
-React has an amazingly large community and is open source. It is maintained by Facebook and the community.
++ **Support** : React has an amazingly large community and is open source. It is maintained by Facebook and the community.
 
-Adding React
+## Adding React
 
 React can be added to a website without any special tools and installations.
 
 First, we need to add the React library as two script tags to the head of our HTML document:
+
+```html
 <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-
- <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> 
-
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> 
+```
 
 Next, we need to add another script, to enable the use of JSX.
 JSX is a syntax extension to JavaScript, and it is recommended to be used with React.
-Don't worry, we will learn more about JSX in the next lessons. For now, let's just add the following script tag:
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
 
+```html
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+```
 
 This approach of adding React to a website is only suitable for creating small demos.
 
 After adding the required script tags, we can start building our React app!
 
 We add a container, that will be used to display something using React.
-<div id="container"></div>
 
+```html
+<div id="container"></div>
+```
 
 You can use any id for your container. It will be used by React to find the container and add content to it.
 Now, it's time for our first React code!
 Let's display a simple message as a heading:
+
+```html
 <script type="text/babel">
 ReactDOM.render(
   <h1>Hello, React!</h1>
   document.getElementById('container')
 )
 </script>
-
+```
 
 The code finds the container div, and adds the h1 heading to it.
 
-Create React App
+## Create React App
 
-In the previous lesson we learned how to add React to a simple HTML document using the script tags.
-However, real web apps have a different scale, contain multiple files, use 3rd party libraries, etc.
+Real web apps have a different scale, contain multiple files, use 3rd party libraries, etc.
 
 Facebook has created a handy tool called Create React App that makes it easy to setup a React project with just a simple command!
 
 To get started, make sure you have a recent version of Node installed on your machine.
 Run the following commands in the Terminal to create and start a React app called "my-app":
+
+```bash
 npx create-react-app my-app
 cd my-app
 npm start 
-
-
-This will install all the required dependencies, configure and start the project on localhost:3000.
+```
+This will install all the required dependencies, configure and start the project on `localhost:3000`.
 
 Create React App allows us to focus on the code, rather than installing and configuring different tools.
 
-Project Structure
+### Project Structure
 
 Let's explore the structure of our project by opening it using a code editor.
-We will be using Visual Studio Code in our example, but you are free to use any code editor.
-The public folder contains files related to how the application will display on the client, the most important of those being index.html, which is the HTML template of our page.
-The src folder contains all of the JavaScript, CSS, and image files that will be compiled into a bundle file and injected into index.html.
+The public folder contains files related to how the application will display on the client, the most important of those being `index.html`, which is the HTML template of our page.
+The src folder contains all of the JavaScript, CSS, and image files that will be compiled into a bundle file and injected into `index.html`.
 
 How is React compiled into a bundle file? It uses what is called a "file loader". In the case of Create React App, Webpack is used.
 Webpack creates a "bundle" file containing the content of multiple files that need to be "bundled" together and it is all added together into a single file. Instead of making the HTML file go and find multiple files, which can slow down load times tremendously, it only has to find one file.
 Remember, all CSS and JS files need to be added to the src folder, otherwise webpack won't see them.
-While there are other files in the src folder that come with Create React App when it is generated, the two files below are the only critical files:
-• index.js: This file is the entry point into our application. In our code, a method called ReactDOM.render() is used to find an element with id="root" in the HTML and add our React application inside of that element (similar to the previous lesson).
-• App.js: This file is the main component that will be rendered to the DOM, which currently includes the React logo image and the default text, that we see in the output.
 
-Changing the Output
+While there are other files in the src folder that come with Create React App when it is generated, the two files below are the only critical files:
+
++ `index.js`: This file is the entry point into our application. In our code, a method called ReactDOM.render() is used to find an element with id="root" in the HTML and add our React application inside of that element (similar to the previous lesson).
++ `App.js`: This file is the main component that will be rendered to the DOM, which currently includes the React logo image and the default text, that we see in the output.
+
+### Changing the Output
 
 Now, when we know how to create and run a React project, let's change the default output to a simple Hello message.
 
 To do that, we need to open src/index.js and change the code to the following:
+
+```js
 ReactDOM.render(
   <h1>Hello, React!</h1>,
   document.getElementById('root')
 );
+```
 
 A really cool feature of Create React App is Fast Refresh, which automatically reflects the changes made to the code in the browser.
 
-StackBlitz
+### StackBlitz
 
 To make it easier to play around with React, we will be using StackBlitz as our online playground to enable changing and running real React code.
 
-Try it on StackBlitz
-
 We have removed all the extra files, such as the logo images, to make the project structure simpler.
 Now we have the following files:
-index.html: The HTML page template.
-index.js: The entry point of our app.
-style.css: the stylesheet for our project.
-package.json: holds various metadata relevant to the project, like dependencies.
 
-What is JSX?
++ index.html: The HTML page template.
++ index.js: The entry point of our app.
++ style.css: the stylesheet for our project.
++ package.json: holds various metadata relevant to the project, like dependencies.
 
-In the previous module we used the following code to show an output using React:
-ReactDOM.render(
-  <h1>Hello, React!</h1>,
-  document.getElementById('root')
-);
+## What is JSX?
 
-
-Try it on StackBlitz
-
-Let's start to break down the code and understand each part of it.
-We will start with the <h1>Hello, React!</h1> element.
+We will start with the `<h1>Hello, React!</h1>` element.
 
 As you can see, the element is not in quotes to represent a string. It's like an HTML element, however we use it right in the JavaScript code!
 This is called JSX, and it is a syntax extension to JavaScript. It allows us to build UI elements right in the JavaScript code!
 React does not require using JSX, however, it is common practice in the React community to use JSX as it eases the development of user interfaces, as well as allows React to show useful error and warning messages.
 
-Intro to JSX
+### Intro to JSX
 
 Let's have a look at our code again:
+
+```js
 ReactDOM.render(
   <h1>Hello, React!</h1>,
   document.getElementById('root')
 ); 
-
+```
 
 The code calls React's render method, and passes it two arguments, a JSX element and a container. The render method displays the provided element in the container, which, in our case, is the HTML element with id="root".
 
 
 When you call the render method, any existing content of the container gets replaced. That is why, usually, the containers are empty in the HTML.
 
-Expressions in JSX
+### Expressions in JSX
 
 We can use any JavaScript expression inside JSX using curly braces.
 
 For example:
+
+```js
 const name = "David";
 const el = <p>Hello, {name}</p>;
 
@@ -160,30 +161,37 @@ ReactDOM.render(
   el,
   document.getElementById('root')
 ); 
+```
 
 
 In the example above, we use the variable name in the JSX element.
 As you can see, JSX can be used just like JavaScript expressions. You can assign a JSX expression to a variable, return it from a function, etc.
 
-Attributes in JSX
+### Attributes in JSX
 
 We can specify attributes using quotes, just like in HTML:
-<div id="name"></div>
 
+```html
+<div id="name"></div>
+```
 
 When using a JavaScript expression as the attributes value, the quotes should not be used:
-<div id={user.id}></div> 
 
+```html
+<div id={user.id}></div> 
+```
 
 React DOM uses camelCase property naming convention instead of HTML attribute names.
 For example, class becomes className in JSX.
 
-How Does JSX Work?
+#### How Does JSX Work?
 
 When the JSX expressions are compiled, they are converted into JavaScript objects, representing React elements.
 React then uses these elements to build the corresponding HTML DOM and display it in the browser.
 
 Let's create a counter app, that increments a counter variable every second and displays it on the page as a paragraph:
+
+```js
 let counter = 0;
 
 function show() {
@@ -195,6 +203,7 @@ function show() {
 }
 
 setInterval(show, 1000); 
+```
 
 
 Try it on StackBlitz
@@ -204,7 +213,7 @@ We use setInterval to call the show function every second and render the counter
 One of the great features of React is that it updates only the elements that need an update. You can inspect the HTML output of the example above and see that only the text in the paragraph gets updated every second.
 In practice, most React apps call ReactDOM.render() once.
 
-Virtual DOM
+## Virtual DOM
 
 We learned in the previous part that React updates only the elements that are necessary.
 This allows React apps to be much faster than apps built with other front-end technologies.
@@ -216,7 +225,7 @@ When an element gets changed, it is first updated in the Virtual DOM. That proce
 After that, React compares the Virtual DOM to its previous state and only applies the DOM updates necessary to bring the DOM to the desired state.
 DOM stands for Document Object Model and is a tree-like representation of the HTML page.
 
-Components
+### Components
 
 Components let you split the page into independent and reusable parts.
 Notice that the page can be split into multiple parts. Each of these "parts" are a component.
@@ -224,29 +233,36 @@ The heading is a component, the button is a component, and the search bar is its
 This makes organizing the page leaps and bounds easier, but even more importantly, components allow us as the developers to separate concerns from one another.
 Separation of concerns is a programming principle that states that each concern should be separated into individual pieces.
 
-Functional Components
+#### Functional Components
 
 In React, there are two types of components that you can use: Functional Components and Class Components.
 In this part, we will talk about functional components.
 
 A functional component is a simple JavaScript function:
+
+```js
 function Hello() {
   return <h1>Hello world.</h1>;
 }
-
+```
 
 The code above defined a functional component called Hello, that returns a simple React element.
 Notice that the name of the functional component begins with a capital letter. This is absolutely critical. If we start the name of a component with a lowercase letter, the browser will treat our component like a regular HTML element instead of a Component.
 
-Rendering Components
+#### Rendering Components
 
 In order to display the component, we need to create the corresponding JSX element.
 
 For example, for our user-defined component Hello:
+
+```js
 const el = <Hello />; 
+```
 
 
 Now, we can use our user-defined element and render it on the page:
+
+```js
 function Hello() {
   return <h1>Hello world.</h1>;
 }
@@ -256,54 +272,57 @@ ReactDOM.render(
   el, 
   document.getElementById('root')
 );
-
-
-Try it on StackBlitz
+```
 Remember, all component names need to start with a capital letter.
 
-Class Components
+#### Class Components
 
 Class components are typically used when there are more advanced user interactions, like forms, and animations.
 
 All class components need to extend the React.Component class.
 
 We can rewrite our Hello functional component as a class component:
+
+```js
 class Hello extends React.Component {
   render() {
     return <h1>Hello world.</h1>;
   }
 } 
-
-
-Try it on StackBlitz
+```
 
 Class components need to have a render method, which is in charge of telling what the page should show.
 
-Props
+#### Props
 
 Functional components can accept arguments, similar to JavaScript functions. These arguments are called props, and represent an object.
 
 For example, we can use props in our Hello component:
+
+```js
 function Hello(props) {
   return <p>Hello, {props.name}!</p>;
 }
-
+```
 
 Now, we can add a name attribute to our element:
+
+```js
 const el = <Hello name="David" />; 
+```
 
 
 The attribute value will be passed to the component when rendered.
 
-Try it on StackBlitz
-
 An element can have multiple custom attributes, which will be passed to the component using the props object. You can use any custom names for your attributes.
 
-Components using Components
+#### Components using Components
 
 Components can use other components to generate an output.
 
 For example:
+
+```js
 function App() {
   return <div>
     <Hello name="David" />
@@ -311,62 +330,67 @@ function App() {
     <Hello name="Amy" />
   </div>;
 }
+```
 
 
 Here, our App component uses the Hello component three times, each times with a new name attribute.
 
-Try it on StackBlitz
-
 Generally, it is a good practice to split complex components into multiple smaller components, that are reusable.
 For example, a Post component can use an Avatar component, an Image component, a Date component, etc.
 
-Props in Class Components
+#### Props in Class Components
 
 Props can be accessed in class components using this.props.
 
 For example:
+
+```js
 class Hello extends React.Component {
   render() {
     return <p>Hello, {this.props.name}!</p>;
   }
 } 
-
-
-Try it on StackBlitz
+```
 
 An important thing to consider is that props are read-only, meaning components cannot modify their props.
 Interactive apps generally need to change data and the page elements.
 
-An Example
+### An Example
 
 Now that we know how to create components and pass them data, let's create a shopping list.
 
 Each item in our list will have a name and a price.
 
 For example:
+
+```js
 <Item name="Cheese" price="4.99" /> 
+```
 
 
 The Item component will render a simple div element with the data:
+
+```js
 function Item(props) {
   return <div className="item">
   <b>Name:</b> {props.name} <br />
   <b>Price:</b> {props.price}
   </div>;
 }
+```
 
 
 Now we can use our component and create multiple items for our shopping list:
+
+```js
 <Item name="Cheese" price="4.99" />
 <Item name="Bread" price="1.5" />
 <Item name="Ice cream" price="24" />
-
-
-Try it on StackBlitz
+```
 
 We have added some simple CSS styles to separate the items visually.
 
-State
+### State
 
 Up until this point, we have learned how to pass data to components using props.
 
@@ -377,6 +401,8 @@ In order to allow components to manage and change their data, React provides a f
 State is an object that is added as a property in class components.
 
 For example:
+
+```js
 class Hello extends React.Component {
   state = {
     name: "James"
@@ -386,25 +412,27 @@ class Hello extends React.Component {
     return <h1>Hello {this.state.name}.</h1>;
   }
 }
-
+```
 
 As you can see, state is just a simple object, that contains key:value pairs.
 Similar to props, the values can be accessed using this.state.
 
-Now, when the component renders, the state is initialized with the given value and there will be a heading that says "Hello James.".
+Now, when the component renders, the state is initialized with the given value and there will be a heading that says `"Hello James."`.
 
-Try It on StackBlitz
 The state object can contain multiple key:value pairs, separated by commas.
 
-Changing State
+#### Changing State
 
 State should not be modified directly. Instead, React provides a setState() method, that can be used to modify state.
 
 For example:
+
+```js
 this.setState({ 
   name: "James",
   age: 25
 }); 
+```
 
 
 You need to pass an object with the new key:value pairs to the setState method.
@@ -415,10 +443,12 @@ The answer uncovers one of the most useful features of React: when setState is c
 Usually, the change in state happens in event handlers. We will look at an example in the next part!
 When state changes using the setState method, React gets informed and immediately re-renders the component with the updated state.
 
-Counter App
+## Counter App
 
 To better understand how state works, let's create a counter app, which increments the counter each time a button is clicked.
 We start by creating our Counter component, which includes the counter and a button:
+
+```js
 class Counter extends React.Component {
   state = {
     counter: 0
@@ -430,12 +460,15 @@ class Counter extends React.Component {
     </div>;
   }
 } 
+```
 
 
 We have initialized our counter to the value 0 in the state.
 
 Now, we need to add a click event handler to the button and increment the counter in the state.
 Here is the final code:
+
+```js
 class Counter extends React.Component {
   state = {
     counter: 0
@@ -451,15 +484,13 @@ class Counter extends React.Component {
     </div>;
   }
 }
-
-
-Try it on StackBlitz
+```
 
 The onClick event calls the increment function of our component, which uses setState to change the value of our counter. When the state is changed, React automatically triggers a re-render of the component.
 
 Notice that the event handler uses camelCase syntax and that the handler function is passed in curly braces.
 
-Props vs State
+## Props vs State
 
 As a recap, here is a summary of the main differences between props and state:
 
@@ -468,39 +499,47 @@ As a recap, here is a summary of the main differences between props and state:
 - Props are read-only and cannot be modified.
 - State can be modified by its component using the setState() method.
 - The setState() method results in re-rendering the component affected.
+
+
 Components that have state are called stateful, while components that do not use state are called stateless.
 
-Hooks
+## Hooks
 
 Earlier version of React allowed to use state only with class components.
 In recent iterations of React, a new feature called hooks was introduced, allowing to use state inside of functional components.
 
 First, we need to import the useState hook:
+
+```js
 import React, { useState } from 'react'; 
+```
 
 
 useState returns a pair, the current state value and a function, that lets you change the state.
 useState takes one argument, which is the initial value of the state.
 
 Let's look at an example:
+
+```js
 function Hello() {
   const [name, setName] = useState("David");
 
   return <h1>Hello {name}.</h1>;
 }
+```
 
-
-Try it on StackBlitz
 
 In the example above, we create a name state variable and a setName function. The square brackets syntax is called array destructuring. It assigns the name variable to the current state value, and setName to the function that allows to change the state. You can name these variables anything you like.
 Then, we pass "David" as the initial value for our name variable to useState().
 You can create multiple state variables with their corresponding set methods. Just use separate statements for each variable using the useState hook.
 
-Counter App using Hooks
+### Counter App using Hooks
 
 Now we can rewrite our Counter app from the previous lesson using a functional component and hooks!
 
 Here is the code:
+
+```js
 function Counter() {
   const [counter, setCounter] = useState(0);
 
@@ -515,15 +554,13 @@ function Counter() {
   </button>
   </div>;
 } 
-
-
-Try it on StackBlitz
+```
 
 As you can see, compared to the class component, the code is much shorter and easier to read and understand. That was one of the reasons why the React team created Hooks.
 Remember, hooks can only be used inside functional components.
 Hooks are functions that allow to "hook into" React features from function components.
 
-Lifecycle Methods
+### Lifecycle Methods
 
 React provides special lifecycle methods for class components, which are called when components are mounted, updated or unmounted.
 
@@ -533,37 +570,41 @@ Unmounting is the process when a component is removed from the page.
 The componentDidMount method is called when a component is rendered on the page.
 
 For example, we can use componentDidMount in our Counter app to set the initial value of the counter:
+
+```js
 componentDidMount() {
   this.setState({counter: 42});
 }
-
-
-Try it on StackBlitz
+```
 
 This will set an initial value of the counter when the component is rendered.
 
 componentDidMount is typically used for populating the state inside of a component when it initially mounts to the DOM.
 Similarly, the componentWillUnmount() lifecycle method is called right before the component is removed from the DOM. It can be used to free up resources taken by the component.
 
-componentDidUpdate
+#### componentDidUpdate
 
 Another lifecycle method is componentDidUpdate(), which is called when a component is updated in the DOM.
 
 We can, for example, alert the current counter value when it is incremented:
+
+```js
 componentDidUpdate() {
   alert("Number of clicks: " + this.state.counter);
 }
+```
 
 
-Try it on StackBlitz
 componentDidUpdate() is only called when the component is updated.
 
-The useEffect Hook
+#### The useEffect Hook
 
 The lifecycle methods we covered are only available for class components.
 However, React provides a special Hook called useEffect to make lifecycle methods available in functional components. It combines the componentDidMount, componentDidUpdate, and componentWillUnmount methods into one.
 
 For example, we can achieve the behavior of our last example using a functional Counter component:
+
+```js
 function Counter() {
   const [counter, setCounter] = useState(0);
 
@@ -579,21 +620,24 @@ function Counter() {
   <button onClick={increment}>Increment</button>
   </div>;
 }
-
-
-Try It on StackBlitz
+```
 
 When you run the code, you'll notice that the alert dialog appears also during the first render. This is caused by the fact that, by default, useEffect runs both, after the first render and after every update.
 
 To call the method only when something changes, we can provide it a second argument:
+
+```js
 useEffect(() => {
   //do something
 }, [count]);  
+```
 
 
 Now, the useEffect() method will run only if count changes.
 
 To mimic componentWillUnmount, useEffect may return a function that cleans up after it:
+
+```js
 useEffect(() => {
   // do something
   
@@ -601,12 +645,17 @@ useEffect(() => {
     // cleanup
   }; 
 });
+```
 
 
 You can have multiple effects in the same component.
-Just like with the useState hook, we need to import useEffect to be able to use it: import React, { useState, useEffect } from 'react';
+Just like with the useState hook, we need to import useEffect to be able to use it: 
 
-Event Handling
+```js
+import React, { useState, useEffect } from 'react';
+```
+
+## Event Handling
 
 Handling events in React is very similar to handling events in the DOM.
 
