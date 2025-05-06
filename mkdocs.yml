@@ -104,3 +104,4 @@ nav:
       - ECMAScript: js_ECMAScript.md
   - Front-end Development:
       - React: js_react.md
+      - Redux: js_redux.md

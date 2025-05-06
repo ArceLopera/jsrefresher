@@ -847,12 +847,100 @@
     Event Handling
   </a>
   
+    <nav class="md-nav" aria-label="Event Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handling-user-input" class="md-nav__link">
+    Handling User Input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forms" class="md-nav__link">
+    Forms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+    <nav class="md-nav" aria-label="Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addpersonform" class="md-nav__link">
+    AddPersonForm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-state" class="md-nav__link">
+    Sharing State
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharing State">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-contact" class="md-nav__link">
+    Adding a Contact
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js_redux/" class="md-nav__link">
+        Redux
+      </a>
     </li>
   
 
@@ -1142,6 +1230,80 @@
         <li class="md-nav__item">
   <a href="#event-handling" class="md-nav__link">
     Event Handling
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handling-user-input" class="md-nav__link">
+    Handling User Input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forms" class="md-nav__link">
+    Forms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+    <nav class="md-nav" aria-label="Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addpersonform" class="md-nav__link">
+    AddPersonForm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-state" class="md-nav__link">
+    Sharing State
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharing State">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-contact" class="md-nav__link">
+    Adding a Contact
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -1599,451 +1761,239 @@ Just like with the useState hook, we need to import useEffect to be able to use 
 <h2 id="event-handling">Event Handling</h2>
 <p>Handling events in React is very similar to handling events in the DOM.</p>
 <p>The only difference is that event names use camelCase syntax and the event handler needs to be passed in curly braces.</p>
-<p>For example, to handle the click event on a button:
-<button onClick={handleClick}>
-  My Button
-</button> </p>
+<p>For example, to handle the click event on a button:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">}</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">My</span><span class="w"> </span><span class="nx">Button</span><span class="w"></span>
+<span class="o">&lt;</span><span class="err">/button&gt; </span><span class="w"></span>
+</code></pre></div>
 <p>Clicking the button will call the handleClick function of the component.</p>
-<p>Let's explore our Counter app:
-function Counter() {
-  const [counter, setCounter] = useState(0);</p>
-<p>function increment() {
-    setCounter(counter+1);
-  }
-  return <div>
-<br />
-<p>{counter}</p></p>
-<p><button onClick={increment}>Increment</button>
-  </div>;
-}</p>
-<p>Try it on StackBlitz</p>
+<p>Let's explore our Counter app:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Counter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">counter</span><span class="p">,</span><span class="w"> </span><span class="nx">setCounter</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">increment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span><span class="o">+</span><span class="mf">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">increment</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Increment</span><span class="o">&lt;</span><span class="err">/button&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="err">/div&gt;;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>The onClick event calls the increment function, which is incrementing the counter state variable.
 Check out the same Counter app built using a class component here.</p>
-<p>Handling User Input</p>
+<h3 id="handling-user-input">Handling User Input</h3>
 <p>One of the common ways that users interact with web pages is through text fields.</p>
 <p>We can handle user input in React using the onChange event of the text field.
 When the value of the text field changes, the event handler is called, updating the value of the field in the component's state.
 This way you always have the actual value of the text field in the state.</p>
-<p>Let's make an app to convert Km to Miles. We will take the Km value from a text field and calculate the miles value upon input:
-function Converter() {
-  const [km, setKm] = useState(0);</p>
-<p>function handleChange(e) {
-    setKm(e.target.value);
-  }
-  function convert(km) {
-    return (km/1.609).toFixed(2);
-  }</p>
-<p>return <div>
-  <input type="text" value={km}
-     onChange={handleChange} />
-<br />
-<p> {km} km is {convert(km)} miles </p></p>
-<p></div>;
-}</p>
-<p>Try it on StackBlitz</p>
+<p>Let's make an app to convert Km to Miles. We will take the Km value from a text field and calculate the miles value upon input:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Converter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">km</span><span class="p">,</span><span class="w"> </span><span class="nx">setKm</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">setKm</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">convert</span><span class="p">(</span><span class="nx">km</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">km</span><span class="o">/</span><span class="mf">1.609</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="w"> </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">km</span><span class="p">}</span><span class="w"></span>
+<span class="w">     </span><span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">km</span><span class="p">}</span><span class="w"> </span><span class="nx">km</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="p">{</span><span class="nx">convert</span><span class="p">(</span><span class="nx">km</span><span class="p">)}</span><span class="w"> </span><span class="nx">miles</span><span class="w"> </span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="err">/div&gt;;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>Our Converter component includes a text field, which calls the handleChange function when its value changes.
 The handleChange function updates the state with the current value of the textfield, causing the component to re-render and show the corresponding miles value, which is calculated using the convert function.
 The value of the text field is accessed via the e object, which represents the React event. It is passed to the event handler function as an argument and can be used to access the event object.</p>
-<p>Forms</p>
+<h3 id="forms">Forms</h3>
 <p>In the previous part, we learned how to handle user input in text fields. Text fields are usually part of a form.</p>
 <p>Similar to the previous example, React form elements keep their state and update it based on user input.
 This way you always have the data of your form at your disposal in the state.</p>
 <p>To demonstrate this, we will create a form, that will add numbers every time the form is submitted and display the sum.
-Our form contains an input field and a submit button:
-function AddForm() {
-  const [sum, setSum] = useState(0);
-  const [num, setNum] = useState(0);</p>
-<p>function handleChange(e) {
-    setNum(e.target.value);
-  }</p>
-<p>function handleSubmit(e) {
-    setSum(sum + Number(num));
-    e.preventDefault();
-  }</p>
-<p>return <form onSubmit={handleSubmit}>
-  <input type="number" value={num} onChange={handleChange} />
-  <input type="submit" value="Add" />
-<br />
-<p> Sum is {sum} </p></p>
-<p></form>;
-}</p>
-<p>Try it on StackBlitz</p>
+Our form contains an input field and a submit button:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">AddForm</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">sum</span><span class="p">,</span><span class="w"> </span><span class="nx">setSum</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="nx">setNum</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">setNum</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">setSum</span><span class="p">(</span><span class="nx">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">num</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">form</span><span class="w"> </span><span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="w"> </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">num</span><span class="p">}</span><span class="w"> </span><span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="w"> </span><span class="nx">value</span><span class="o">=</span><span class="s2">&quot;Add&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="w"> </span><span class="nx">Sum</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="p">{</span><span class="nx">sum</span><span class="p">}</span><span class="w"> </span><span class="o">&lt;</span><span class="err">/p&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="err">/form&gt;;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>In the code above, the value of the input is controlled by React (we keep the value in the state).
 When the form is submitted using the submit button, the handleSubmit function gets called, which updates the value of sum in the state.</p>
 <p>An input form element whose value is controlled by React in this way is called a "controlled component".
 Notice the e.preventDefault(); statement. This statement prevents the default behavior of the form, which, by default, reloads the page when submitted. In JavaScript we would use return false; for that, but in React we need to call preventDefault().</p>
-<p>Lists</p>
+<h2 id="lists">Lists</h2>
 <p>Web apps commonly contain repeating elements, such as lists or sections, where the same DOM element is repeated with a different data set.</p>
-<p>Consider an array of strings:
-const arr = ["A", "B", "C"];</p>
+<p>Consider an array of strings:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="p">];</span><span class="w"></span>
+</code></pre></div>
 <p>We need to render a list <li> element for each item in the array.
-We can define a MyList component and pass it the array as a prop using a custom data attribute:
-<MyList data={arr} /></p>
-<p>Now, when the array is accessible via props, we can write the component logic:
-function MyList(props) {
-  const arr = props.data;
-  const listItems = arr.map((val) =&gt;
-    <li>{val}</li>
-  );
-  return <ul>{listItems}</ul>;
-}</p>
-<p>Try it on StackBlitz</p>
-<p>We take the input array from the incoming props, loop through the array using the JavaScript map function and return a <li> element for each item.
+We can define a MyList component and pass it the array as a prop using a custom data attribute:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">MyList</span><span class="w"> </span><span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">arr</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+</code></pre></div>
+<p>Now, when the array is accessible via props, we can write the component logic:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">MyList</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">val</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">val</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">listItems</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/ul&gt;;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>We take the input array from the incoming props, loop through the array using the JavaScript map function and return a <code>&lt;li&gt;</code> element for each item.
 The resulted array is stored in the listItems variable.
-Then, the component returns the listItems array inside a <ul> tag.</p>
+Then, the component returns the listItems array inside a <code>&lt;ul&gt;</code> tag.</p>
 <p>This code results in a warning, saying that each element needs a unique key</p>
-<p>Keys</p>
+<h3 id="keys">Keys</h3>
 <p>Each element in a list must have a key attribute.
 Keys act as a unique identity, identifying each element.
 Usually, these are IDs from your data, or can be auto-generated indexes.</p>
-<p>For example:
-const listItems = arr.map((val, index) =&gt;
-<br />
-<li key={index}>{val}</li></p>
-<p>);</p>
-<p>Try it on StackBlitz</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">val</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">li</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">val</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <p>Keys are important, because they uniquely identify elements, helping React understand which items have changed, are added, or are removed.</p>
-<p>Example : Contact Manager</p>
-<p>Now, that we know how to create components, pass them data using props and manage their data using state, let's start building our Contact Manager.</p>
-<p>Our Contact Manager will allow to view the list of contacts and add new ones to the list.</p>
-<p>By looking at the mockup, it makes sense to have two components:
-AddPersonForm: a form with the text field and Add button.
-PeopleList: a list of contacts.</p>
-<p>Let's create these components.
-AddPersonForm uses state to manage the value of the text field:
-function AddPersonForm() {
-  const [ person, setPerson ] = useState("");</p>
-<p>function handleChange(e) {
-    setPerson(e.target.value);
-  }</p>
-<p>function handleSubmit(e) {
-    e.preventDefault();
-  }
-  return (
-    <form onSubmit={handleSubmit}>
-    <input type="text" 
-    placeholder="Add new contact" 
-    onChange={handleChange} 
-    value={person} />
-    <button type="submit">Add</button>
-    </form>
-    );
-}</p>
+<p><strong>Example : Contact Manager</strong></p>
+<p>Let's build a contact manager app. We will use a form to add new contacts to the list and display them in a list.</p>
+<h3 id="addpersonform">AddPersonForm</h3>
+<p>Our AddPersonForm component uses state to manage the value of the text field:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">AddPersonForm</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">person</span><span class="p">,</span><span class="w"> </span><span class="nx">setPerson</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">setPerson</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">form</span><span class="w"> </span><span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Add new contact&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">person</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="nx">Add</span><span class="o">&lt;</span><span class="err">/button&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/form&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>For now, we just prevent the default behavior when the form is submitted.</p>
-<p>PeopleList received an array representing the contacts and renders a list on the page:
-function PeopleList(props) {
-  const arr = props.data;
-  const listItems = arr.map((val, index) =&gt;
-    <li key={index}>{val}</li>
-  );
-  return <ul>{listItems}</ul>;
-}</p>
-<p>Now we can render our components on the page and include some initial data:
-const contacts = ["James Smith", "Thomas Anderson", "Bruce Wayne"];</p>
-<p>const el = (
-<br />
-<div>
-    <AddPersonForm />
-    <PeopleList data={contacts} />
-  </div></p>
-<p>);</p>
-<p>Try it on StackBlitz</p>
+<p>PeopleList received an array representing the contacts and renders a list on the page:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">PeopleList</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">val</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">li</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">val</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">listItems</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/ul&gt;;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Now we can render our components on the page and include some initial data:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">contacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;James Smith&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thomas Anderson&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Bruce Wayne&quot;</span><span class="p">];</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">AddPersonForm</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">PeopleList</span><span class="w"> </span><span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">contacts</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="err">/div&gt;</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
 <p>Adding a new contact does not work, as we have not built the logic in the handleSubmit function yet.</p>
-<p>Sharing State</p>
+<h2 id="sharing-state">Sharing State</h2>
 <p>Right now, our AddPersonForm independently keeps its state. How can we add a new contact to our PeopleList then, when the form is submitted?</p>
 <p>To accomplish that, we need to share the state between the components. We can do that by lifting the state up to a parent component. This means that the parent component will hold the data that needs to be shared between the components. In our case, that is the contacts list.</p>
-<p>Let's create a parent component called ContactManager, which includes the AddPersonForm and PeopleList as child components and holds the contacts list in its state:
-function ContactManager(props) {
-  const [contacts, setContacts] = useState(props.data);</p>
-<p>return (
-    <div>
-      <AddPersonForm />
-      <PeopleList data={contacts} />
-    </div>
-  );
-} </p>
-<p>Try it on StackBlitz</p>
+<p>Let's create a parent component called ContactManager, which includes the AddPersonForm and PeopleList as child components and holds the contacts list in its state:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">ContactManager</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">contacts</span><span class="p">,</span><span class="w"> </span><span class="nx">setContacts</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">AddPersonForm</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">PeopleList</span><span class="w"> </span><span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">contacts</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w">   </span>
+</code></pre></div>
 <p>The ContactManager component receives the initial contacts list using props, saves it in its state.
 Then it passes down the contacts list to its child component.
 Data can be passed from the parent to the child, but not from the child to the parent. React uses what is called unidirectional data flow, in other words, data only flows downward, so to speak.</p>
-<p>Adding a Contact</p>
-<p>Now, we can create an addPerson() function to our ContactManager component to add a new person to our contacts state array:
-function ContactManager(props) {
-  const [contacts, setContacts] = useState(props.data);</p>
-<p>function addPerson(name) {
-    setContacts([...contacts, name]);
-  }
- ...
-} </p>
+<h3 id="adding-a-contact">Adding a Contact</h3>
+<p>Now, we can create an addPerson() function to our ContactManager component to add a new person to our contacts state array:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">ContactManager</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">contacts</span><span class="p">,</span><span class="w"> </span><span class="nx">setContacts</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">addPerson</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">setContacts</span><span class="p">([...</span><span class="nx">contacts</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">]);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span>
+</code></pre></div>
 <p>But how are we going to call this function from our child AddPersonForm component, where the data for the new person is stored?
-Just like we passed down data using props, React allows us to pass down function references!
-function ContactManager(props) {
-  const [contacts, setContacts] = useState(props.data);</p>
-<p>function addPerson(name) {
-    setContacts([...contacts, name]);
-  }</p>
-<p>return (
-    <div>
-      <AddPersonForm handleSubmit={addPerson} />
-      <PeopleList data={contacts} />
-    </div>
-  );
-} </p>
+Just like we passed down data using props, React allows us to pass down function references!</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">ContactManager</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">contacts</span><span class="p">,</span><span class="w"> </span><span class="nx">setContacts</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">addPerson</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">setContacts</span><span class="p">([...</span><span class="nx">contacts</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">]);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">AddPersonForm</span><span class="w"> </span><span class="nx">handleSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">addPerson</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">PeopleList</span><span class="w"> </span><span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">contacts</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span>
+</code></pre></div>
 <p>Similar to passing the contacts list to our PeopleList component, we passed down the addPerson() function to our AddPersonForm using a prop called handleSubmit.</p>
-<p>Now, our PeopleList can call the handleSubmit function that it received when the form is submitted, to add a new person to the list:
-function AddPersonForm(props) {
-  const [ person, setPerson ] = useState('');</p>
-<p>function handleChange(e) {
-    setPerson(e.target.value);
-  }</p>
-<p>function handleSubmit(e) {
-    props.handleSubmit(person);
-    setPerson('');
-    e.preventDefault();
-  }
-  return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" 
-        placeholder="Add new contact" 
-        onChange={handleChange} 
-        value={person} />
-      <button type="submit">Add</button>
-    </form>
-  );
-} </p>
-<p>Try it on StackBlitz
-We also clear the value of the text field using setPerson('') after adding a new person.</p>
-<p>Summary</p>
+<p>Now, our PeopleList can call the handleSubmit function that it received when the form is submitted, to add a new person to the list:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">AddPersonForm</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">person</span><span class="p">,</span><span class="w"> </span><span class="nx">setPerson</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">setPerson</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">props</span><span class="p">.</span><span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">setPerson</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">form</span><span class="w"> </span><span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Add new contact&quot;</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">person</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="nx">Add</span><span class="o">&lt;</span><span class="err">/button&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/form&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>We also clear the value of the text field using setPerson('') after adding a new person.</p>
+<h2 id="summary">Summary</h2>
 <p>An important takeaway from this lesson is that props can be used to pass down not only state, but also functions, that may manipulate the state.
 This way, we are able to store the application state in the parent and allow its child components to use and manipulate the state.</p>
 <p>Now, when our app is fully functional, we can add some CSS styles and a check, to prevent creation of blank contacts.</p>
-<p>Try It on StackBlitz</p>
-<p>Intro to Redux</p>
-<p>State Management</p>
-<p>In the previous module we built a Contact Manager app, which stores the state in the parent component, and passes it down to the corresponding child components.</p>
-<p>In the real world with larger scale applications, this can get far more complex. We might have to pass down the state data multiple levels to get to the desired component.</p>
-<p>Having to pass down data to multiple levels of nested components would make it hard to understand what caused a change to the state, as there might be multiple potential components that can change the state.</p>
-<p>This would also cause a lot of redundant code, make it hard to maintain and debug the code.</p>
-<p>Redux was created to make state management predictable, providing a single state container and strict rules on how state can be changed.</p>
-<p>Redux is a small JavaScript library and can be used with any front-end framework, such as React, Angular, jQuery.</p>
-<p>It employs the "single source of truth" pattern.
-In short, single source of truth just refers to relocating the application state and all associated logic outside of the application, allowing ANY component to access the data it needs.
-Having a single state container makes it easier to manage the state of your application, as you can access and change the data from any component that needs it, without having to pass down the data.</p>
-<p>Core Concepts</p>
-<p>Store</p>
-<p>Let's look into the core concepts of Redux.</p>
-<p>In Redux, the application's state is stored as a simple object, called store.
-There should only be a single store in an app.</p>
-<p>For example, a store can look like this:
-{
-  contacts: [{
-    name: 'David'
-  }, {
-    name: 'Amy'
-  }],
-  toggle: true
-}</p>
-<p>You cannot change the state directly. Instead, you need to dispatch an action.</p>
-<p>Actions &amp; Reducers</p>
-<p>An action is just a plain JavaScript object:
-{ 
-  type: 'ADD_CONTACT', 
-  name: 'James' 
-}</p>
-<p>The code above defines an action with type ADD_CONTACT and a name property.</p>
-<p>An action clearly describes why the state change happened, and can be dispatched from anywhere in your app.</p>
-<p>At this point we just have a store, which includes our state data and an object, that includes some data that needs to be changed in the state. So, how do we actually do the change?
-To tie the store and the action together, we need to write a function, called a reducer.
-It takes state and action as arguments, and returns the next state of the app.</p>
-<p>For example:
-function contactsApp(state, action) {
-  if (action.type === 'ADD_CONTACT') {
-    return [ ...state,  action.name ]
-  } else {
-    return state
-  }
-}</p>
-<p>The code above defines a simple reducer function, that checks the action and returns the new state.</p>
-<p>These concepts are basically the idea of Redux: you hold the global state in a store, define actions to describe what to change in the store and write reducer functions to handle those actions.
-Notice, we have not touched any React specific syntax, all of the above is plain JavaScript.</p>
-<p>Core Concepts</p>
-<p>Redux can be described using the following principles:</p>
-<p>Single source of truth
-The global state of the app is stored in a single store.</p>
-<p>State is read-only
-You can change the state only by dispatching actions. Action are objects, that contain information about what should be changed.</p>
-<p>Pure reducers
-Reducers are functions that handle the actions and return the next state of the application. Reducers need to be pure, meaning they cannot modify the state, they need to return a new state object.</p>
-<p>Actions</p>
-<p>Action can be viewed as payloads of information that send data to the store.
-Actions are represented by simple JavaScript object and need to have a type property:
-{
-  type: 'ADD_CONTACT',
-  name: 'James'
-}</p>
-<p>In the example above, we define an action with the type ADD_CONTACT and provide it a name property as its payload.
-Notice that for the type we're using all uppercase letters and words separated by underscores. This is also called "snake case". This is the generally accepted way to create an action type.
-You can use any naming and structure for the other properties defining the data in the action.</p>
-<p>You can, for instance, call it payload, and provide it an object with the data:
-{
-    type: 'ADD_CONTACT',
-    payload: {
-        name: "Jimmy Barnes"
-    }
- }</p>
-<p>You should pass as little data in each action as possible. That keeps the actions clean and easy to read.</p>
-<p>Action Creators</p>
-<p>In order to use the same action with different payloads, as well as create reusable code, we can create Action creators.</p>
-<p>Action creators are simple functions that return actions.</p>
-<p>For example:
-function addContact(person) {
-  return {
-    type: 'ADD_CONTACT',
-    payload: person
-  }
-}</p>
-<p>The action creator function takes a person parameter and uses that as the actions payload.
-Now, we can use the action creator to create multiple new contacts by passing it the corresponding data.
-Action creators are not built into the Redux library by default. It is a pattern that was implemented to create code that reflects a more DRY (Don't Repeat Yourself) approach.</p>
-<p>Reducer Function</p>
-<p>Reducers are functions that handle the actions.
-The function takes the current state and the action as its parameters and returns the new state.</p>
-<p>A reducer can handle multiple actions, so usually it includes a switch statement for each action case.</p>
-<p>For example:
-function contactsApp(state, action) {
-  switch (action.type) {
-    case 'ADD_CONTACT':
-      return [ ...state,  action.person ]
-    default:
-      return state
-  }
-}</p>
-<p>In the code above, our reducer function uses a switch statement to handle the appropriate actions.
-As the default case, it just returns the current state.</p>
-<p>Remember, the reducer has to be a pure function, meaning it cannot modify the current state. It has to return a new state object instead.
-The default case is added for handling unknown actions.</p>
-<p>Multiple Reducers</p>
-<p>If you have more than one entity (i.e. users, products, invoices, orders, etc.), it's typically a good idea to break them into multiple reducer functions to separate concerns.</p>
-<p>Redux gives us a method that we can use called combineReducers. This allows us to use more than one reducer so that when an action gets dispatched, the action would get run through all of the reducers instead of only one. It also allows us to separate the concerns of our store state.</p>
-<p>For example:
-const contactsApp = combineReducers({
-  addContacts,
-  doSomething
-})</p>
-<p>Now, our contactsApp is combining two reducers into one.
-It's a good practice to provide each reducer only the part of the state that it needs to manage. This is called reducer composition, and is a fundamental pattern of building Redux apps.</p>
-<p>Redux with React</p>
-<p>Now, that we know what Redux is, we can start building React apps that use Redux!</p>
-<p>First, we need to install Redux:
-npm install redux </p>
-<p>This will install the Redux library.
-However, Redux itself is just a small library, that can be used with different technologies.
-To use it with React, we need to install another library, called react-redux:
-npm install react-redux</p>
-<p>The react-redux library binds React with Redux, allowing React components to read data from a Redux store, and dispatch actions to the store to update data.</p>
-<p>Counter App</p>
-<p>As our first example, let's build the Counter app we made in the previous module using Redux!</p>
-<p>First, we need to create our action and corresponding reducer.
-function incrementCounter(num) {
-  return { 
-    type: 'INCREMENT', 
-    num: num 
-  }
-}</p>
-<p>The code above declares an action creator function named incrementCounter(), which returns an action with type INCREMENT and the corresponding payload.</p>
-<p>Our reducer:
-const initialState = {
-  count: 0
-};</p>
-<p>function reducer(state = initialState, action) {
-  switch(action.type) {
-    case 'INCREMENT':
-      return { count: state.count + action.num };
-    default:
-      return state;
-  }
-}</p>
-<p>The code above defines a reducer function, which returns the new state based on the given action. We increment the count state variable by the provided num value.</p>
-<p>We also provide a default value for our state using the initialState variable.
-Nothing fancy until now, we just created two simple functions, one returning our action object, the other one returning a new state with the incremented count.</p>
-<p>Creating the Store</p>
-<p>To create the store, we call the createStore() function, which takes the reducer as its parameter:
-const store = createStore(reducer);</p>
-<p>But how do we pass the store to our components?
-That is achieved using a special <Provider> element. It makes the store available to any nested child component.</p>
-<p>So, for our counter, we would have the following:
-const el = <Provider store={store}>
-    <Counter/>
-  </Provider>; </p>
-<p>Provider takes the store as an attribute and makes it available to its child component.
-We need to import { createStore } and { Provider } using the following syntax:
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';</p>
-<p>Connecting to the Store</p>
-<p>At this point, we have created our action, the reducer, the store, and made it available to our Counter component using the Provider element.</p>
-<p>In order to connect our component to the store, we need to call the connect() function.
-The connect() function returns a new component, that wraps the component you passed to it and connects it to the store using its special parameter functions.
-function connect(mapStateToProps?, mapDispatchToProps?) </p>
-<p>connect() takes two optional parameters:</p>
-<p>mapStateToProps
-This function is called every time the store state changes. It receives the state as a parameter and returns the state for the component.
-For example, for our Counter, we need to return the count state variable:
-function mapStateToProps(state) {
-  return {
-    count: state.count
-  };
-}</p>
-<p>Now, our component can access the count variable using its props! Just as the name of the function states, it maps the state to the props.</p>
-<p>mapDispatchToProps
-As you may have guessed from the name, this parameter is used to map the dispatch functions to props.
-It can be a simple object, defining the function that needs to be mapped:
-const mapDispatchToProps = {
-  incrementCounter
-}</p>
-<p>This might seem a bit confusing, but its very straightforward: mapStateToProps simply returns the state variables as props to our component, while mapDispatchToProps allows to define how we dispatch actions and make the dispatching functions available as props.</p>
-<p>Both are optional, as, for example, your component might only need to read from the store.
-mapDispatchToProps can also be defined as a function. Take a look at the official documentation for more details.
-Note, that we need to import the connect function: import { connect } from 'react-redux';</p>
-<p>Accessing The Store</p>
-<p>Inside our component we just access the store properties using props
-function Counter(props) {
-  function handleClick() {
-    props.incrementCounter(1);
-  }
-    return <div>
-    <p>{props.count}</p>
-    <button onClick={handleClick}>Increment</button>
-    </div>;
-}</p>
-<p>Notice, that we pass 1 as the argument to our incrementCounter(), making our counter increment by 1. We can change the value to any other number, and our counter will behave as expected, because we handled the increment parameter in our reducer.</p>
-<p>Now, the only thing left is to call the connect() function for our Counter component and render it on the page:
-const Counter = connect(mapStateToProps, mapDispatchToProps)(Counter);</p>
-<p>const el = <Provider store={store}>
-          <Counter/>
-        </Provider>;</p>
-<p>Try in on StackBlitz</p>
-<p>Remember, connect() returns a new component, which wraps the component it received.
-Now we have a fully functional React+Redux app!
-This might seem too much code for a simple counter app, however this architecture is great when building large scale apps, that use many components, multiple levels of nesting and manage a lot of data.</p>
-<p>Project Structure</p>
-<p>In our Counter example, we wrote the whole code in a single source file.
-Usually, web apps contain multiple component, reducers and actions.</p>
-<p>To make our project more manageable, we can use separate source files (and folders) for components, reducers and actions.
-For example, we can move our Counter component and the action creator function to a separate Counter.js file.</p>
-<p>In order to use the Counter component in our index.js, we need to export it first:
-export default connect(mapStateToProps, mapDispatchToProps)(Counter); </p>
-<p>Notice, we export the connected component.</p>
-<p>Now, we can import the component in index.js:
-import Counter from './Counter'; </p>
-<p>Try it on StackBlitz</p>
-<p>We use the ES6 modules system, which allows use to export and import modules.</p>
-<p>Contact Manager</p>
-<p>Let's change our Contact Manager app to use Redux!</p>
-<p>We created a separate folder named components for our components.</p>
-<p>We use Redux to keep the contacts list.</p>
-<p>The ADD_PERSON action is used to add a new person to the list.
-Check out the complete project code on StackBlitz!</p>
-<p>Notice, that we manage the new contact form's state in React, not Redux, because the data is used only by the AddPersonForm component to temporarily keep the input value. You can move it to Redux, if you want to; we just used local component state for simplicity.</p>
 
               
             </article>
@@ -2071,6 +2021,21 @@ Check out the complete project code on StackBlitz!</p>
           </div>
         </a>
       
+      
+        
+        <a href="../js_redux/" class="md-footer__link md-footer__link--next" aria-label="Next: Redux" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Redux
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
