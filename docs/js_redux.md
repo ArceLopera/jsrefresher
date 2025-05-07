@@ -251,7 +251,7 @@ At this point, we have created our action, the reducer, the store, and made it a
 In order to connect our component to the store, we need to call the connect() function.
 The connect() function returns a new component, that wraps the component you passed to it and connects it to the store using its special parameter functions.
 
-#### function connect(mapStateToProps?, mapDispatchToProps?) 
+##### function connect(mapStateToProps?, mapDispatchToProps?) 
 
 `connect()` takes two optional parameters:
 
@@ -319,7 +319,7 @@ Remember, connect() returns a new component, which wraps the component it receiv
 Now we have a fully functional React+Redux app!
 This might seem too much code for a simple counter app, however this architecture is great when building large scale apps, that use many components, multiple levels of nesting and manage a lot of data.
 
-## Project Structure
+### Project Structure
 
 To make our project more manageable, we can use separate source files (and folders) for components, reducers and actions.
 For example, we can move our Counter component and the action creator function to a separate Counter.js file.

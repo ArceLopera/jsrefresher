@@ -238,6 +238,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../fullstack/" class="md-tabs__link">
+        Full-stack Development
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -697,19 +713,6 @@
     Connecting to the Store
   </a>
   
-    <nav class="md-nav" aria-label="Connecting to the Store">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#function-connectmapstatetoprops-mapdispatchtoprops" class="md-nav__link">
-    function connect(mapStateToProps?, mapDispatchToProps?)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -719,15 +722,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#project-structure" class="md-nav__link">
     Project Structure
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -735,6 +738,54 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Full-stack Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Full-stack Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Full-stack Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fullstack/" class="md-nav__link">
+        General
+      </a>
     </li>
   
 
@@ -860,19 +911,6 @@
     Connecting to the Store
   </a>
   
-    <nav class="md-nav" aria-label="Connecting to the Store">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#function-connectmapstatetoprops-mapdispatchtoprops" class="md-nav__link">
-    function connect(mapStateToProps?, mapDispatchToProps?)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -882,15 +920,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#project-structure" class="md-nav__link">
     Project Structure
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1065,7 +1103,7 @@ We need to import <code>{ createStore }</code> and <code>{ Provider }</code> usi
 <p>At this point, we have created our action, the reducer, the store, and made it available to our Counter component using the Provider element.</p>
 <p>In order to connect our component to the store, we need to call the connect() function.
 The connect() function returns a new component, that wraps the component you passed to it and connects it to the store using its special parameter functions.</p>
-<h4 id="function-connectmapstatetoprops-mapdispatchtoprops">function connect(mapStateToProps?, mapDispatchToProps?)</h4>
+<h5 id="function-connectmapstatetoprops-mapdispatchtoprops">function connect(mapStateToProps?, mapDispatchToProps?)</h5>
 <p><code>connect()</code> takes two optional parameters:</p>
 <p><strong>mapStateToProps</strong></p>
 <p>This function is called every time the store state changes. It receives the state as a parameter and returns the state for the component.
@@ -1111,7 +1149,7 @@ Note, that we need to import the connect function: <code>import { connect } from
 <p>Remember, connect() returns a new component, which wraps the component it received.
 Now we have a fully functional React+Redux app!
 This might seem too much code for a simple counter app, however this architecture is great when building large scale apps, that use many components, multiple levels of nesting and manage a lot of data.</p>
-<h2 id="project-structure">Project Structure</h2>
+<h3 id="project-structure">Project Structure</h3>
 <p>To make our project more manageable, we can use separate source files (and folders) for components, reducers and actions.
 For example, we can move our Counter component and the action creator function to a separate Counter.js file.</p>
 <p>In order to use the Counter component in our index.js, we need to export it first:</p>
@@ -1149,6 +1187,21 @@ For example, we can move our Counter component and the action creator function t
           </div>
         </a>
       
+      
+        
+        <a href="../fullstack/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              General
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
