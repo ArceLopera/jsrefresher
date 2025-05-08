@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/fullstack/">
+        <link rel="canonical" href="https://arcelopera.github.io/jsrefresher/angular/">
       
       <link rel="icon" href="../Images/javascript_favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>General - JS Refresher</title>
+        <title>Angular - JS Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-concept-of-web-stacks" class="md-skip">
+        <a href="#the-angular-framework" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              General
+              Angular
             
           </span>
         </div>
@@ -247,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../fullstack/" class="md-tabs__link md-tabs__link--active">
         Full-stack Development
       </a>
     </li>
@@ -638,6 +638,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../fullstack/" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -650,12 +664,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          General
+          Angular
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        General
+        Angular
       </a>
       
         
@@ -674,37 +688,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#javascript-and-typescript-throughout-the-stack" class="md-nav__link">
-    JavaScript and TypeScript throughout the Stack
+  <a href="#datatypes" class="md-nav__link">
+    DataTypes
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xhr" class="md-nav__link">
-    XHR
-  </a>
-  
-    <nav class="md-nav" aria-label="XHR">
+    <nav class="md-nav" aria-label="DataTypes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#http-error-codes" class="md-nav__link">
-    HTTP Error Codes
+  <a href="#strings-in-typescript" class="md-nav__link">
+    Strings in TypeScript
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#http-success-codes" class="md-nav__link">
-    HTTP Success Codes
+  <a href="#numbers-in-typescript" class="md-nav__link">
+    Numbers in TypeScript
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-angular-nest-flow" class="md-nav__link">
-    The Angular / NEST flow
+  <a href="#booleans-in-typescript" class="md-nav__link">
+    Booleans in TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums-in-typescript" class="md-nav__link">
+    Enums in TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-any-type-in-typescript" class="md-nav__link">
+    The 'any' Type in TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-types" class="md-nav__link">
+    Custom Types
   </a>
   
 </li>
@@ -714,24 +742,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#optional-fields-in-interfaces" class="md-nav__link">
+    Optional Fields in Interfaces
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../angular/" class="md-nav__link">
-        Angular
-      </a>
     </li>
   
 
@@ -770,43 +791,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#javascript-and-typescript-throughout-the-stack" class="md-nav__link">
-    JavaScript and TypeScript throughout the Stack
+  <a href="#datatypes" class="md-nav__link">
+    DataTypes
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xhr" class="md-nav__link">
-    XHR
-  </a>
-  
-    <nav class="md-nav" aria-label="XHR">
+    <nav class="md-nav" aria-label="DataTypes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#http-error-codes" class="md-nav__link">
-    HTTP Error Codes
+  <a href="#strings-in-typescript" class="md-nav__link">
+    Strings in TypeScript
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#http-success-codes" class="md-nav__link">
-    HTTP Success Codes
+  <a href="#numbers-in-typescript" class="md-nav__link">
+    Numbers in TypeScript
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-angular-nest-flow" class="md-nav__link">
-    The Angular / NEST flow
+  <a href="#booleans-in-typescript" class="md-nav__link">
+    Booleans in TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums-in-typescript" class="md-nav__link">
+    Enums in TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-any-type-in-typescript" class="md-nav__link">
+    The 'any' Type in TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-types" class="md-nav__link">
+    Custom Types
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-fields-in-interfaces" class="md-nav__link">
+    Optional Fields in Interfaces
+  </a>
   
 </li>
       
@@ -824,64 +866,114 @@
                 
 
 
-<h1 id="the-concept-of-web-stacks">The Concept of Web Stacks</h1>
-<p>Often you will hear programmers referring to various stacks in web development. In the last several years we have seen the proliferation of many stacks, including:</p>
-<ul>
-<li>MEAN (Mongo, Express, Angular and Node)</li>
-<li>LAMP (Linux, Apache, MySQL and PHP)</li>
-<li>Python-Django</li>
-<li>Ruby on Rails</li>
-<li>.NET</li>
-</ul>
-<p>It’s important to understand that these stacks are constantly being invented, reinvented, iterated upon, and mixed with other stacks. The MEAN stack evolved into the PEAN or NEAP stack when some developers started switching back to using Postgresql instead of Mongo for the database resource related to that particular stack.</p>
-<p>Stack is not a technical term. It is a loose term and can be very fluid and sometimes even subjective. It is important, however, to be able to articulate which stacks you feel most comfortable with when you become a full stack developer.</p>
-<p>For example, a TypeScript based stack can use Angular and NestJS, one of the newer stacks in web development.</p>
-<p>JavaScript and TypeScript can be used in BOTH the front and the back-end of the stack.</p>
-<h2 id="javascript-and-typescript-throughout-the-stack">JavaScript and TypeScript throughout the Stack</h2>
-<p>JavaScript became a popular full stack tool in 2009 after NodeJS was released. Prior to the release of NodeJS, JavaScript was seen as primarily a front-end only tool used for creating widgets, user activity on a page, DOM (web page structure) manipulation and other front-end only tasks. After NodeJS was released, JavaScript was seen as a great tool for creating back-ends and front-ends alike.</p>
-<p>TypeScript was released in 2012 by Microsoft because many JavaScript developers had expressed the desire for more structure and clear data types, especially for use in large scale applications. TypeScript has some features like static variable typing and interfaces that are present in well-respected legacy languages like Java and C#.</p>
-<p>TypeScript is a superset of JavaScript. What this means is that TypeScript is transpiled into JavaScript. It’s literally translated into JavaScript code when it is compiled and before it is run.</p>
-<p>TypeScript is Translated into JavaScript. That’s an important concept to remember! It therefore made logical sense, upon the release of NestJS, that TypeScript could be used throughout the entire web application stack just like JavaScript had been.
-One of the creators of Typescript was Microsoft employee Anders Hejlsberg, the creator of C#.</p>
-<h2 id="xhr">XHR</h2>
-<p>The next concept to understand is the request / response nature of full stack applications.</p>
-<p>In a restaurant, the food request comes from the dining room, or the front-end.</p>
-<p>The customer makes a request to the kitchen. In web applications, this typically comes in the form of an XML/HTTP Request or an XHR.</p>
-<p>Let’s break down that term: "XML/HTTP" request. Although the term itself is already showing its age (we don’t use XML as much to send data over the web; JSON is used instead in most instances now), the second part of that term, HTTP, is critically important.</p>
-<p>HTTP stands for HyperTextTransfer Protocol and is the foundation of all communication on the web. Think of HTTP as the way in which all web based technologies must communicate with each other.
-You can analyze XHR for any website in the browser’s network tab in Chrome developer tools.</p>
-<h3 id="http-error-codes">HTTP Error Codes</h3>
-<p>Yes, XML/HTTP requests can be rejected by the server!</p>
-<p>If rejected, the web application server sends an HTTP response back to the client (the front-end). Possible HTTP error status codes are:</p>
-<ul>
-<li>404 (not found)</li>
-<li>403 (forbidden)</li>
-<li>401 (not authorized)</li>
-<li>500 (internal server error)</li>
-<li>503 (service unavailable)</li>
-</ul>
-<p>There are many more HTTP status codes, and they are generally categorized by the first digit in the status code.
-Server and client are very common terms in computing. The "server" in full stack development typically refers to web application server, and the client refers to any device that is interacting with the server on the front-end. Common clients include laptop and desktop computers, mobile phones, GPS systems in cars, voice-driven devices like Amazon Alexa, Siri and Google Home, video game consoles, smart watches, and anything else that connects to a back-end.</p>
-<h3 id="http-success-codes">HTTP Success Codes</h3>
-<p>All of the 200 level codes are generally positive status codes:</p>
-<ul>
-<li>200 (ok)</li>
-<li>201 (created)</li>
-<li>202 (accepted), etc.</li>
-</ul>
-<p>By contrast, 400 level status codes generally indicate an issue with the request itself, and 500 level status codes generally indicate an error on the back-end.</p>
-<p>If the initial request has been accepted by the web application server, and there is a need to retrieve data related to the request, the web application server then queries a database or databases to get the information needed to send back to the user.</p>
-<p>The database sends the result of the query back to the web application server, and then the web application server usually formats the data into a format to be sent back to the front-end. JSON (JavaScript Object Notation) is a very common format currently used to send data to clients (the front-end).
-200 level codes are positive, 400 level codes are issues and 500 level codes are errors.</p>
-<h3 id="the-angular-nest-flow">The Angular / NEST flow</h3>
-<p>As an example, we can think of using TypeScript, a superset of JavaScript, to be building a full stack app called TS Flights that allows users to search for plane flights. The app will also have a page that allows you as an admin to enter new flights to show up in future searches.
-On the front-end we will be using Angular. On the back-end we will be using NestJS.
-For something like searching for a flight or adding a new flight into the database, our Angular front-end app will make requests to our NestJS back-end using XHR.</p>
-<p>If the request is rejected, it will return a negative HTTP status code back to Angular. If the request is accepted, it will then proceed to do the work that it was sent to do...which may include getting all of the flights from New York to Paris or something of that nature.</p>
-<p>If the request was accepted and includes a database call, NestJS will make a database query to our database, get the result, and if that database query is a success, return the JSON response to our Angular app with a 200 level status code.</p>
-<p>Our Angular app will then use HTML and CSS to make the response pretty so that our users can see all of the flights to Paris on their phone or computer.</p>
-<p>You should be able to see with this flow that the user initiates the process on the client, the request goes back to the server, does its work, and then ends up returning back to the client for the end of the process.
-Request/response cycles can be incredibly complex, but this very simple flow is the beginning of understanding the volleys between the front and the back end.</p>
+<h1 id="the-angular-framework">The Angular Framework</h1>
+<p>Angular is a front-end JavaScript framework. A framework is a set of connected libraries designed around a specific programming language. Frameworks provide conventions that support doing things a certain way. A front-end framework typically has specific conventions around how HTML is handled, how forms are created, how interactive elements on a web page are handled, how variables are interpolated inside of HTML views, etc.</p>
+<p>AngularJS or Angular 1.x was the first iteration of the Angular framework. With the release of Angular 2, Angular was completely redesigned using TypeScript and component based architecture. Although component based architecture was available in the later releases of Angular 1.x, components are now the very foundation of Angular 2 and all subsequent releases after version 2. After 2, Angular 4 was released and versions counted upwards from there (there was no version 3).</p>
+<p>It is important to know that when developers say Angular, they mean Angular versions 2 and higher. AngularJS refers to version 1 of Angular only.</p>
+<h2 id="datatypes">DataTypes</h2>
+<p>AngularJS used Javascript as its primary language. Angular began using TypeScript starting in Angular 2. Since then, TypeScript has become the primary language of Angular.</p>
+<h3 id="strings-in-typescript">Strings in TypeScript</h3>
+<p>Variables in TypeScript can be statically typed. Statically typed variables must always retain the data type that they start out with. Once a variable is statically typed as a string, for example, that variable cannot hold any other data type.</p>
+<p>TypeScript uses JavaScript’s var, let, and const keywords to initialize variables.</p>
+<p>It also uses a colon after the variable name to designate the type.</p>
+<p>Javascript:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Fred&#39;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>TypeScript:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Fred&#39;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>Based on this convention, we could initialize a shoeColor string in TypeScript as such:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">shoeColor</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shoeColor</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>It is possible to change variable values over time:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">shoeColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shoeColor</span><span class="p">);</span><span class="w"> </span>
+<span class="c1">// Now &quot;shoeColor&quot; has a value of red. Note that once a variable has been typed, you don&#39;t have to declare a type again when the value of the variable changes.</span><span class="w"></span>
+</code></pre></div>
+<p>TypeScript does not require you to statically type variables. Plain Javascript syntax WILL work in TypeScript. However, by convention, most programmers statically type variables in TypeScript because it helps to provide structure and prevent programmer errors.</p>
+<h3 id="numbers-in-typescript">Numbers in TypeScript</h3>
+<p>Another TypeScript data type is the number data type.</p>
+<p>We can initialize a seatCount number variable in TypeScript like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">seatCount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">seatCount</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>TypeScript does not designate between integers and floating point or decimal numbers like other languages when it comes to typing. Initializing a decimal number is just like initializing an integer:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">registrationPercentage</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">92.87</span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">registrationPercentage</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Note that registrationPercentage will always have to be of a number type. If you were to try to reassign registrationPercentage to a string value in another line of that program, the program would not compile, and your text editor would most likely throw an error.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">registrationPercentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ninety Two&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// WILL CAUSE AN ERROR because registrationPercentage is statically typed as a number.</span><span class="w"></span>
+</code></pre></div>
+<p>Typescript includes all methods that you are used to using in JavaScript. For example, string methods like parseInt() and parseFloat() that return numbers will also work in TypeScript.</p>
+<h3 id="booleans-in-typescript">Booleans in TypeScript</h3>
+<p>Boolean values are either true or false. In TypeScript, you can declare and statically type a variable without initializing it with a value. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">isRegistered</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isRegistered</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span><span class="w"></span>
+</code></pre></div>
+<p>If you try to use isRegistered at this point in the program, however, you will get an error. Some programmers declare variables and type them without initializing them because the value of the variable is completely unknown at the start of the program. Later, you can assign it.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">isRegistered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isRegistered</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
+</code></pre></div>
+<p>Booleans always return true or false values. These values are not strings, they are actually their own data type.</p>
+<h3 id="enums-in-typescript">Enums in TypeScript</h3>
+<p>Enum values in Typescript are collections of constants. Think of an Enum as a type of fixed array of things that you use as a reference, such as days of the week, states in the USA, etc. The number of elements never changes during the run of the program and the order of elements doesn’t change either.</p>
+<p>Let’s create an enum called spiceLevel:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">spiceLevel</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">NONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;no spice&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">LOW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;barely spicy&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">MEDIUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;medium spicy&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">HIGH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hot&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">spiceLevel</span><span class="p">.</span><span class="nx">MEDIUM</span><span class="p">);</span><span class="w"> </span>
+<span class="c1">// outputs &quot;medium spicy&quot;</span><span class="w"></span>
+</code></pre></div>
+<p>Modern Integrated development environments ( IDEs ) like Visual Studio Code help you complete enum values and other coding constructs by using autocomplete. Enums help to ensure that commonly used constants in your program are all consistent. This helps to avoid typos and general errors.</p>
+<h3 id="the-any-type-in-typescript">The 'any' Type in TypeScript</h3>
+<p>Finally, we will examine the any data type.
+The 'any' type is essentially a wild card. It can hold anything.</p>
+<p>We can declare an 'any' data type in TypeScript like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">userData</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p><code>userData</code> will now be a container that can hold any data type. Once userData is initialized, however, it will infer the type from the value given to it.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">userData</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">;</span><span class="w"></span>
+
+<span class="nx">userData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">22</span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userData</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// logs 24</span><span class="w"></span>
+
+<span class="nx">userData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;free&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userData</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;man&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// logs &quot;freeman&quot;;</span><span class="w"></span>
+</code></pre></div>
+<p>Note that with an any data type, even though the type is inferred upon assignment, you can re-assign the variable to another data type and it still works.</p>
+<p>Why in the world would you ever need an 'any' type? Well, in certain situations, like getting user data from a server, you might be accepting variable data that could conceivably be of any data type.
+Any types not only accommodate data from any source, but they also signal to other developers the fact that this particular variable is of an unknown type and that the data should be handled with care.</p>
+<h3 id="custom-types">Custom Types</h3>
+<p>If you thought for a minute that TypeScript was limited to number, string, boolean, and other familiar types, then we have a pleasant surprise for you! In TypeScript, you can create your OWN types and use them the same way that you would primitive types like numbers and strings.</p>
+<p>One way to do this is by creating an interface. An interface in TypeScript is a data structure that defines the shape of data. Let’s see this in action:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Order</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">customerName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">itemNumbers</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">[],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">isComplete</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The interface keyword is used to initialize an interface, which shows us the SHAPE of the data that’s coming. Think of an interface like a factory mold. This interface is used to stamp out Order types for a store. Now let’s actually use the Order interface to type a variable:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">order1</span><span class="o">:</span><span class="w"> </span><span class="kt">Order</span><span class="p">;</span><span class="w"></span>
+<span class="nx">order1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">customerName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Abiye&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">itemNumbers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">123</span><span class="p">,</span><span class="mf">44</span><span class="p">,</span><span class="mf">232</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">isComplete</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Let’s analyze the order1 variable. It is of an "Order" type, so it must have 3 fields: the first field is a string, the second field is an array of integers, and the third field is a boolean. It MUST have each of those fields in order to fulfill the contract of the interface. Try omitting one of the fields in order1 (for example, remove the customerName). You will receive an error because the contract has not been fulfilled.
+An interface contract is simply the list of fields in that interface that any variable needs if it wants to use that type. All of the normal fields within an interface must be implemented in any variable that uses that type.</p>
+<h2 id="optional-fields-in-interfaces">Optional Fields in Interfaces</h2>
 
               
             </article>
@@ -895,7 +987,7 @@ Request/response cycles can be incredibly complex, but this very simple flow is 
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../js_redux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Redux" rel="prev">
+        <a href="../fullstack/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -904,26 +996,11 @@ Request/response cycles can be incredibly complex, but this very simple flow is 
               <span class="md-footer__direction">
                 Previous
               </span>
-              Redux
+              General
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../angular/" class="md-footer__link md-footer__link--next" aria-label="Next: Angular" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Angular
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
