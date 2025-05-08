@@ -107,3 +107,4 @@ nav:
       - Redux: js_redux.md
   - Full-stack Development:
       - General: fullstack.md
+      - Angular: angular.md
