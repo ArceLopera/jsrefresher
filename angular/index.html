@@ -749,6 +749,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#angular-files" class="md-nav__link">
+    Angular Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Angular Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parts-of-a-component" class="md-nav__link">
+    Parts of a Component
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -849,6 +869,26 @@
   <a href="#optional-fields-in-interfaces" class="md-nav__link">
     Optional Fields in Interfaces
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#angular-files" class="md-nav__link">
+    Angular Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Angular Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parts-of-a-component" class="md-nav__link">
+    Parts of a Component
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -974,6 +1014,44 @@ Any types not only accommodate data from any source, but they also signal to oth
 <p>Let’s analyze the order1 variable. It is of an "Order" type, so it must have 3 fields: the first field is a string, the second field is an array of integers, and the third field is a boolean. It MUST have each of those fields in order to fulfill the contract of the interface. Try omitting one of the fields in order1 (for example, remove the customerName). You will receive an error because the contract has not been fulfilled.
 An interface contract is simply the list of fields in that interface that any variable needs if it wants to use that type. All of the normal fields within an interface must be implemented in any variable that uses that type.</p>
 <h2 id="optional-fields-in-interfaces">Optional Fields in Interfaces</h2>
+<p>We can use optional fields in an interface in TypeScript. Optional fields are not part of the strict interface contract. You can omit them when creating an instance of that interface.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Order</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">customerName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">itemNumbers</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">[],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">isComplete?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Notice the question mark after isComplete. isComplete? means that we can omit that value and the code will still compile. This is useful for fields within an interface that are not mandatory.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">order1</span><span class="o">:</span><span class="w"> </span><span class="kt">Order</span><span class="p">;</span><span class="w"></span>
+<span class="nx">order1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">customerName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Abiye&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">itemNumbers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">123</span><span class="p">,</span><span class="w"> </span><span class="mf">44</span><span class="p">,</span><span class="w"> </span><span class="mf">232</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Order1 only has 2 fields now and it still compiles because isComplete is an optional field.
+Optional fields are helpful when getting data from a database or an API call where some fields may be missing or incomplete.</p>
+<h2 id="angular-files">Angular Files</h2>
+<p>Up until this point, we have been creating simple TypeScript files that run in any environment that runs TypeScript. From this point on, however, we will be writing ALL of our TypeScript in Angular!</p>
+<p>In Angular, each component has at least 4 files that work in harmony together.</p>
+<p>The only two files that we will concern ourselves with here are the app.component.ts file, which we will call the component, and the app.component.html file which we will call the view.</p>
+<p>The component is where variables are declared and modified.</p>
+<p>The view is an HTML file that receives variables from the component and displays them.</p>
+<p>We have built a 'hello world' example to show you how these files communicate with each other.</p>
+<p><strong>COMPONENT</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Star student&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p><strong>VIEW</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;container&#39;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;box&#39;</span><span class="p">&gt;</span>
+    Hello, {{name}} ! 
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Result:
+<img alt="img" src="../Images/img.png" /></p>
+<p>We have set up this code on StackBlitz, which is an online Angular editor, that allows you to run the code on your phone! In StackBlitz, the files are on the far left, the code is in the middle, and a small browser is on the right. You can view and or edit the code and see the result within seconds.</p>
+<p>The double curly braces around {{name}} demonstrates what we call interpolation. Interpolation is the insertion of variable content from the component into the view.</p>
+<h3 id="parts-of-a-component">Parts of a Component</h3>
 
               
             </article>
