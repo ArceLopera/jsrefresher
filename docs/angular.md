@@ -187,3 +187,70 @@ Let’s analyze the order1 variable. It is of an "Order" type, so it must have 3
 An interface contract is simply the list of fields in that interface that any variable needs if it wants to use that type. All of the normal fields within an interface must be implemented in any variable that uses that type.
 
 ## Optional Fields in Interfaces
+
+We can use optional fields in an interface in TypeScript. Optional fields are not part of the strict interface contract. You can omit them when creating an instance of that interface.
+
+```ts
+interface Order {
+  customerName: string,
+  itemNumbers: number[],
+  isComplete?: boolean
+}
+```
+
+
+Notice the question mark after isComplete. isComplete? means that we can omit that value and the code will still compile. This is useful for fields within an interface that are not mandatory.
+
+```ts
+let order1: Order;
+order1 = {
+  customerName: "Abiye",
+  itemNumbers: [123, 44, 232]
+}
+```
+
+
+Order1 only has 2 fields now and it still compiles because isComplete is an optional field.
+Optional fields are helpful when getting data from a database or an API call where some fields may be missing or incomplete.
+
+
+## Angular Files
+
+Up until this point, we have been creating simple TypeScript files that run in any environment that runs TypeScript. From this point on, however, we will be writing ALL of our TypeScript in Angular!
+
+In Angular, each component has at least 4 files that work in harmony together.
+
+The only two files that we will concern ourselves with here are the app.component.ts file, which we will call the component, and the app.component.html file which we will call the view.
+
+The component is where variables are declared and modified.
+
+The view is an HTML file that receives variables from the component and displays them.
+
+We have built a 'hello world' example to show you how these files communicate with each other.
+
+**COMPONENT**
+
+```ts
+name = "Star student";
+```
+
+
+**VIEW**
+
+```html
+<div class='container'>
+  <div class='box'>
+    Hello, {{name}} ! 
+  </div>
+</div>
+```
+
+
+Result:
+![img](./Images/img.png)
+
+We have set up this code on StackBlitz, which is an online Angular editor, that allows you to run the code on your phone! In StackBlitz, the files are on the far left, the code is in the middle, and a small browser is on the right. You can view and or edit the code and see the result within seconds.
+
+The double curly braces around {{name}} demonstrates what we call interpolation. Interpolation is the insertion of variable content from the component into the view.
+
+### Parts of a Component
