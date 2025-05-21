@@ -306,4 +306,113 @@ We did not use static typing for the prefix, name, and sentence variables becaus
 
 The name variable is a method variable. It belongs to the speak() method.
 
-### Arrays and iterations
+## Arrays and iterations
+
+### Iterating through String Arrays
+
+With Angular, noted in code as ng, we can use the *ngFor command in the HTML file (the view) to loop through arrays declared in the component.
+
+Given this array in the Angular component:
+
+```ts
+colors:string[] = ['red', 'blue', 'green', 'purple'];
+```
+
+We can loop through the colors in the accompanying HTML file in Angular like this:
+
+```html
+<div *ngFor='let color of colors'> 
+  {{color}} 
+</div>
+```
+
+
+The result in your browser will look like this:
+
+```
+red
+blue
+green
+purple
+```
+
+Where each of the colors, red, blue, green, etc. are wrapped within a div. *ngFor essentially creates a loop where the html tag that it's declared within loops for as many times as there are elements in the array that it's invoking.
+
+*ngFor is a structural directive. Structural directives modify HTML according to variable data that they are associated with.
+
+### Iterating with Indices
+
+Sometimes it's helpful, when iterating through an array, to have access to an index within each iteration of the loop.
+
+Here's how we do that in Angular:
+
+```html
+<div *ngFor='let fruit of fruits; let i=index'>
+   Fruit {{ i }} is {{ fruit }} 
+</div>
+```
+
+
+The result in your browser will look like this:
+
+```
+Fruit 0 is apple
+Fruit 1 is orange
+Fruit 2 is pear
+Fruit 3 is peach
+```
+
+Note that our 'iterator' variable is named i. This variable can be named anything; we just used the letter i out of convention. The 'index' keyword cannot be changed. Angular knows that the 'index' is the index of each iteration as we loop through the array.
+
+
+Indices during iteration are helpful when iterating through lists of things, like shopping cart items, that are associated with database ids from the back end.
+
+### Iterating through Custom Types
+
+We will now connect what you learned about interfaces with our *ngFor looping mechanism.
+
+Let's make an interface for a Car and put it in its own file called car.ts (.ts is the extension for TypeScript files)
+
+```ts
+export interface Car {
+  make: string;
+  model: string;
+  miles: number;
+}
+```
+
+Now that we have a Car interface, we can import that interface into our component as such:
+
+```ts
+import { Car } from './car';
+```
+
+Now we can create 3 entities of the Car type:
+
+```ts
+subaru: Car = {make: 'Subaru', model: 'Outback', miles: 58232};
+honda: Car = {make: 'Honda', model: 'Accord', miles: 39393};
+bmw: Car = {make: 'BMW', model: 'X3', miles: 4400};
+cars:Car[ ] = [this.subaru, this.honda, this.bmw];
+```
+
+
+And finally we can loop through all of our cars in the HTML file:
+
+```html
+<div *ngFor="let car of cars">
+   {{car.make}} {{car.model}}  with a mileage of {{car.miles}}
+</div>
+```
+
+Here is our output:
+
+```
+Subaru Outback with a mileage of 58232
+Honda Accord with a mileage of 39393
+BMW X3 with a mileage of 4400
+```
+
+When you iterate over a custom type, like a Car in this instance, you must use dot notation ( car.make, car.model, car.miles, etc.) to access the members of that entity because interfaces are made up of various fields, similar to a JavaScript object.
+
+## Angular Services
