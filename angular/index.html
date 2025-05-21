@@ -777,15 +777,49 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#arrays-and-iterations" class="md-nav__link">
     Arrays and iterations
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays and iterations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterating-through-string-arrays" class="md-nav__link">
+    Iterating through String Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterating-with-indices" class="md-nav__link">
+    Iterating with Indices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterating-through-custom-types" class="md-nav__link">
+    Iterating through Custom Types
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#angular-services" class="md-nav__link">
+    Angular Services
+  </a>
   
 </li>
       
@@ -920,15 +954,49 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#arrays-and-iterations" class="md-nav__link">
     Arrays and iterations
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays and iterations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterating-through-string-arrays" class="md-nav__link">
+    Iterating through String Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterating-with-indices" class="md-nav__link">
+    Iterating with Indices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterating-through-custom-types" class="md-nav__link">
+    Iterating through Custom Types
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#angular-services" class="md-nav__link">
+    Angular Services
+  </a>
   
 </li>
       
@@ -1129,7 +1197,70 @@ Optional fields are helpful when getting data from a database or an API call whe
 <p>Also, note that inside of the speak() method, we are using the const keyword to declare the sentence variable. Inside of methods, you must use a keyword like var, let or const to declare variables. We chose const because const keywords declare a value that is a constant. It will not change.</p>
 <p>We did not use static typing for the prefix, name, and sentence variables because the type was inferred when we initialized these variables with strings.</p>
 <p>The name variable is a method variable. It belongs to the speak() method.</p>
-<h3 id="arrays-and-iterations">Arrays and iterations</h3>
+<h2 id="arrays-and-iterations">Arrays and iterations</h2>
+<h3 id="iterating-through-string-arrays">Iterating through String Arrays</h3>
+<p>With Angular, noted in code as ng, we can use the *ngFor command in the HTML file (the view) to loop through arrays declared in the component.</p>
+<p>Given this array in the Angular component:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">colors</span><span class="o">:</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;purple&#39;</span><span class="p">];</span><span class="w"></span>
+</code></pre></div>
+<p>We can loop through the colors in the accompanying HTML file in Angular like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&#39;let color of colors&#39;</span><span class="p">&gt;</span> 
+  {{color}} 
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>The result in your browser will look like this:</p>
+<div class="highlight"><pre><span></span><code>red
+blue
+green
+purple
+</code></pre></div>
+<p>Where each of the colors, red, blue, green, etc. are wrapped within a div. *ngFor essentially creates a loop where the html tag that it's declared within loops for as many times as there are elements in the array that it's invoking.</p>
+<p>*ngFor is a structural directive. Structural directives modify HTML according to variable data that they are associated with.</p>
+<h3 id="iterating-with-indices">Iterating with Indices</h3>
+<p>Sometimes it's helpful, when iterating through an array, to have access to an index within each iteration of the loop.</p>
+<p>Here's how we do that in Angular:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&#39;let fruit of fruits; let i=index&#39;</span><span class="p">&gt;</span>
+   Fruit {{ i }} is {{ fruit }} 
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>The result in your browser will look like this:</p>
+<div class="highlight"><pre><span></span><code>Fruit 0 is apple
+Fruit 1 is orange
+Fruit 2 is pear
+Fruit 3 is peach
+</code></pre></div>
+<p>Note that our 'iterator' variable is named i. This variable can be named anything; we just used the letter i out of convention. The 'index' keyword cannot be changed. Angular knows that the 'index' is the index of each iteration as we loop through the array.</p>
+<p>Indices during iteration are helpful when iterating through lists of things, like shopping cart items, that are associated with database ids from the back end.</p>
+<h3 id="iterating-through-custom-types">Iterating through Custom Types</h3>
+<p>We will now connect what you learned about interfaces with our *ngFor looping mechanism.</p>
+<p>Let's make an interface for a Car and put it in its own file called car.ts (.ts is the extension for TypeScript files)</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">Car</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">make</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">miles</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Now that we have a Car interface, we can import that interface into our component as such:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Car</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./car&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>Now we can create 3 entities of the Car type:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">subaru</span><span class="o">:</span><span class="w"> </span><span class="kt">Car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">make</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Subaru&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Outback&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">miles</span><span class="o">:</span><span class="w"> </span><span class="kt">58232</span><span class="p">};</span><span class="w"></span>
+<span class="nx">honda</span><span class="o">:</span><span class="w"> </span><span class="kt">Car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">make</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Honda&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Accord&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">miles</span><span class="o">:</span><span class="w"> </span><span class="kt">39393</span><span class="p">};</span><span class="w"></span>
+<span class="nx">bmw</span><span class="o">:</span><span class="w"> </span><span class="kt">Car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">make</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;X3&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">miles</span><span class="o">:</span><span class="w"> </span><span class="kt">4400</span><span class="p">};</span><span class="w"></span>
+<span class="nx">cars</span><span class="o">:</span><span class="kt">Car</span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">subaru</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">honda</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">bmw</span><span class="p">];</span><span class="w"></span>
+</code></pre></div>
+<p>And finally we can loop through all of our cars in the HTML file:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let car of cars&quot;</span><span class="p">&gt;</span>
+   {{car.make}} {{car.model}}  with a mileage of {{car.miles}}
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Here is our output:</p>
+<div class="highlight"><pre><span></span><code>Subaru Outback with a mileage of 58232
+Honda Accord with a mileage of 39393
+BMW X3 with a mileage of 4400
+</code></pre></div>
+<p>When you iterate over a custom type, like a Car in this instance, you must use dot notation ( car.make, car.model, car.miles, etc.) to access the members of that entity because interfaces are made up of various fields, similar to a JavaScript object.</p>
+<h2 id="angular-services">Angular Services</h2>
 
               
             </article>
