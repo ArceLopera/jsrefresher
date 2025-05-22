@@ -821,6 +821,53 @@
     Angular Services
   </a>
   
+    <nav class="md-nav" aria-label="Angular Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generating-an-angular-service" class="md-nav__link">
+    Generating an Angular Service
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating an Angular Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-interface-into-a-service" class="md-nav__link">
+    Import Interface into a Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recreating-car-array-in-a-service" class="md-nav__link">
+    Recreating Car Array in a Service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-injection" class="md-nav__link">
+    Dependency Injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-binding" class="md-nav__link">
+    Event Binding
+  </a>
+  
 </li>
       
     </ul>
@@ -996,6 +1043,53 @@
         <li class="md-nav__item">
   <a href="#angular-services" class="md-nav__link">
     Angular Services
+  </a>
+  
+    <nav class="md-nav" aria-label="Angular Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generating-an-angular-service" class="md-nav__link">
+    Generating an Angular Service
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating an Angular Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-interface-into-a-service" class="md-nav__link">
+    Import Interface into a Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recreating-car-array-in-a-service" class="md-nav__link">
+    Recreating Car Array in a Service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-injection" class="md-nav__link">
+    Dependency Injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-binding" class="md-nav__link">
+    Event Binding
   </a>
   
 </li>
@@ -1261,6 +1355,97 @@ BMW X3 with a mileage of 4400
 </code></pre></div>
 <p>When you iterate over a custom type, like a Car in this instance, you must use dot notation ( car.make, car.model, car.miles, etc.) to access the members of that entity because interfaces are made up of various fields, similar to a JavaScript object.</p>
 <h2 id="angular-services">Angular Services</h2>
+<p>Services are special files in Angular that are used to manage data. They usually pull data from XHR (XML/HTTP Requests), but they can also store data on their own.
+A service is like a 'brain' in an Angular app that either returns data from the service itself or data retrieved from an external source. It can be viewed as a 'data manager'.</p>
+<h3 id="generating-an-angular-service">Generating an Angular Service</h3>
+<p>Angular can generate a service for you with a simple command so you don't have to remember how to build the basic structure.</p>
+<p>In order to do this, we use this command in the computer terminal:</p>
+<div class="highlight"><pre><span></span><code>ng generate service transportation
+</code></pre></div>
+<p>This generates an empty service within the Angular application.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Injectable</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">@Injectable</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">providedIn</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">TransportationService</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>We will only concern ourselves with two parts of this service:</p>
+<ol>
+<li>The top of the file where the imports live. This is where we will import files that the service will use.</li>
+<li>The class body where it says export class TransportationService. The class body is contained within the curly brackets after the word TransportationService.</li>
+</ol>
+<p>Methods within the class body of the service are used to export data out of the service.</p>
+<h4 id="import-interface-into-a-service">Import Interface into a Service</h4>
+<p>Our Transportation Service will contain an array of Car types. To do that, we need to import our Car interface that we created earlier. We learned that the top of the file is where we import things.</p>
+<p>We can add this line to the top section of the transportation service:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Car</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./car&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>This allows us to use the Car type to make an array of Cars. Our transportation service has now IMPORTED the interface from the car.ts file.</p>
+<p>The car.ts file EXPORTS the interface and the transportation service IMPORTS that same interface for use. That will now allow us to create an array of Car types in our service.</p>
+<p>The import / export functionality we see in Angular is derived from NodeJS. This same import / export system is seen in almost every front-end JavaScript framework, as most of these frameworks are built using Node.</p>
+<h4 id="recreating-car-array-in-a-service">Recreating Car Array in a Service</h4>
+<p>Now that we've imported the car resource, we can create an array of Car types in our transportation service. The last thing we need to do after we do this is to create a getCars( ) method to export the car data out of the service. Here is the completed service:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Injectable</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Car</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./car&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w"> </span><span class="kd">@Injectable</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">providedIn</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"></span>
+<span class="w"> </span><span class="p">})</span><span class="w"></span>
+<span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">TransportationService</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// NEW CODE</span><span class="w"></span>
+<span class="w">  </span><span class="nx">subaru</span><span class="o">:</span><span class="w"> </span><span class="kt">Car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">make</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Subaru&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Outback&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">miles</span><span class="o">:</span><span class="w"> </span><span class="kt">58232</span><span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="nx">honda</span><span class="o">:</span><span class="w"> </span><span class="kt">Car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">make</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Honda&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Accord&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">miles</span><span class="o">:</span><span class="w"> </span><span class="kt">39393</span><span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="nx">bmw</span><span class="o">:</span><span class="w"> </span><span class="kt">Car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">make</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;X3&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">miles</span><span class="o">:</span><span class="w"> </span><span class="kt">4400</span><span class="p">};</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">cars</span><span class="o">:</span><span class="kt">Car</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">subaru</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">honda</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">bmw</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// NEW CODE</span><span class="w"></span>
+<span class="w">  </span><span class="nx">getCars</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">cars</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>This service is now ready to use by our component.</p>
+<p>Services export methods that will later be invoked by Angular components that use the service. One service can conceivably be used by multiple components.</p>
+<h3 id="dependency-injection">Dependency Injection</h3>
+<p>Now that our service is actually exporting data, our component needs to pull it in.</p>
+<p>In Angular we use something called dependency injection to pull a service into a component.</p>
+<p>This service is now ready to use by our component.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Component</span><span class="p">,</span><span class="w"> </span><span class="nx">OnInit</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Import the TransportationService.</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">TransportationService</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./transportation.service&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Car</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./car&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">@Component</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;app-angular&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">templateUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;./angular.component.html&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">styleUrls</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;./angular.component.css&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AngularComponent</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">OnInit</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">cars</span><span class="o">:</span><span class="w"> </span><span class="kt">Car</span><span class="p">[];</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// Inject the TransportationService into the component.</span><span class="w"></span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="k">private</span><span class="w"> </span><span class="nx">transportationService</span><span class="o">:</span><span class="w"> </span><span class="kt">TransportationService</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">cars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">transportationService</span><span class="p">.</span><span class="nx">getCars</span><span class="p">();</span><span class="w"> </span>
+
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">ngOnInit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">cars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">transportationService</span><span class="p">.</span><span class="nx">getCars</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>This component is now ready to use the data that the service exports.
+Dependency injection is a common design pattern in object oriented programming.</p>
+<p>Think of dependency injection like installing a weather app on your phone. Every phone that installs the weather app gets the same app. It can be installed on multiple phones, and every phone that clicks a "get weather" button for a city will get the same weather. The weather service is a central service that provides data for everyone who subscribes to it. That's what a service does through dependency injection. It usually provides data to all of its subscribers, along with other functionality.</p>
+<p>Note how we create a private variable called transportationService that is of the type TransportationService. transportationService (with the lowercase t) is the variable and TransportationService (with an upperCase T) is the type. Those two naming conventions are called camelCase and PascalCase, respectively. Using camelCase for class variables and PascalCase for class and interface names is a convention seen throughout Angular.</p>
+<h2 id="event-binding">Event Binding</h2>
 
               
             </article>

@@ -416,3 +416,130 @@ BMW X3 with a mileage of 4400
 When you iterate over a custom type, like a Car in this instance, you must use dot notation ( car.make, car.model, car.miles, etc.) to access the members of that entity because interfaces are made up of various fields, similar to a JavaScript object.
 
 ## Angular Services
+
+Services are special files in Angular that are used to manage data. They usually pull data from XHR (XML/HTTP Requests), but they can also store data on their own.
+A service is like a 'brain' in an Angular app that either returns data from the service itself or data retrieved from an external source. It can be viewed as a 'data manager'.
+
+### Generating an Angular Service
+
+Angular can generate a service for you with a simple command so you don't have to remember how to build the basic structure.
+
+In order to do this, we use this command in the computer terminal:
+
+```bash
+ng generate service transportation
+```
+
+This generates an empty service within the Angular application.
+
+```ts
+import { Injectable } from '@angular/core';
+@Injectable({
+  providedIn: 'root'
+})
+export class TransportationService {
+  constructor() { }
+}
+```
+
+
+We will only concern ourselves with two parts of this service:
+
+1. The top of the file where the imports live. This is where we will import files that the service will use.
+2. The class body where it says export class TransportationService. The class body is contained within the curly brackets after the word TransportationService.
+
+Methods within the class body of the service are used to export data out of the service.
+
+#### Import Interface into a Service
+
+Our Transportation Service will contain an array of Car types. To do that, we need to import our Car interface that we created earlier. We learned that the top of the file is where we import things.
+
+We can add this line to the top section of the transportation service:
+
+```ts
+import { Car } from './car';
+```
+
+
+This allows us to use the Car type to make an array of Cars. Our transportation service has now IMPORTED the interface from the car.ts file.
+
+The car.ts file EXPORTS the interface and the transportation service IMPORTS that same interface for use. That will now allow us to create an array of Car types in our service.
+
+The import / export functionality we see in Angular is derived from NodeJS. This same import / export system is seen in almost every front-end JavaScript framework, as most of these frameworks are built using Node.
+
+#### Recreating Car Array in a Service
+
+Now that we've imported the car resource, we can create an array of Car types in our transportation service. The last thing we need to do after we do this is to create a getCars( ) method to export the car data out of the service. Here is the completed service:
+
+```ts
+import { Injectable } from '@angular/core';
+ import { Car } from './car';
+ 
+ @Injectable({
+  providedIn: 'root'
+ })
+ export class TransportationService {
+  // NEW CODE
+  subaru: Car = {make: 'Subaru', model: 'Outback', miles: 58232};
+  honda: Car = {make: 'Honda', model: 'Accord', miles: 39393};
+  bmw: Car = {make: 'BMW', model: 'X3', miles: 4400};
+ 
+  cars:Car[] = [this.subaru, this.honda, this.bmw];
+ 
+  constructor() { }
+ 
+  // NEW CODE
+  getCars() {
+    return this.cars;
+  }
+ }
+```
+
+This service is now ready to use by our component.
+
+Services export methods that will later be invoked by Angular components that use the service. One service can conceivably be used by multiple components.
+
+### Dependency Injection
+
+Now that our service is actually exporting data, our component needs to pull it in.
+
+In Angular we use something called dependency injection to pull a service into a component.
+
+This service is now ready to use by our component.
+
+```ts
+import { Component, OnInit } from '@angular/core';
+// Import the TransportationService.
+import { TransportationService } from './transportation.service';
+import { Car } from './car';
+ 
+@Component({
+  selector: 'app-angular',
+  templateUrl: './angular.component.html',
+  styleUrls: ['./angular.component.css']
+})
+export class AngularComponent implements OnInit {
+ 
+  cars: Car[];
+ 
+  // Inject the TransportationService into the component.
+  constructor(private transportationService: TransportationService) {
+    this.cars = this.transportationService.getCars(); 
+
+  }
+ 
+  ngOnInit() {
+    this.cars = this.transportationService.getCars();
+  }
+ 
+}
+```
+
+This component is now ready to use the data that the service exports.
+Dependency injection is a common design pattern in object oriented programming.
+
+Think of dependency injection like installing a weather app on your phone. Every phone that installs the weather app gets the same app. It can be installed on multiple phones, and every phone that clicks a "get weather" button for a city will get the same weather. The weather service is a central service that provides data for everyone who subscribes to it. That's what a service does through dependency injection. It usually provides data to all of its subscribers, along with other functionality.
+  
+Note how we create a private variable called transportationService that is of the type TransportationService. transportationService (with the lowercase t) is the variable and TransportationService (with an upperCase T) is the type. Those two naming conventions are called camelCase and PascalCase, respectively. Using camelCase for class variables and PascalCase for class and interface names is a convention seen throughout Angular.
+
+## Event Binding
