@@ -543,3 +543,97 @@ Think of dependency injection like installing a weather app on your phone. Every
 Note how we create a private variable called transportationService that is of the type TransportationService. transportationService (with the lowercase t) is the variable and TransportationService (with an upperCase T) is the type. Those two naming conventions are called camelCase and PascalCase, respectively. Using camelCase for class variables and PascalCase for class and interface names is a convention seen throughout Angular.
 
 ## Event Binding
+
+Up until this point, we have mainly been reading data in Angular and outputting it to the screen. What if, however, we wanted to actually change some data or respond to user events? That's where Angular event binding comes into play.
+
+Browser based events in Angular are typically tied to methods within their corresponding components. Here is an example of a button that triggers an alert.
+
+app.component.html
+
+```html
+<button (click)="saySomething()"> Say Something </button>
+```
+
+app.component.ts
+
+```ts
+saySomething() {
+  alert('good day.');
+}
+```
+
+
+Let's break this code down.
+```html
+<button (click) = "saySomething()" > Say Something </button>
+```
+
+
+Here we have inserted a click handler on a button that fires whenever a click event occurs. This triggers the "saySomething()" method in the component. In Angular, the parentheses around an event handler within an html tag signify what we call "event binding". In this instance, "click" is bound with the parentheses to be (click), which binds that event to the method passed in the quotes, which is "saySomething()".
+
+There are many other types of events that happen on the web: click, change, mouseover, hover, dragover, etc. are all examples of events that are the result of user actions.
+
+Note that you must use the () after saySomething() to trigger the method in the corresponding app.component.ts file. This is because Angular not only binds the action to the event, it also fires the event when clicked, similar in execution context to JavaScript’s native "call" method. The () after the method symbolizes the triggering of the event once that button is clicked.
+
+**Making a Counter**
+
+Our next exercise is an example using click events to make a counter increment. When you click on a button, the counter increments. This is what we will be trying to achieve:
+As you can imagine, we need a button with a click event in the view which is tied to a corresponding method in the component:
+
+app.component.html
+
+```html
+<div class="container">
+  <div class="number-display">
+    {{counter}}
+  </div>
+    <button (click)="increment()"> increment </button>
+ </div>
+```
+
+
+app.component.ts
+
+```ts
+counter = 0;
+increment() {
+  this.counter++;
+}
+```
+
+
+In the HTML view, the `<button>` tag has a (click) method inside of it. This sends a command to the component to fire the increment() method.
+
+The center of the functionality here is the counter variable. When the button is clicked, the counter is incremented. The result is shown in the view because {{ counter }} will always hold the updated value of the counter variable as it's being incremented with clicks.
+
+Events further demonstrate the close relationship between view and component files.
+
+**Event Updating a String**
+
+We will try another exercise: we want to update a string with an event. In this example, every time we click on a button, an existing string will be appended with a few more words. The string will start off with the words "It's going", and every time we click on the button, the words "..and going", will be added to the end of the string:
+
+app.component.html
+
+```html
+<div class="display">
+  {{phrase}}
+</div>
+<button (click)="update()"> click me </button>
+```
+
+
+app.component.ts
+
+```ts
+phrase = "It's going";
+update() {
+  this.phrase+=" ..and going";
+}
+```
+
+
+Again, we have a button that's wired to a method that fires in the component. The component has a variable called "phrase" that starts out as just two words: "It's going". However, every time you click the button, the update() method is fired and the += sign in that expression forces the componen to add ".. and going" to the end of whatever the former phrase was. The result is that the phrase keeps getting longer and longer and longer every time we click the button.
+
+Events are a core part of any Angular project. In fact, events are really key to all of the TypeScript and JavaScript frameworks and most applications that use JavaScript in general.
+
+## Data Binding

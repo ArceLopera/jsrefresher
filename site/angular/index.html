@@ -870,6 +870,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#data-binding" class="md-nav__link">
+    Data Binding
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1090,6 +1097,13 @@
         <li class="md-nav__item">
   <a href="#event-binding" class="md-nav__link">
     Event Binding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-binding" class="md-nav__link">
+    Data Binding
   </a>
   
 </li>
@@ -1446,6 +1460,59 @@ Dependency injection is a common design pattern in object oriented programming.<
 <p>Think of dependency injection like installing a weather app on your phone. Every phone that installs the weather app gets the same app. It can be installed on multiple phones, and every phone that clicks a "get weather" button for a city will get the same weather. The weather service is a central service that provides data for everyone who subscribes to it. That's what a service does through dependency injection. It usually provides data to all of its subscribers, along with other functionality.</p>
 <p>Note how we create a private variable called transportationService that is of the type TransportationService. transportationService (with the lowercase t) is the variable and TransportationService (with an upperCase T) is the type. Those two naming conventions are called camelCase and PascalCase, respectively. Using camelCase for class variables and PascalCase for class and interface names is a convention seen throughout Angular.</p>
 <h2 id="event-binding">Event Binding</h2>
+<p>Up until this point, we have mainly been reading data in Angular and outputting it to the screen. What if, however, we wanted to actually change some data or respond to user events? That's where Angular event binding comes into play.</p>
+<p>Browser based events in Angular are typically tied to methods within their corresponding components. Here is an example of a button that triggers an alert.</p>
+<p>app.component.html</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">saySomething</span><span class="err">()&quot;</span><span class="p">&gt;</span> Say Something <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>app.component.ts</p>
+<div class="highlight"><pre><span></span><code><span class="nx">saySomething</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;good day.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Let's break this code down.
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)</span> <span class="err">=</span> <span class="err">&quot;</span><span class="na">saySomething</span><span class="err">()&quot;</span> <span class="p">&gt;</span> Say Something <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p>Here we have inserted a click handler on a button that fires whenever a click event occurs. This triggers the "saySomething()" method in the component. In Angular, the parentheses around an event handler within an html tag signify what we call "event binding". In this instance, "click" is bound with the parentheses to be (click), which binds that event to the method passed in the quotes, which is "saySomething()".</p>
+<p>There are many other types of events that happen on the web: click, change, mouseover, hover, dragover, etc. are all examples of events that are the result of user actions.</p>
+<p>Note that you must use the () after saySomething() to trigger the method in the corresponding app.component.ts file. This is because Angular not only binds the action to the event, it also fires the event when clicked, similar in execution context to JavaScript’s native "call" method. The () after the method symbolizes the triggering of the event once that button is clicked.</p>
+<p><strong>Making a Counter</strong></p>
+<p>Our next exercise is an example using click events to make a counter increment. When you click on a button, the counter increments. This is what we will be trying to achieve:
+As you can imagine, we need a button with a click event in the view which is tied to a corresponding method in the component:</p>
+<p>app.component.html</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;number-display&quot;</span><span class="p">&gt;</span>
+    {{counter}}
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">increment</span><span class="err">()&quot;</span><span class="p">&gt;</span> increment <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>app.component.ts</p>
+<div class="highlight"><pre><span></span><code><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="nx">increment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">counter</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>In the HTML view, the <code>&lt;button&gt;</code> tag has a (click) method inside of it. This sends a command to the component to fire the increment() method.</p>
+<p>The center of the functionality here is the counter variable. When the button is clicked, the counter is incremented. The result is shown in the view because {{ counter }} will always hold the updated value of the counter variable as it's being incremented with clicks.</p>
+<p>Events further demonstrate the close relationship between view and component files.</p>
+<p><strong>Event Updating a String</strong></p>
+<p>We will try another exercise: we want to update a string with an event. In this example, every time we click on a button, an existing string will be appended with a few more words. The string will start off with the words "It's going", and every time we click on the button, the words "..and going", will be added to the end of the string:</p>
+<p>app.component.html</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;display&quot;</span><span class="p">&gt;</span>
+  {{phrase}}
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">update</span><span class="err">()&quot;</span><span class="p">&gt;</span> click me <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>app.component.ts</p>
+<div class="highlight"><pre><span></span><code><span class="nx">phrase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;It&#39;s going&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="nx">update</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">phrase</span><span class="o">+=</span><span class="s2">&quot; ..and going&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Again, we have a button that's wired to a method that fires in the component. The component has a variable called "phrase" that starts out as just two words: "It's going". However, every time you click the button, the update() method is fired and the += sign in that expression forces the componen to add ".. and going" to the end of whatever the former phrase was. The result is that the phrase keeps getting longer and longer and longer every time we click the button.</p>
+<p>Events are a core part of any Angular project. In fact, events are really key to all of the TypeScript and JavaScript frameworks and most applications that use JavaScript in general.</p>
+<h2 id="data-binding">Data Binding</h2>
 
               
             </article>
